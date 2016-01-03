@@ -75,13 +75,11 @@ public class LoginHandler {
             System.out.println(json.toString());
 
             String name = json.get("name").toString();
-            String matrikelnummer = json.get("matrikelnummer").toString();
-            String linked_exam = json.get("linked_exam").toString();
             String email = json.get("email").toString();
 
-            // Todo sitznummer muss noch gespiecher werden
+            // Todo speichern der name und email der dozenten!! Ebenfalls bei Login Daten
 
-            user = new User(email, linked_exam, name, matrikelnummer);
+            user = new User(email, name);
 
         } catch(JSONException e) {
             System.out.println(e);

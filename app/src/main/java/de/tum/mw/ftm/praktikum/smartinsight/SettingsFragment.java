@@ -100,8 +100,6 @@ public class SettingsFragment extends Fragment {
 
         txtEmail.setText(user.email);
         txtName.setText(user.name);
-        txtMatrikelNum.setText(user.matrikelnummer);
-        txtExam.setText(user.exam);
         updateProfilPic();
         return view;
     }

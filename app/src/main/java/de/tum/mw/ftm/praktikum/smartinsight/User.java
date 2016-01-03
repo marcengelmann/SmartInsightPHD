@@ -6,12 +6,10 @@ import android.graphics.Bitmap;
  * Created by Rebecca on 13.12.2015.
  */
 public class User {
-    String name, email, exam, matrikelnummer;
+    String name, email;
 
-    public User (String email, String exam, String name, String matrikelnummer){
+    public User (String email, String name){
         this.email = email;
-        this.exam = exam;
-        this.matrikelnummer = matrikelnummer;
         this.name = name;
     }
 }

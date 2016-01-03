@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity
         user = userLocalStore.getUserLogInUser();
 
         if(authenticate() == true && startActFirstTime){
-            Toast.makeText(MainActivity.this,"Willkommen, "+user.name + ", Matrikelnummer: "+ user.matrikelnummer + ", Email: "+user.email+ ", Prüfung: "+user.exam,
+            Toast.makeText(MainActivity.this,"Willkommen, "+user.name + ", Email: "+user.email,
                     Toast.LENGTH_LONG).show();
             emailView.setText(user.email);
             nameView.setText(user.name);
@@ -331,7 +331,8 @@ public class MainActivity extends AppCompatActivity
     private void downloadRequests() {
         JSONClient client = new JSONClient(this, requestResultListener);
         // TODO: Website so konfigurieren, dass die Anfrage nur mit Passwort ausgegeben wird.
-        String url = "http://www.marcengelmann.com/smart/download.php?intent=request&matrikelnummer=" + user.matrikelnummer;
+        // Todo: MUss das hier mit E-mail angepasst werden, da es keine Matrikelnummern mehr gibt
+        String url = "http://www.marcengelmann.com/smart/download.php?intent=request&matrikelnummer=" + user.email;
         client.execute(url);
     }
 
@@ -348,7 +349,8 @@ public class MainActivity extends AppCompatActivity
         System.out.println(anfrage.toString());
         JSONClient uploader = new JSONClient(this, uploadResultListener);
         // TODO: Website so konfigurieren, dass die Anfrage nur mit Passwort ausgegeben wird.
-        String url = "http://www.marcengelmann.com/smart/upload.php?intent=request&matrikelnummer=" + user.matrikelnummer+"&task_id="+anfrage.linked_task+"&subtask_id="+anfrage.linked_subtask;
+        // Todo: habe hier statt matrikelnummer email hingeschrieben
+        String url = "http://www.marcengelmann.com/smart/upload.php?intent=request&matrikelnummer=" + user.email+"&task_id="+anfrage.linked_task+"&subtask_id="+anfrage.linked_subtask;
         uploader.execute(url);
     }
 
