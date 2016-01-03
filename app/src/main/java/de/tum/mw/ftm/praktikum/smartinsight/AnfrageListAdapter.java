@@ -17,16 +17,9 @@ import java.util.List;
 public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.ViewHolder> {
 
     private final List<AnfrageProvider> mValues;
-    customButtonListener customListner;
 
-
-    public interface customButtonListener {
-        public void onButtonClickListner(int position,AnfrageProvider value);
-    }
-
-    public AnfrageListAdapter(List<AnfrageProvider> anfrageProvider , customButtonListener listener) {
+    public AnfrageListAdapter(List<AnfrageProvider> anfrageProvider) {
         mValues = anfrageProvider;
-        customListner = listener;
     }
 
     @Override
@@ -47,15 +40,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         viewHolder.taskNumber.setText(mValues.get(position).taskNumber);
         viewHolder.taskSubNumber.setText(mValues.get(position).taskSubNumber);
         viewHolder.sitzNumber.setText(mValues.get(position).sitzNumber);
-        viewHolder.listViewButton.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                if (customListner != null) {
-                    customListner.onButtonClickListner(position, viewHolder.mItem);
-                }
-            }
-        });
     }
 
 
@@ -76,20 +61,16 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         public TextView taskNumber;
         public TextView taskSubNumber;
         public TextView sitzNumber;
-        public ImageButton listViewButton;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            //mIdView = (TextView) view.findViewById(R.id.id);
-            //mContentView = (TextView) view.findViewById(R.id.content);
             editor = (TextView) view.findViewById(R.id.editor);
             endTime = (TextView) view.findViewById(R.id.endTime);
             question = (TextView) view.findViewById(R.id.question);
             startTime = (TextView) view.findViewById(R.id.startTime);
             taskNumber = (TextView) view.findViewById(R.id.taskNumber);
             taskSubNumber = (TextView) view.findViewById(R.id.taskSubNumber);
-            listViewButton = (ImageButton) view.findViewById(R.id.listViewButton);
             sitzNumber = (TextView) view.findViewById(R.id.sitzNumb);
         }
 

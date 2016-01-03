@@ -26,7 +26,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, AnfrageListFragment.OnListFragmentInteractionListener, SettingsFragment.OnListFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnListFragmentInteractionListener{
     UserLocalStore userLocalStore;
     AnfrageLocalStore anfrageLocalStore;
     TaskListLocalStore taskListLocalStore;
@@ -44,15 +44,6 @@ public class MainActivity extends AppCompatActivity
     ArrayList<Calendar> requestsCalendar = new ArrayList<Calendar>();
 
     ArrayList<Task> tasks = new ArrayList<Task>();
-
-    @Override
-    public void onListFragmentDeleteListItem(int position, AnfrageProvider value) {
-        deleteRequest(value);
-        downloadRequests();
-        Toast.makeText(MainActivity.this, "Anfrage ... wurde gelöscht!",
-                Toast.LENGTH_SHORT).show();
-        updateListView();
-    }
 
     private GetJSONListener uploadResultListener = new GetJSONListener(){
         @Override

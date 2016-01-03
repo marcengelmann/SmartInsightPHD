@@ -17,19 +17,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
- */
-public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.customButtonListener{
+
+public class AnfrageListFragment extends Fragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     AnfrageListAdapter adapter;
     TextView txtIntroduction;
-    private OnListFragmentInteractionListener mListener;
     ArrayList<AnfrageProvider> listAnfrageProvider = new ArrayList<AnfrageProvider>();
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -56,7 +50,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
 
         }
 
-        adapter = new AnfrageListAdapter(anfrageProviders, this);
+        adapter = new AnfrageListAdapter(anfrageProviders);
 
     }
     RecyclerView recyclerView = null;
@@ -87,18 +81,11 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener) {
-            mListener = (OnListFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
     static  ArrayList<AnfrageProvider> anfrageProviders =  new ArrayList<AnfrageProvider>();
 
@@ -123,36 +110,4 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
 
     }
 
-    @Override
-    public void onButtonClickListner(int position, AnfrageProvider value) {
-        String msg = "Möchtest du die Anfrage zur Aufgabe " + value.getTaskNumber() + value.getTaskSubNumber() + " löschen?" ;
-        String title = "Anfrage löschen?";
-
-        finalDialog(title,msg, position,value).show();
-    }
-
-    private Dialog finalDialog(String title,String msg, final int position, final AnfrageProvider value){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage(msg);
-        builder.setTitle(title);
-        builder.setPositiveButton("Ja", new DialogInterface.OnClickListener
-                () {
-            @Override
-            public void onClick(DialogInterface dialog, int arg1) {
-                mListener.onListFragmentDeleteListItem(position, value);
-            }
-        });
-        builder.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-
-        builder.setCancelable(false);
-        return builder.create();    }
-
-
-    public interface OnListFragmentInteractionListener {
-        void onListFragmentDeleteListItem(int position, AnfrageProvider value);
-    }
 }
