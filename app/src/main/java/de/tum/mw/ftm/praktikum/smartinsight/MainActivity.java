@@ -106,7 +106,8 @@ public class MainActivity extends AppCompatActivity
                     String task = obj.getString("linked_task");
                     String phd = obj.getString("linked_phd");
                     String id = obj.getString("id");
-                    AnfrageProvider anfrage = new AnfrageProvider(id,"12:00","12:10", task, subtask, "Inhalt und PUnkte", phd);
+                    //Todo sitznummer hinzufügen wir Uhrzeit, Art der Frage
+                    AnfrageProvider anfrage = new AnfrageProvider(id,"12:00","12:10", task, subtask, "Inhalt und PUnkte", student,"3");
                     requests.add(anfrage);
                     System.out.println(anfrage.toString());
                 }

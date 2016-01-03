@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 
@@ -44,6 +46,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         viewHolder.question.setText(mValues.get(position).question);
         viewHolder.taskNumber.setText(mValues.get(position).taskNumber);
         viewHolder.taskSubNumber.setText(mValues.get(position).taskSubNumber);
+        viewHolder.sitzNumber.setText(mValues.get(position).sitzNumber);
         viewHolder.listViewButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -72,6 +75,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         public TextView editor;
         public TextView taskNumber;
         public TextView taskSubNumber;
+        public TextView sitzNumber;
         public ImageButton listViewButton;
 
         public ViewHolder(View view) {
@@ -86,6 +90,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
             taskNumber = (TextView) view.findViewById(R.id.taskNumber);
             taskSubNumber = (TextView) view.findViewById(R.id.taskSubNumber);
             listViewButton = (ImageButton) view.findViewById(R.id.listViewButton);
+            sitzNumber = (TextView) view.findViewById(R.id.sitzNumb);
         }
 
     }

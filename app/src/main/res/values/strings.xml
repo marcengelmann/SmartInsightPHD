@@ -7,7 +7,7 @@
     <string name="caption_settings">Einstellungen</string>
     <string name="caption_statistic">Statistik</string>
     <string name="caption_addTask">Anfragen erstellen</string>
-    <string name="caption">SmartInsight Student</string>
+    <string name="caption">SmartInsight PHD</string>
     <!-- Strings related to login -->
 
     <string name="prompt_matrikelnummber">Matrikelnummer</string>

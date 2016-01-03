@@ -112,7 +112,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
             txtIntroduction.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
             for (AnfrageProvider request : requests) {
-                anfrageProviders.add(new AnfrageProvider(request.id, request.startTime, request.endTime, request.taskNumber, request.taskSubNumber, request.question, request.editor));
+                anfrageProviders.add(new AnfrageProvider(request.id, request.startTime, request.endTime, request.taskNumber, request.taskSubNumber, request.question, request.editor, request.sitzNumber));
             }
         }
         if (recyclerView != null){

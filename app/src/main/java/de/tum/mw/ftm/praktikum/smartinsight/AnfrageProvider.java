@@ -15,11 +15,12 @@ public class AnfrageProvider implements Serializable{
     public String editor;
     public String question;
     public String taskNumber;
+    public String sitzNumber;
     public String taskSubNumber;
     public String id;
 
 
-    public AnfrageProvider(String id, String startTime, String endTime, String taskNumber, String taskSubNumber, String question, String editor) {
+    public AnfrageProvider(String id, String startTime, String endTime, String taskNumber, String taskSubNumber, String question, String editor, String sitzNumber) {
         this.endTime = endTime;
         this.startTime = startTime;
         this.editor = editor;
@@ -27,6 +28,7 @@ public class AnfrageProvider implements Serializable{
         this.taskNumber = taskNumber;
         this.taskSubNumber = taskSubNumber;
         this.id = id;
+        this.sitzNumber = sitzNumber;
     }
 
     public String getEndTime() {
@@ -85,14 +87,4 @@ public class AnfrageProvider implements Serializable{
         this.taskSubNumber = taskSubNumber;
     }
 
-
-    public static List<AnfrageProvider> createAnfrageProviderList(ArrayList<Anfrage> requests) {
-        List<AnfrageProvider> anfrageProvider = new ArrayList<AnfrageProvider>();
-
-        for(Anfrage request:requests) {
-            anfrageProvider.add(new AnfrageProvider(request.id, "12:00","13:00",request.linked_task,request.linked_subtask,request.linked_exam, request.linked_phd));
-        }
-
-        return anfrageProvider;
-    }
 }
