@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnListFragmentInteractionListener{
     UserLocalStore userLocalStore;
     AnfrageLocalStore anfrageLocalStore;
-    TaskListLocalStore taskListLocalStore;
     User user = null;
 
     private boolean fragmentAnfrageListActive = false;
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity
     //Todo In dieses Array müsste am Anfang (Nur einmal) alle aktuellen Prüfungstermine geladen werden!
     ArrayList<Calendar> requestsCalendar = new ArrayList<Calendar>();
 
-    ArrayList<Task> tasks = new ArrayList<Task>();
 
     private GetJSONListener uploadResultListener = new GetJSONListener(){
         @Override
@@ -105,10 +103,6 @@ public class MainActivity extends AppCompatActivity
                 }
                 updateListView();
 
-                /*if (customIntFragListView != null) {
-                    customIntFragListView.updateFragmentListView(requests);
-                }*/
-
             } catch (JSONException e) {
                 System.out.println(e);
             }catch (NullPointerException e) {
@@ -123,10 +117,7 @@ public class MainActivity extends AppCompatActivity
         @Override
         public void onRemoteCallComplete(JSONObject jsonFromNet) {
 
-            taskListLocalStore.clearTaskStore();
-
             try {
-                tasks.clear();
                 JSONArray jsonArray = jsonFromNet.getJSONArray("posts");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject obj = jsonArray.getJSONObject(i);
@@ -136,14 +127,7 @@ public class MainActivity extends AppCompatActivity
                     String linked_phd = obj.getString("linked_phd");
                     String id = obj.getString("id");
                     String number = obj.getString("number");
-
-                    Task task = new Task(name,linked_exam,linked_phd,id,number);
-                    tasks.add(task);
-                    System.out.println(task.toString());
                 }
-
-                taskListLocalStore.storeTaskList(tasks);
-
 
             } catch (JSONException e) {
                 System.out.println(e);
@@ -191,7 +175,6 @@ public class MainActivity extends AppCompatActivity
         ArrayList<AnfrageProvider> arrayOfUsers = new ArrayList<AnfrageProvider>();
         // Create the adapter to convert the array to views
 
-        taskListLocalStore = new TaskListLocalStore(this);
         userLocalStore = new UserLocalStore(this);
         anfrageLocalStore = new AnfrageLocalStore(this);
         anfrageLocalStore.setStatusAnfrageClient(false);

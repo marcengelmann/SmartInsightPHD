@@ -75,7 +75,8 @@ public class LoginHandler {
             System.out.println(json.toString());
 
             String name = json.get("name").toString();
-            String email = json.get("email").toString();
+            //Todo speichern der email adresse statt matrikelnummern, aber dann muss auch in MainActivity die matrikelnummer vom Serverseite aus angepasst werdne
+            String email = json.get("matrikelnummer").toString();
 
             // Todo speichern der name und email der dozenten!! Ebenfalls bei Login Daten
 

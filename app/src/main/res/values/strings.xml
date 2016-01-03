@@ -6,12 +6,12 @@
     <string name="caption_klausur">Klausureinsichtstermine</string>
     <string name="caption_settings">Einstellungen</string>
     <string name="caption_statistic">Statistik</string>
-    <string name="caption_addTask">Anfragen erstellen</string>
+    <string name="caption_editTask">Anfragen bearbeiten</string>
     <string name="caption">SmartInsight PHD</string>
     <!-- Strings related to login -->
 
     <string name="prompt_matrikelnummber">Matrikelnummer</string>
-    <string name="text_information">Auf dieser Seite werden die erstellten Anfragen aufgelistet. Anfragen fügt ihr über den Floating Action Button unten links im Feld hinzu!</string>
+    <string name="text_information">Auf dieser Seite werden die Anfragen von den Studenten aufgelistet. Bearbeiten kann man die Anfragen über den Floating Action Button unten links im Feld!</string>
     <string name="calendar_information">Hier wirden die aktuellen Klausureinsichtstermine aufgelistet. Zur Zeit sind keine vorhanden!</string>
 
     <string name="prompt_email">E-Mail</string>
