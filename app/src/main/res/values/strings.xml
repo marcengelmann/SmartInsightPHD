@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">SmartInsight Student</string>
+    <integer name="max_sitz_numb">15</integer>
+
+    <string name="capition_anfrageliste">Anfrageliste</string>
+    <string name="caption_klausur">Klausureinsichtstermine</string>
+    <string name="caption_settings">Einstellungen</string>
+    <string name="caption_statistic">Statistik</string>
+    <string name="caption_addTask">Anfragen erstellen</string>
+    <string name="caption">SmartInsight Student</string>
+    <!-- Strings related to login -->
+
+    <string name="prompt_matrikelnummber">Matrikelnummer</string>
+    <string name="text_information">Auf dieser Seite werden die erstellten Anfragen aufgelistet. Anfragen fügt ihr über den Floating Action Button unten links im Feld hinzu!</string>
+    <string name="calendar_information">Hier wirden die aktuellen Klausureinsichtstermine aufgelistet. Zur Zeit sind keine vorhanden!</string>
+
+    <string name="prompt_email">E-Mail</string>
+    <string name="prompt_name">Name</string>
+    <string name="prompt_password">Passwort</string>
+    <string name="action_sign_in">Zur Einsicht einchecken</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">Die Matrikelnummer ist ungültig</string>
+    <string name="error_invalid_password">Das Passwortformat ist ungültig</string>
+    <string name="error_incorrect_password">Die Matrikelnummer ist unbekannt</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main">Anfragen</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="checkQuestion_a">Inhalt</string>
+    <string name="checkQuestion_b">Punkte</string>
+    <string name="checkQuestion_c">Inhalt und Punkte</string>
+    <string-array name="art_of_question">
+        <item>@string/checkQuestion_a</item>
+        <item>@string/checkQuestion_b</item>
+        <item>@string/checkQuestion_c</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
