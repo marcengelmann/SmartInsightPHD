@@ -32,7 +32,6 @@ import java.io.OutputStream;
 
 
 public class SettingsFragment extends Fragment {
-    private Spinner spinnerSitzNumber;
     private TextView txtMatrikelNum;
     private TextView txtName;
     private TextView txtEmail;
@@ -72,7 +71,6 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         view.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        spinnerSitzNumber = (Spinner) view.findViewById(R.id.profileSitzNumb);
         txtEmail = (TextView) view.findViewById(R.id.profileEmail);
         txtMatrikelNum = (TextView) view.findViewById(R.id.profilMatrikel);
         txtName = (TextView) view.findViewById(R.id.profileName);
@@ -97,24 +95,8 @@ public class SettingsFragment extends Fragment {
         }
         ArrayAdapter<String> adapterSitNumber = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, number);
         adapterSitNumber.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerSitzNumber.setAdapter(adapterSitNumber);
         final User user = userLocalStore.getUserLogInUser();
-        spinnerSitzNumber.setSelection(Integer.valueOf(user.sitNumb));
-        spinnerSitzNumber.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                user.sitNumb = String.valueOf(position);
-                userLocalStore.storeUserData(user);
-                //Todo interface erstellen, was die Sitzpostion updated oder bei UserLocalStore eine Variable  hinzufügen, die besagt, dass das ganze upgedated werden muss
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-
-        });
 
         txtEmail.setText(user.email);
         txtName.setText(user.name);

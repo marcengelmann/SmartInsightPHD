@@ -81,7 +81,7 @@ public class LoginHandler {
 
             // Todo sitznummer muss noch gespiecher werden
 
-            user = new User(email, linked_exam, name, matrikelnummer, "0");
+            user = new User(email, linked_exam, name, matrikelnummer);
 
         } catch(JSONException e) {
             System.out.println(e);

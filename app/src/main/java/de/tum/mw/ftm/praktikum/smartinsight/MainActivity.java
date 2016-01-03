@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity
                     String phd = obj.getString("linked_phd");
                     String id = obj.getString("id");
                     //Todo sitznummer hinzufügen wir Uhrzeit, Art der Frage
+                    //Todo statt matirkelnummer Namen des Studenten schicken
                     AnfrageProvider anfrage = new AnfrageProvider(id,"12:00","12:10", task, subtask, "Inhalt und PUnkte", student,"3");
                     requests.add(anfrage);
                     System.out.println(anfrage.toString());
