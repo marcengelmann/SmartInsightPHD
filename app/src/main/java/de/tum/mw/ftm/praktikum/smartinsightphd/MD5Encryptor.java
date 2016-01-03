@@ -1,10 +1,7 @@
-package de.tum.mw.ftm.praktikum.smartinsight;
+package de.tum.mw.ftm.praktikum.smartinsightphd;
 
-import java.io.FileInputStream;
 import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by marcengelmann on 15.12.15.

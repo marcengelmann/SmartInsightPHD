@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="de.tum.mw.ftm.praktikum.smartinsight.LoginActivity">
+    tools:context="de.tum.mw.ftm.praktikum.smartinsightphd.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <de.tum.mw.ftm.praktikum.smartinsight.CircleImageView
+            <de.tum.mw.ftm.praktikum.smartinsightphd.CircleImageView
                 android:src="@mipmap/ic_launcher_fernrohr"
                 android:layout_width="100dp"
                 android:layout_height="100dp"

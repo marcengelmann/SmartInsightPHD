@@ -1,4 +1,4 @@
-package de.tum.mw.ftm.praktikum.smartinsight;
+package de.tum.mw.ftm.praktikum.smartinsightphd;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

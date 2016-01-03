@@ -1,10 +1,6 @@
-package de.tum.mw.ftm.praktikum.smartinsight;
-
-import android.support.v7.widget.RecyclerView;
+package de.tum.mw.ftm.praktikum.smartinsightphd;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Rebecca on 13.12.2015.

@@ -1,15 +1,11 @@
-package de.tum.mw.ftm.praktikum.smartinsight;
+package de.tum.mw.ftm.praktikum.smartinsightphd;
 
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 

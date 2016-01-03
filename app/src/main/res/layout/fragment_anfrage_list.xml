@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
 
-    tools:context="de.tum.mw.ftm.praktikum.smartinsight.AnfrageListDefault">
+    tools:context="de.tum.mw.ftm.praktikum.smartinsightphd.AnfrageListDefault">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"

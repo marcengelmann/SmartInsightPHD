@@ -1,4 +1,4 @@
-package de.tum.mw.ftm.praktikum.smartinsight;
+package de.tum.mw.ftm.praktikum.smartinsightphd;
 
 /**
  * Created by marcengelmann on 22.12.15.

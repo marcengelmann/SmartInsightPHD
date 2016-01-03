@@ -1,4 +1,4 @@
-package de.tum.mw.ftm.praktikum.smartinsight;
+package de.tum.mw.ftm.praktikum.smartinsightphd;
 
 /**
  * Created by marcengelmann on 12.12.15.
@@ -22,7 +22,6 @@ import org.json.JSONObject;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 public class JSONClient extends AsyncTask<String, Void, JSONObject>{
     ProgressDialog progressDialog ;

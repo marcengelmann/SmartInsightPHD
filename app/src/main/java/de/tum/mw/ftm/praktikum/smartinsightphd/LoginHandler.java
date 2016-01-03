@@ -1,4 +1,4 @@
-package de.tum.mw.ftm.praktikum.smartinsight;
+package de.tum.mw.ftm.praktikum.smartinsightphd;
 
 import org.json.JSONException;
 import org.json.JSONObject;

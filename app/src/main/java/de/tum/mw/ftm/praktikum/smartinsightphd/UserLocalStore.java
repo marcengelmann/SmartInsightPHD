@@ -1,13 +1,8 @@
-package de.tum.mw.ftm.praktikum.smartinsight;
+package de.tum.mw.ftm.praktikum.smartinsightphd;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.util.Base64;
-
-import java.io.ByteArrayOutputStream;
 
 /**
  * Created by Rebecca on 13.12.2015.
