@@ -150,6 +150,9 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(v.getContext(), FloatingActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("requests", (Serializable) requests);
+                myIntent.putExtras(bundle);
                 startActivity(myIntent);
             }
         });
@@ -231,9 +234,10 @@ public class MainActivity extends AppCompatActivity
         //Hier kommen updates nach dem Floating action button hin
         if(anfrageLocalStore.getStatusAnfrageClient())
         {
+            // ToDo hier müsste die Anfrage des dozenten überarbeitet werden
             Anfrage anfrage = anfrageLocalStore.getDataAnfrageClient();
-            uploadData(anfrage);
-            updateListView();
+            //uploadData(anfrage);
+            //updateListView();
         }
         anfrageLocalStore.setStatusAnfrageClient(false);
 

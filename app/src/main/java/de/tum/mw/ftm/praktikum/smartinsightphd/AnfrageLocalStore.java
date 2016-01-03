@@ -14,6 +14,7 @@ public class AnfrageLocalStore {
     public AnfrageLocalStore(Context context){
         anfrageLocalDatabase = context.getSharedPreferences(SP_NAME, 0);
     }
+    //public Anfrage(String id,String student, String task, String subtask, String phd, String startTime, String endTime, String editRequest) {
 
     public void storeAnfrageData(Anfrage anfrage){
         SharedPreferences.Editor spEditor = anfrageLocalDatabase.edit();
@@ -21,8 +22,11 @@ public class AnfrageLocalStore {
         spEditor.putString("linked_task",anfrage.linked_task);
         spEditor.putString("linked_subtask",anfrage.linked_subtask);
         spEditor.putString("linked_phd",anfrage.linked_phd);
-        spEditor.putString("linked_exam",anfrage.linked_exam);
         spEditor.putString("id",anfrage.id);
+        spEditor.putString("startTime", anfrage.startTime);
+        spEditor.putString("endTime", anfrage.endTime);
+        spEditor.putString("editRequest", anfrage.editRequest);
+
         spEditor.commit();
     }
 
@@ -31,10 +35,12 @@ public class AnfrageLocalStore {
         String linked_task = anfrageLocalDatabase.getString("linked_task","");
         String linked_subtask = anfrageLocalDatabase.getString("linked_subtask", "");
         String linked_phd = anfrageLocalDatabase.getString("linked_phd", "");
-        String linked_exam = anfrageLocalDatabase.getString("linked_exam", "");
         String id = anfrageLocalDatabase.getString("id", "");
+        String startTime = anfrageLocalDatabase.getString("startTime","");
+        String endTime = anfrageLocalDatabase.getString("endTime", "");
+        String editRequest = anfrageLocalDatabase.getString("editRequest", "");
 
-        Anfrage storedAnfrage = new Anfrage(id,linked_student, linked_task, linked_subtask , linked_phd,linked_exam);
+        Anfrage storedAnfrage = new Anfrage(id,linked_student, linked_task, linked_subtask , linked_phd, startTime, endTime, editRequest);
 
         return storedAnfrage;
     }

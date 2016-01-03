@@ -13,30 +13,24 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Aufgabe:"
+            android:text="Wähle die zu bearbeitende Anfrage aus:"
             android:textSize="16dp"
             android:layout_margin="8dp"
-            android:id="@+id/rowTask"/>
+            android:id="@+id/rowRequest"/>
 
         <Spinner
-            android:id="@+id/spinnerTaskNumber"
+            android:id="@+id/spinnerRequest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rowTask"
+            android:layout_marginBottom="16dp"
+            android:layout_below="@+id/rowRequest"
             android:spinnerMode="dropdown"/>
-        <Spinner
-            android:id="@+id/spinnerTaskSubNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/spinnerTaskNumber"
-            android:spinnerMode="dropdown"/>
-
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Frage zu:"
-        android:layout_below="@+id/spinnerTaskSubNumber"
+        android:text="Folgende Bearbeitung der Anfrage:"
+        android:layout_below="@+id/spinnerRequest"
         android:textSize="16dp"
         android:layout_margin="8dp"
         android:layout_marginTop="32dp"
@@ -66,7 +60,7 @@
     <Button
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Anfrage senden"
+        android:text="Anfrage bearbeiten"
         android:id="@+id/btnSendQuestion"
         android:onClick="onButtonSendQuestion"
         android:layout_alignParentBottom="true"/>

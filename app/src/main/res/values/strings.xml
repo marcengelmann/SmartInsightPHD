@@ -31,9 +31,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="checkQuestion_a">Inhalt</string>
-    <string name="checkQuestion_b">Punkte</string>
-    <string name="checkQuestion_c">Inhalt und Punkte</string>
+    <string name="checkQuestion_a">Ich bin früher mit der Anfrage fertig geworden, nächsten freien Studenten ermitteln.</string>
+    <string name="checkQuestion_b">Anfrage um 5 Minuten verlängern.</string>
+    <string name="checkQuestion_c">Alle Anfragen um 10 Minuten nach hinten verschieben.</string>
     <string-array name="art_of_question">
         <item>@string/checkQuestion_a</item>
         <item>@string/checkQuestion_b</item>
