@@ -95,7 +95,8 @@ public class MainActivity extends AppCompatActivity
                     String id = obj.getString("id");
                     //Todo sitznummer hinzufügen wir Uhrzeit, Art der Frage
                     //Todo statt matirkelnummer Namen des Studenten schicken
-                    AnfrageProvider anfrage = new AnfrageProvider(id,"12:00","12:10", task, subtask, "Inhalt und PUnkte", student,"3");
+                    //Todo Kommentar direkt mit runterladen
+                    AnfrageProvider anfrage = new AnfrageProvider(id,"12:00","12:10", task, subtask, "Inhalt und PUnkte", student,"3","Commit");
                     requests.add(anfrage);
                     System.out.println(anfrage.toString());
                 }
@@ -234,7 +235,7 @@ public class MainActivity extends AppCompatActivity
         //Hier kommen updates nach dem Floating action button hin
         if(anfrageLocalStore.getStatusAnfrageClient())
         {
-            // ToDo hier müsste die Anfrage des dozenten überarbeitet werden
+            // ToDo KOmmentar des Dozenten per mail schicken oder in einer Historie/Todo liste speichern
             Anfrage anfrage = anfrageLocalStore.getDataAnfrageClient();
             //uploadData(anfrage);
             //updateListView();

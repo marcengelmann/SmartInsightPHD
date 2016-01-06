@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -18,17 +19,13 @@ import java.util.ArrayList;
 
 public class FloatingActivity extends AppCompatActivity {
 
-    private RadioButton radioBtnQuestionA;
-    private RadioButton radioBtnQuestionB;
-    private RadioButton radioBtnQuestionC;
-    private RadioGroup radioGroupQuestion;
     private String artOfQuestion = "";
     private Spinner spinnerrequest;
     private ArrayList<AnfrageProvider> listSpinRequest  = new ArrayList<AnfrageProvider>();
     SpinnerAnfrageAdapter adapter;
     AnfrageLocalStore anfrageLocalStore;
     UserLocalStore userLocalStore;
-
+    EditText addCommit;
     String editor;
     String endTime;
     String question;
@@ -45,20 +42,16 @@ public class FloatingActivity extends AppCompatActivity {
         ArrayList<AnfrageProvider> listAnfrageProvider = new ArrayList<AnfrageProvider>();
         listAnfrageProvider = (ArrayList<AnfrageProvider>)b.getSerializable("requests");
         setTitle(R.string.caption_editTask);
-        radioBtnQuestionA = (RadioButton) findViewById(R.id.radioBtnQuestionA);
-        radioBtnQuestionB = (RadioButton) findViewById(R.id.radioBtnQuestionB);
-        radioBtnQuestionC = (RadioButton) findViewById(R.id.radioBtnQuestionC);
-        radioGroupQuestion = (RadioGroup) findViewById(R.id.radioGroupQuestion);
+        addCommit = (EditText) findViewById(R.id.addCommit);
         spinnerrequest = (Spinner) findViewById(R.id.spinnerRequest);
-        for (AnfrageProvider request : listAnfrageProvider) {
-            listSpinRequest.add(new AnfrageProvider(request.id, request.startTime, request.endTime, request.taskNumber, request.taskSubNumber, request.question, request.editor, request.sitzNumber));
-        }
+
         // Create custom adapter object ( see below CustomAdapter.java )
-        adapter = new SpinnerAnfrageAdapter(this, R.layout.spinner_list_item, listSpinRequest);
+        adapter = new SpinnerAnfrageAdapter(this, R.layout.spinner_list_item, listAnfrageProvider);
         // Set adapter to spinner
         spinnerrequest.setAdapter(adapter);
 
         // Listener called when spinner item selected
+        final ArrayList<AnfrageProvider> finalListAnfrageProvider = listAnfrageProvider;
         spinnerrequest.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View v, int position, long id) {
@@ -69,6 +62,7 @@ public class FloatingActivity extends AppCompatActivity {
                 taskNumber = ((TextView) findViewById(R.id.taskNumber)).getText().toString();;
                 taskSubNumber = ((TextView) findViewById(R.id.taskSubNumber)).getText().toString();;
                 sitzNumber = ((TextView) findViewById(R.id.sitzNumb)).getText().toString();;
+                addCommit.setText(finalListAnfrageProvider.get(position).phdCommit);
             }
 
             @Override
@@ -97,13 +91,8 @@ public class FloatingActivity extends AppCompatActivity {
     }
 
     public void onButtonSendQuestion(View view){
-        String[] arrayQuestion = getResources().getStringArray(R.array.art_of_question);
-        int radioButtonID = radioGroupQuestion.getCheckedRadioButtonId();
-        View radioButton = radioGroupQuestion.findViewById(radioButtonID);
-        int idx = radioGroupQuestion.indexOfChild(radioButton);
-        artOfQuestion = arrayQuestion[idx];
-
-        finalDialog("Anfrage senden","Anfrage um " + startTime + " Uhr vom Student " + editor + " soll bearbeitet werden?").show();
+        artOfQuestion = String.valueOf(addCommit.getText());
+        finalDialog("Kommentar hinzufügen","Anfrage um " + startTime + " Uhr vom Student " + editor + " soll folgender Kommentar hinzugefügt werden:" +artOfQuestion+"hinzugeügt werden?").show();
     }
     private Dialog finalDialog(String title,String msg){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -31,15 +31,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="checkQuestion_a">Ich bin früher mit der Anfrage fertig geworden, nächsten freien Studenten ermitteln.</string>
-    <string name="checkQuestion_b">Anfrage um 5 Minuten verlängern.</string>
-    <string name="checkQuestion_c">Alle Anfragen um 10 Minuten nach hinten verschieben.</string>
-    <string-array name="art_of_question">
-        <item>@string/checkQuestion_a</item>
-        <item>@string/checkQuestion_b</item>
-        <item>@string/checkQuestion_c</item>
-    </string-array>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wähle die zu bearbeitende Anfrage aus:"
+            android:text="Wähle die Anfrage aus, zu der Sie ein Kommentar schreiben oder einen bestehenedne Kommentar bearbeiten möchten:"
             android:textSize="16dp"
             android:layout_margin="8dp"
             android:id="@+id/rowRequest"/>
@@ -29,33 +29,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Folgende Bearbeitung der Anfrage:"
+        android:text="Kommentar:"
         android:layout_below="@+id/spinnerRequest"
         android:textSize="16dp"
         android:layout_margin="8dp"
         android:layout_marginTop="32dp"
         android:id="@+id/rowQuestion"/>
 
-    <RadioGroup
-        android:layout_width="fill_parent"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_below="@+id/rowQuestion"
-        android:id="@+id/radioGroupQuestion">
-        <RadioButton android:id="@+id/radioBtnQuestionA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/checkQuestion_a"/>
-        <RadioButton android:id="@+id/radioBtnQuestionB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/checkQuestion_b"/>
-        <RadioButton android:id="@+id/radioBtnQuestionC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/checkQuestion_c"/>
-    </RadioGroup>
+        android:id="@+id/addCommit">
+    </EditText>
 
     <Button
         android:layout_height="wrap_content"
@@ -64,4 +50,5 @@
         android:id="@+id/btnSendQuestion"
         android:onClick="onButtonSendQuestion"
         android:layout_alignParentBottom="true"/>
+
 </RelativeLayout>
