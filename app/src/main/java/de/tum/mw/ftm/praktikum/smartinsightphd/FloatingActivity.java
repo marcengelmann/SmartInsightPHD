@@ -62,7 +62,6 @@ public class FloatingActivity extends AppCompatActivity {
                 taskNumber = ((TextView) findViewById(R.id.taskNumber)).getText().toString();;
                 taskSubNumber = ((TextView) findViewById(R.id.taskSubNumber)).getText().toString();;
                 sitzNumber = ((TextView) findViewById(R.id.sitzNumb)).getText().toString();;
-                addCommit.setText(finalListAnfrageProvider.get(position).phdCommit);
             }
 
             @Override
@@ -92,7 +91,7 @@ public class FloatingActivity extends AppCompatActivity {
 
     public void onButtonSendQuestion(View view){
         artOfQuestion = String.valueOf(addCommit.getText());
-        finalDialog("Kommentar hinzufügen","Anfrage um " + startTime + " Uhr vom Student " + editor + " soll folgender Kommentar hinzugefügt werden:" +artOfQuestion+"hinzugeügt werden?").show();
+        finalDialog("Kommentar per E-Mail schicken?","Anfrage um " + startTime + " Uhr vom Student " + editor + " soll folgender Kommentar '" +artOfQuestion+"' hinzugeügt werden?").show();
     }
     private Dialog finalDialog(String title,String msg){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

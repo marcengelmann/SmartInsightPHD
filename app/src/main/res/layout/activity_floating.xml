@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wähle die Anfrage aus, zu der Sie ein Kommentar schreiben oder einen bestehenedne Kommentar bearbeiten möchten:"
+            android:text="Wähle die Anfrage aus, zu der Sie ein Kommentar verfassen möchten:"
             android:textSize="16dp"
             android:layout_margin="8dp"
             android:id="@+id/rowRequest"/>
@@ -46,7 +46,7 @@
     <Button
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Anfrage bearbeiten"
+        android:text="Kommentar per Mail schicken"
         android:id="@+id/btnSendQuestion"
         android:onClick="onButtonSendQuestion"
         android:layout_alignParentBottom="true"/>

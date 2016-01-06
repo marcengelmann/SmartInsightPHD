@@ -11,7 +11,7 @@
     <!-- Strings related to login -->
 
     <string name="prompt_matrikelnummber">Matrikelnummer</string>
-    <string name="text_information">Auf dieser Seite werden die Anfragen von den Studenten aufgelistet. Bearbeiten kann man die Anfragen über den Floating Action Button unten links im Feld!</string>
+    <string name="text_information">Auf dieser Seite werden die Anfragen von den Studenten aufgelistet. Kommentare zu den einzelnen Anfragen können durch den roten runden Bearbeitungs Button erstellt werden!</string>
     <string name="calendar_information">Hier wirden die aktuellen Klausureinsichtstermine aufgelistet. Zur Zeit sind keine vorhanden!</string>
 
     <string name="prompt_email">E-Mail</string>
