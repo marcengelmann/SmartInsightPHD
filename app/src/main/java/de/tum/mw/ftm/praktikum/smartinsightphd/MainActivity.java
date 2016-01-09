@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity
         super.onStart();
 
         user = userLocalStore.getUserLogInUser();
-
+/*
         if(authenticate() == true && startActFirstTime){
             Toast.makeText(MainActivity.this,"Willkommen, "+user.name + ", Email: "+user.email,
                     Toast.LENGTH_LONG).show();
@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity
         else if (startActFirstTime){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             startActFirstTime = true;
-        }
+        }*/
 
         //Hier kommen updates nach dem Floating action button hin
         if(anfrageLocalStore.getStatusAnfrageClient())
