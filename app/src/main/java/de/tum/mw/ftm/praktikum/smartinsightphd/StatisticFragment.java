@@ -97,7 +97,7 @@ public class StatisticFragment extends Fragment {
         // "def", "ghj", "ikl", "mno" });
         // l.setCustom(ColorTemplate.VORDIPLOM_COLORS, new String[] { "abc",
         // "def", "ghj", "ikl", "mno" });
-        setData(12, 50);
+        setData(10, 50);
 
         return view;
 
@@ -119,7 +119,7 @@ public class StatisticFragment extends Fragment {
 
         ArrayList<String> xVals = new ArrayList<String>();
         for (int i = 0; i < count; i++) {
-            xVals.add(mMonths[i % 12]);
+            xVals.add(mTaks[i]);
         }
         float mult = 10;
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
@@ -127,29 +127,29 @@ public class StatisticFragment extends Fragment {
         ArrayList<BarEntry> yVals3 = new ArrayList<BarEntry>();
 
         for (int i = 0; i < 10; i++) {
-            float val = (float) (Math.random() * mult) + 3;
+            float val = (int) (Math.random() * mult);
             yVals1.add(new BarEntry(val, i));
         }
 
         for (int i = 0; i < 10; i++) {
-            float val = (float) (Math.random() * mult) + 3;
+            float val = (int) (Math.random() * mult);
             yVals2.add(new BarEntry(val, i));
         }
 
         for (int i = 0; i < 10; i++) {
-            float val = (float) (Math.random() * mult) + 3;
+            float val = (int) (Math.random() * mult);
             yVals3.add(new BarEntry(val, i));
         }
 
 
         // create 3 datasets with different types
-        BarDataSet set1 = new BarDataSet(yVals1, "Company A");
+        BarDataSet set1 = new BarDataSet(yVals1, "Inhalt");
         // set1.setColors(ColorTemplate.createColors(getApplicationContext(),
         // ColorTemplate.FRESH_COLORS));
         set1.setColor(Color.rgb(104, 241, 175));
-        BarDataSet set2 = new BarDataSet(yVals2, "Company B");
+        BarDataSet set2 = new BarDataSet(yVals2, "Punkte");
         set2.setColor(Color.rgb(164, 228, 251));
-        BarDataSet set3 = new BarDataSet(yVals3, "Company C");
+        BarDataSet set3 = new BarDataSet(yVals3, "Inhalt und Punkte");
         set3.setColor(Color.rgb(242, 247, 158));
 
         ArrayList<BarDataSet> dataSets = new ArrayList<BarDataSet>();
@@ -167,8 +167,8 @@ public class StatisticFragment extends Fragment {
         mChart.invalidate();
     }
 
-    protected String[] mMonths = new String[] {
-            "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"
+    protected String[] mTaks = new String[] {
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
     };
 
 

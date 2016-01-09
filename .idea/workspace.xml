@@ -6,21 +6,15 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6e7f170-35dc-4786-8066-046aab9bc561" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/MPAndroidChart_v2_1_6.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_statistic.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_statistic.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SmartInsightPHD.iws" />
@@ -88,13 +82,13 @@
       <file leaf-file-name="StatisticFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6468144">
-              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="94" selection-end-column="29" />
+            <state vertical-scroll-proportion="-1.7890625">
+              <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3849#3859#0" expanded="true" />
-                <element signature="e#3977#3987#0" expanded="true" />
-                <element signature="e#5021#5033#0" expanded="true" />
+                <element signature="e#3842#3852#0" expanded="true" />
+                <element signature="e#3970#3980#0" expanded="true" />
+                <element signature="e#4998#5010#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2054,7 +2048,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452368312011</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Hinzufügen eines bar chart dummys, welches noch angepasst werden muss, an Klausuren und Legende und ganze Zahlen als y-Achsen wert">
+      <created>1452373927383</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1452373927383</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2078,7 +2078,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13444445" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36777776" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4498934" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2159,7 +2159,8 @@
     <MESSAGE value="Überarbeiten der Floating Activity Seite um Kommentare hinzuzfügen" />
     <MESSAGE value="Leichte ÄNderung auf der Floating Activity Seite" />
     <MESSAGE value="Löschen des Aktuellen Klausurnamen in den Settings, da der Dozent nichts damit zu tun hat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Löschen des Aktuellen Klausurnamen in den Settings, da der Dozent nichts damit zu tun hat" />
+    <MESSAGE value="Hinzufügen eines bar chart dummys, welches noch angepasst werden muss, an Klausuren und Legende und ganze Zahlen als y-Achsen wert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hinzufügen eines bar chart dummys, welches noch angepasst werden muss, an Klausuren und Legende und ganze Zahlen als y-Achsen wert" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2780,13 +2781,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6468144">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="94" selection-end-column="29" />
+        <state vertical-scroll-proportion="-1.7890625">
+          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3849#3859#0" expanded="true" />
-            <element signature="e#3977#3987#0" expanded="true" />
-            <element signature="e#5021#5033#0" expanded="true" />
+            <element signature="e#3842#3852#0" expanded="true" />
+            <element signature="e#3970#3980#0" expanded="true" />
+            <element signature="e#4998#5010#0" expanded="true" />
           </folding>
         </state>
       </provider>
