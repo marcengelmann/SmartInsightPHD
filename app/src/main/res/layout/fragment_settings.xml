@@ -46,20 +46,7 @@
                 android:textSize="18dp"
                 android:enabled="false"
                 android:layout_marginBottom="8dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Klausureinsicht"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Klausurname"
-                android:id="@+id/profilExam"
-                android:textSize="18dp"
-                android:enabled="false"
-                android:layout_marginBottom="8dp" />
-
-            <GridLayout
+                      <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -93,7 +80,7 @@
             <Button
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="Update"
+                android:text="Profilbild ändern"
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="32dp"
                 android:id="@+id/btnUploadFoto"

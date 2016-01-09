@@ -24,7 +24,6 @@ public class SettingsFragment extends Fragment {
     private TextView txtMatrikelNum;
     private TextView txtName;
     private TextView txtEmail;
-    private TextView txtExam;
     private Button btnUploadFoto;
     CircleImageView profileImage;
     UserLocalStore userLocalStore;
@@ -63,7 +62,6 @@ public class SettingsFragment extends Fragment {
         txtEmail = (TextView) view.findViewById(R.id.profileEmail);
         txtMatrikelNum = (TextView) view.findViewById(R.id.profilMatrikel);
         txtName = (TextView) view.findViewById(R.id.profileName);
-        txtExam = (TextView) view.findViewById(R.id.profilExam);
         profileImage = (CircleImageView) view.findViewById(R.id.profileImage);
         btnUploadFoto = (Button) view.findViewById(R.id.btnUploadFoto);
         btnUploadFoto.setOnClickListener(new View.OnClickListener() {
