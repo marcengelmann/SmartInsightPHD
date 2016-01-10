@@ -1,12 +1,92 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="de.tum.mw.ftm.praktikum.smartinsightphd.StatisticFragment">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textOverview"
+            android:text="Diese Seite zeigt drei Statistiken bezogen auf das ausgewählte Semester."/>
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/settingsSemester"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="24dp"
+            android:layout_below="@id/textOverview"
+            android:layout_alignParentRight="true"
+            app:ms_multiline="false"
+            app:ms_enableFloatingLabel="false"
+            app:ms_enableErrorLabel="false"
+            app:ms_highlightColor="@color/colorPrimary"
+            app:ms_arrowSize="16dp"
+            app:ms_alignLabels="false"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textStatistic1"
+            android:layout_below="@id/settingsSemester"
+            android:text="1. Statistik über die Anzahl der zur Prüfungsansicht angemeldeten Studenten bezogen auf die Klausuren"/>
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChartOverviewExam"
+            android:layout_below="@id/textStatistic1"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="220dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textStatistic2"
+            android:layout_below="@id/barChartOverviewExam"
+            android:text="2. Statistik zeigt die Anzahl der Anfragen der Studenten bezogen auf die Kategorien Punkte, Inhalt, Inhalt und Punkte bezogen auf die Aufgaben der ausgewählte Klausur an."/>
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/settingsExams"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/textStatistic2"
+            app:ms_multiline="true"
+            app:ms_enableFloatingLabel="false"
+            app:ms_enableErrorLabel="false"
+            app:ms_highlightColor="@color/colorPrimary"
+            app:ms_arrowSize="16dp"
+            app:ms_alignLabels="false"/>
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChartExam"
+            android:layout_below="@id/settingsExams"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="220dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/textStatistic3"
+            android:layout_below="@id/barChartExam"
+            android:layout_height="wrap_content"
+            android:text="Die 3. Statistik zeigt die Anzahl der Anfrage der Studenten bezogen auf die Klausuraufgabe untergliedert in Unteraufgaben an. "/>
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/settingsTasks"
+            android:layout_width="120dp"
+            android:layout_below="@id/textStatistic3"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            app:ms_multiline="false"
+            app:ms_enableFloatingLabel="false"
+            app:ms_enableErrorLabel="false"
+            app:ms_highlightColor="@color/colorPrimary"
+            app:ms_arrowSize="16dp"
+            app:ms_alignLabels="false"/>
     <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChartExam"
+        android:id="@+id/barChartTask"
+        android:layout_below="@id/settingsTasks"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="220dp" />
+</RelativeLayout>
+</ScrollView>
 </FrameLayout>

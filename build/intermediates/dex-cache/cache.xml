@@ -2,11 +2,18 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Rebecca\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v2.1.6\b036abbb61656165da99cf44898e4b9123687e65\MPAndroidChart-v2.1.6.jar"
+        jar="C:\Users\Rebecca\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="b036abbb61656165da99cf44898e4b9123687e65">
-        <dex dex="C:\Users\Rebecca\Documents\GitHub\SmartInsightPHD\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v2.1.6-0ae2abad329ae5f1d220b8eebb007759e639fb9f.jar" />
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\Rebecca\Documents\GitHub\SmartInsightPHD\app\build\intermediates\pre-dexed\debug\library-2.4.0-74b653806f30bc773298e44708318787c6f1d0d7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rebecca\Documents\GitHub\SmartInsightPHD\app\build\intermediates\exploded-aar\com.github.ganfra\material-spinner\1.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d0df3bf618b078d102a4234ceff33c44026e64b9">
+        <dex dex="C:\Users\Rebecca\Documents\GitHub\SmartInsightPHD\app\build\intermediates\pre-dexed\debug\classes-aa2ef1c6fecad7f33a138e42ad83943ae291905e.jar" />
     </item>
 
 </items>
