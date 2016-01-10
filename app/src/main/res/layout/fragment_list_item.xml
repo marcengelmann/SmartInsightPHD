@@ -19,11 +19,33 @@
             android:layout_alignParentLeft="true"
             android:text="09:00"
             android:textSize="16dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/anfrage_item_row0"
+        android:layout_marginBottom="4dp"
+        android:layout_row="1"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="56dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Klausur: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:id="@+id/exam"
+            android:text="1"/>
+    </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/anfrage_item_row0"
+            android:id="@+id/anfrage_item_row1"
+            android:layout_below="@id/anfrage_item_row0"
             android:layout_marginBottom="4dp"
             android:layout_row="1"
             android:layout_alignParentLeft="true"
@@ -61,8 +83,8 @@
             android:orientation="horizontal"
             android:paddingLeft="56dp"
             android:layout_marginBottom="4dp"
-            android:id="@+id/anfrage_item_row1"
-            android:layout_below="@id/anfrage_item_row0">
+            android:id="@+id/anfrage_item_row2"
+            android:layout_below="@id/anfrage_item_row1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -88,11 +110,11 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/anfrage_item_row1"
+            android:layout_below="@id/anfrage_item_row2"
             android:layout_marginBottom="4dp"
             android:orientation="horizontal"
             android:paddingLeft="56dp"
-            android:id="@+id/anfrage_item_row2">
+            android:id="@+id/anfrage_item_row3">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,10 +131,10 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/anfrage_item_row2"
+        android:layout_below="@id/anfrage_item_row3"
         android:orientation="horizontal"
         android:paddingLeft="56dp"
-        android:id="@+id/anfrage_item_row3">
+        android:id="@+id/anfrage_item_row4">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

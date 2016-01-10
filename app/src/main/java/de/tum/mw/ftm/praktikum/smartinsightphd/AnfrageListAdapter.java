@@ -36,7 +36,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         viewHolder.taskNumber.setText(mValues.get(position).taskNumber);
         viewHolder.taskSubNumber.setText(mValues.get(position).taskSubNumber);
         viewHolder.sitzNumber.setText(mValues.get(position).sitzNumber);
-
+        viewHolder.exam.setText(mValues.get(position).exam);
     }
 
 
@@ -57,6 +57,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         public TextView taskNumber;
         public TextView taskSubNumber;
         public TextView sitzNumber;
+        public TextView exam;
 
         public ViewHolder(View view) {
             super(view);
@@ -68,6 +69,8 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
             taskNumber = (TextView) view.findViewById(R.id.taskNumber);
             taskSubNumber = (TextView) view.findViewById(R.id.taskSubNumber);
             sitzNumber = (TextView) view.findViewById(R.id.sitzNumb);
+            sitzNumber = (TextView) view.findViewById(R.id.exam);
+
         }
 
     }

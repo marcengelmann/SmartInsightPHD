@@ -3,6 +3,7 @@ package de.tum.mw.ftm.praktikum.smartinsightphd;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -90,34 +91,22 @@ public class FloatingActivity extends AppCompatActivity {
     }
 
     public void onButtonSendQuestion(View view){
-        artOfQuestion = String.valueOf(addCommit.getText());
-        finalDialog("Kommentar per E-Mail schicken?","Anfrage um " + startTime + " Uhr vom Student " + editor + " soll folgender Kommentar '" +artOfQuestion+"' hinzugeügt werden?").show();
+        Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+
+        User user = userLocalStore.getUserLogInUser();
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, user.email);
+
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Klausureinsichtskommentar");
+
+        String sendText = "Anfrage um " + startTime + " Uhr vom Student " + editor + " soll folgender Kommentar hinzugefügt werden:\n" + String.valueOf(addCommit.getText());
+
+
+        emailIntent.setType("plain/text");
+        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, sendText);
+
+        startActivity(Intent.createChooser(emailIntent, "Sende deine E-Mail an:"));
+
     }
-    private Dialog finalDialog(String title,String msg){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(msg);
-        builder.setTitle(title);
-        builder.setPositiveButton("Senden", new DialogInterface.OnClickListener
-                () {
-            @Override
-            public void onClick(DialogInterface dialog, int arg1) {
-                //Todo sende erstelle anfrage zum server und bearbeite diese
-                User user = userLocalStore.getUserLogInUser();
 
-                Anfrage anfrage = new Anfrage("0",editor, taskNumber, taskSubNumber, user.name, startTime, endTime,artOfQuestion);
-                anfrageLocalStore.storeAnfrageData(anfrage);
-                anfrageLocalStore.setStatusAnfrageClient(true);
-                finish();
-            }
-        });
-        builder.setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-// Canel was clicked
-            }
-        });
-
-        builder.setCancelable(false);
-        return builder.create();    }
 }
 
