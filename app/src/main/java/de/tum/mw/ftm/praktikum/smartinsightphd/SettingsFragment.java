@@ -15,17 +15,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.File;
 
 
 public class SettingsFragment extends Fragment {
-    private TextView txtMatrikelNum;
     private TextView txtName;
     private TextView txtEmail;
-    private Button btnUploadFoto;
-    CircleImageView profileImage;
+    private ImageButton btnUploadFoto;
+    ImageView profileImage;
     UserLocalStore userLocalStore;
     private OnListFragmentInteractionListener mListener;
     public SettingsFragment() {
@@ -60,10 +61,9 @@ public class SettingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         view.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         txtEmail = (TextView) view.findViewById(R.id.profileEmail);
-        txtMatrikelNum = (TextView) view.findViewById(R.id.profilMatrikel);
         txtName = (TextView) view.findViewById(R.id.profileName);
-        profileImage = (CircleImageView) view.findViewById(R.id.profileImage);
-        btnUploadFoto = (Button) view.findViewById(R.id.btnUploadFoto);
+        profileImage = (ImageView) view.findViewById(R.id.profileImage);
+        btnUploadFoto = (ImageButton) view.findViewById(R.id.btnUploadFoto);
         btnUploadFoto.setOnClickListener(new View.OnClickListener() {
 
             @Override
