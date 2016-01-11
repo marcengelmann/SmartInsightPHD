@@ -31,6 +31,8 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
         viewHolder.name.setText(mValues.get(position).name);
         viewHolder.room.setText(mValues.get(position).room);
         viewHolder.date.setText(mValues.get(position).date);
+        viewHolder.numbOfReg.setText(mValues.get(position).numbOfRegistration);
+        viewHolder.responsiblePerson.setText(mValues.get(position).responsiblePerson);
     }
 
     @Override
@@ -45,7 +47,8 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
         public TextView name;
         public TextView room;
         public TextView date;
-
+        public TextView numbOfReg;
+        public TextView responsiblePerson;
 
         public ViewHolder(View view) {
             super(view);
@@ -53,7 +56,10 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
             name = (TextView) view.findViewById(R.id.calendar_name);
             room = (TextView) view.findViewById(R.id.calendar_place);
             date = (TextView) view.findViewById(R.id.calendar_date);
+            numbOfReg = (TextView) view.findViewById(R.id.calendar_numbOfReg);
+            responsiblePerson = (TextView) view.findViewById(R.id.calendar_responsiblePerson);
         }
 
     }
 }
+

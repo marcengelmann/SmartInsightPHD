@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity
     private void  updateCalendarData(){
         requestsCalendar.clear();
         for (int i = 0; i < 10 ;i++){
-            Calendar calendarItem = new Calendar("DAtum " + i , "Klausurname " + i, "Raum " + i);
+            Calendar calendarItem = new Calendar("29.01.2016 ", "Klausurname" + i, "Raum" + i, String.valueOf(i), "Markus Schmitt");
             requestsCalendar.add(calendarItem);
         }
     }

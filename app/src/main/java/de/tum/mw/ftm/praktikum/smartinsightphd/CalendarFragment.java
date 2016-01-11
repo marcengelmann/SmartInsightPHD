@@ -14,13 +14,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
 public class CalendarFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
     CalendarListAdapter adapter;
     TextView txtIntroduction;
-    LinearLayout layout_list_calendar;
+    RecyclerView list_calendar;
     ArrayList<Calendar> listCalendar = new ArrayList<Calendar>();
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -61,7 +60,7 @@ public class CalendarFragment extends Fragment {
         // Set the adapter
         Context context = view.getContext();
         txtIntroduction = (TextView) view.findViewById(R.id.txtInfo);
-        layout_list_calendar = (LinearLayout) view.findViewById(R.id.calender_list_layout);
+        list_calendar = (RecyclerView) view.findViewById(R.id.list);
         recyclerView = (RecyclerView) view.findViewById(R.id.list);
         if (mColumnCount <= 1) {
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -94,13 +93,11 @@ public class CalendarFragment extends Fragment {
         providerCalender.clear();
         if (listItems.isEmpty()) {
             txtIntroduction.setVisibility(View.VISIBLE);
-            layout_list_calendar.setVisibility(View.GONE);
+            list_calendar.setVisibility(View.GONE);
         } else {
             txtIntroduction.setVisibility(View.GONE);
-            layout_list_calendar.setVisibility(View.VISIBLE);
-            for (Calendar request : listItems) {
-                providerCalender.add(new Calendar(request.date, request.name, request.room));
-            }
+            list_calendar.setVisibility(View.VISIBLE);
+            providerCalender.addAll(listItems);
         }
         if (recyclerView != null) {
             // Create the adapter to convert the array to views
