@@ -48,6 +48,7 @@ public class GcmIntentService extends IntentService {
                         .setSmallIcon(R.drawable.ic_action_user)
                         .setAutoCancel(true)
                         .setVisibility(1)
+                        .setStyle(new NotificationCompat.BigTextStyle().bigText(extras.getString("message")))
                         .addAction(android.R.drawable.ic_menu_view, "Details anzeigen ...", backToAppintent)
                         .setContentIntent(backToAppintent)
                         .setPriority(Notification.PRIORITY_HIGH)

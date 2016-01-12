@@ -240,6 +240,9 @@ public class MainActivity extends AppCompatActivity
             //uploadData(anfrage);
             //updateListView();
         }
+
+        downloadRequests();
+
         anfrageLocalStore.setStatusAnfrageClient(false);
 
 
