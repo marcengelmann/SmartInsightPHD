@@ -33,7 +33,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnListFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnListFragmentInteractionListener, AnfrageListFragment.OnListFragmentInteractionListener{
     UserLocalStore userLocalStore;
     AnfrageLocalStore anfrageLocalStore;
     User user = null;
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
 
                     String cutStart = startTime.substring(11, startTime.length() - 3);
                     String cutEnd = endTime.substring(11, endTime.length() - 3);
-                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam);
+                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam, "false");
                     requests.add(anfrage);
                 }
 
@@ -196,6 +196,8 @@ public class MainActivity extends AppCompatActivity
         setFragmentAnfrageliste();
 
         user = userLocalStore.getUserLogInUser();
+        onListFragmentUpdateProfilePic();
+
     }
 
     @Override
@@ -219,7 +221,6 @@ public class MainActivity extends AppCompatActivity
                     Toast.LENGTH_LONG).show();
             emailView.setText(user.email);
             nameView.setText(user.name);
-            onListFragmentUpdateProfilePic();
             startActFirstTime = false;
             downloadRequests();
             downloadCalendar();
@@ -366,5 +367,13 @@ public class MainActivity extends AppCompatActivity
         else {
             profilPicView.setImageResource(R.mipmap.ic_launcher_fernrohr);
         }
+    }
+
+    @Override
+    public void onListFragmentRequestFinishedItem(int position, AnfrageProvider value) {
+        //ToDo hier muss das item das fertig ist mit bearbeiten true gestzt werden!
+        downloadRequests();
+        Toast.makeText(MainActivity.this, "Anfrage wurde bearbeitet!",
+                Toast.LENGTH_SHORT).show();
     }
 }

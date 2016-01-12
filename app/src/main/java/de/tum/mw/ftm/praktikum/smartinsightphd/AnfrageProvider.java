@@ -15,8 +15,9 @@ public class AnfrageProvider implements Serializable{
     public String taskSubNumber;
     public String id;
     public String exam;
+    public String requestFinished;
 
-    public AnfrageProvider(String id, String startTime, String endTime, String taskNumber, String taskSubNumber, String question, String editor, String sitzNumber, String exam) {
+    public AnfrageProvider(String id, String startTime, String endTime, String taskNumber, String taskSubNumber, String question, String editor, String sitzNumber, String exam, String requestFinished) {
         this.endTime = endTime;
         this.startTime = startTime;
         this.editor = editor;
@@ -26,6 +27,7 @@ public class AnfrageProvider implements Serializable{
         this.id = id;
         this.sitzNumber = sitzNumber;
         this.exam = exam;
+        this.requestFinished = requestFinished;
     }
 
     public String getEndTime() {

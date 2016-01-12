@@ -1,21 +1,42 @@
 package de.tum.mw.ftm.praktikum.smartinsightphd;
 
+import android.graphics.Color;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.Time;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
 public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.ViewHolder> {
 
-    private final List<AnfrageProvider> mValues;
+    private final ArrayList<AnfrageProvider> mValues = new ArrayList<AnfrageProvider>();
+    customButtonListener customListner;
+    private Boolean refreshActive = false; //
 
-    public AnfrageListAdapter(List<AnfrageProvider> anfrageProvider) {
-        mValues = anfrageProvider;
+
+    public void setRefreshActive(Boolean refreshActive) {
+        this.refreshActive = refreshActive;
+    }
+
+    public interface customButtonListener {
+        public void onButtonClickListner(int position,AnfrageProvider value);
+        public void refreshListListener(int position, long timer);
+    }
+
+    public AnfrageListAdapter(List<AnfrageProvider> anfrageProvider , customButtonListener listener) {
+        mValues.addAll(anfrageProvider);
+        customListner = listener;
     }
 
     @Override
@@ -25,18 +46,98 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         return new ViewHolder(view);
     }
 
+    public void updateData(ArrayList<AnfrageProvider> anfrageProvider){
+        mValues.clear();
+        mValues.addAll(anfrageProvider);
+    }
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder,final int position) {
         viewHolder.mItem = mValues.get(position);
+        String endTime = mValues.get(position).endTime;
+        String startTime = mValues.get(position).startTime;
         viewHolder.editor.setText(mValues.get(position).editor);
-        viewHolder.endTime.setText(mValues.get(position).endTime);
-        viewHolder.startTime.setText(mValues.get(position).startTime);
+        Boolean requestFinished = Boolean.getBoolean(mValues.get(position).requestFinished);
+        viewHolder.endTime.setText(endTime);
+        viewHolder.startTime.setText(startTime);
         viewHolder.question.setText(mValues.get(position).question);
         viewHolder.taskNumber.setText(mValues.get(position).taskNumber);
         viewHolder.taskSubNumber.setText(mValues.get(position).taskSubNumber);
         viewHolder.sitzNumber.setText(mValues.get(position).sitzNumber);
         viewHolder.exam.setText(mValues.get(position).exam);
+
+        long requestStartDate = 0;
+        long requestEndDate = 0;
+        Time time = new Time("Europe/Berlin");
+        time.setToNow();
+        long actualDate = (time.hour * 60 + time.minute) * 60 + time.second;
+        SimpleDateFormat curFormater = new SimpleDateFormat("HH:mm");
+
+        try {
+            Date startDate = curFormater.parse(startTime);
+            requestStartDate = (startDate.getHours() * 60 + startDate.getMinutes()) * 60;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        try {
+            Date endDate = curFormater.parse(endTime);
+            requestEndDate = (endDate.getHours() * 60 + endDate.getMinutes()) * 60;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if(requestEndDate != 0 && requestStartDate != 0) {
+
+            if(actualDate < requestEndDate && !refreshActive)
+            {
+                refreshActive = true;
+                long calcTime = 0 ;
+                if(actualDate >= requestStartDate){
+                    calcTime = (requestEndDate - actualDate + 10) * 1000;
+                }
+                else{
+                    calcTime = (requestStartDate - actualDate + 10) * 1000;
+                }
+
+                if (customListner != null) {
+                    customListner.refreshListListener(position, calcTime);
+                }
+            }
+
+            if(actualDate >= requestEndDate){
+                if(requestFinished){
+                    viewHolder.card.setCardBackgroundColor(Color.LTGRAY);
+                }
+                else {
+                    viewHolder.card.setCardBackgroundColor(Color.RED);
+                }
+            }
+            else
+            {
+                viewHolder.card.setCardBackgroundColor(Color.WHITE);
+
+            }
+
+            if(requestFinished){
+                viewHolder.listViewButton.setVisibility(View.GONE);
+            }
+            else
+            {
+                viewHolder.listViewButton.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        if (customListner != null) {
+                            customListner.onButtonClickListner(position, viewHolder.mItem);
+                        }
+
+                    }
+                });
+
+            }
+
+
+        }
     }
 
 
@@ -58,6 +159,8 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         public TextView taskSubNumber;
         public TextView sitzNumber;
         public TextView exam;
+        private CardView card;
+        public ImageButton listViewButton;
 
         public ViewHolder(View view) {
             super(view);
@@ -70,6 +173,8 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
             taskSubNumber = (TextView) view.findViewById(R.id.taskSubNumber);
             sitzNumber = (TextView) view.findViewById(R.id.sitzNumb);
             exam = (TextView) view.findViewById(R.id.exam);
+            card = (CardView) view.findViewById(R.id.card_view_request_list);
+            listViewButton = (ImageButton) view.findViewById(R.id.listViewButton);
 
         }
 

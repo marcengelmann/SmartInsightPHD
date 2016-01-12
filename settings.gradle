@@ -1,1 +1,1 @@
-include ':app', ':pushBackend'
+include ':pushBackend', ':app'

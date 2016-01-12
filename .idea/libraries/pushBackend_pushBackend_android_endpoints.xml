@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="pushBackend.pushBackend-android-endpoints">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/pushBackend/build/libs/pushBackend-android-endpoints.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
