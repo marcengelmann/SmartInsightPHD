@@ -50,7 +50,11 @@ class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String> {
 
             //TODO store deviceID and push it to server!
 
-            //UserLocalStore userLocalStore = new UserLocalStore();
+            UserLocalStore userLocalStore = new UserLocalStore(context);
+            User user = userLocalStore.getUserLogInUser();
+            user.deviceID = regId;
+            user.didChange = true;
+            userLocalStore.storeUserData(user);
 
             regService.register(regId).execute();
 

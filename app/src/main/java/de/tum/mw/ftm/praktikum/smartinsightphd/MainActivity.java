@@ -243,6 +243,10 @@ public class MainActivity extends AppCompatActivity
 
         downloadRequests();
 
+        if(user.didChange) {
+            refreshUserData();
+        }
+
         anfrageLocalStore.setStatusAnfrageClient(false);
 
 
@@ -341,6 +345,17 @@ public class MainActivity extends AppCompatActivity
         String url = "http://www.marcengelmann.com/smart/upload.php?intent=delete_request&exam_name="+user.exam+"&request_id=" + anfrage.id + "&pw=" + user.password;
         uploader.execute(url);
     }*/
+
+    @SuppressWarnings("SpellCheckingInspection")
+    private void refreshUserData() {
+        System.out.println("Trying user data update ...");
+        JSONClient uploader = new JSONClient(this, uploadResultListener);
+        String url = "http://www.marcengelmann.com/smart/upload.php?intent=userdata&phd="+user.id+"&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password + "&deviceID=" + user.deviceID;
+        System.out.println(url);
+        uploader.execute(url);
+        user.didChange = false;
+        userLocalStore.storeUserData(user);
+    }
 
     @Override
     public void onListFragmentUpdateProfilePic() {
