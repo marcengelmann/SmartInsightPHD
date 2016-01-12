@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity
     CircleImageView profilPicView;
     NavigationView navigationView;
     ArrayList<AnfrageProvider> requests = new ArrayList<>();
-    //Todo In dieses Array müsste am Anfang (Nur einmal) alle aktuellen Prüfungstermine geladen werden!
     ArrayList<Calendar> requestsCalendar = new ArrayList<>();
 
 
@@ -92,11 +91,11 @@ public class MainActivity extends AppCompatActivity
                     String endTime = obj.getString("end_time");
                     String type_of_question = obj.getString("type_of_question");
                     String exam = obj.getString("linked_exam");
-                    //String seat = obj.getString("seat");
+                    String seat = obj.getString("seat");
 
                     String cutStart = startTime.substring(11, startTime.length() - 3);
                     String cutEnd = endTime.substring(11, endTime.length() - 3);
-                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,"seat",exam);
+                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam);
                     requests.add(anfrage);
                 }
 
