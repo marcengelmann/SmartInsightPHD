@@ -86,16 +86,17 @@ public class MainActivity extends AppCompatActivity
                     JSONObject obj = jsonArray.getJSONObject(i);
                     String subtask = obj.getString("subtask_name");
                     String task = obj.getString("task_name");
-                    String phd = obj.getString("linked_phd");
+                    String student = obj.getString("linked_student");
                     String id = obj.getString("id");
                     String startTime = obj.getString("start_time");
                     String endTime = obj.getString("end_time");
                     String type_of_question = obj.getString("type_of_question");
                     String exam = obj.getString("linked_exam");
+                    //String seat = obj.getString("seat");
 
                     String cutStart = startTime.substring(11, startTime.length() - 3);
                     String cutEnd = endTime.substring(11, endTime.length() - 3);
-                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, phd,"sitz",exam);
+                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,"seat",exam);
                     requests.add(anfrage);
                 }
 
@@ -213,7 +214,7 @@ public class MainActivity extends AppCompatActivity
             onListFragmentUpdateProfilePic();
             startActFirstTime = false;
             downloadRequests();
-            //downloadCalendar();
+            downloadCalendar();
             navigationView.getMenu().getItem(0).setChecked(true);
             setFragmentAnfrageliste();
         }
@@ -303,7 +304,6 @@ public class MainActivity extends AppCompatActivity
         System.out.println("Trying requests download ...");
         JSONClient client = new JSONClient(this, requestResultListener);
         String url = "http://www.marcengelmann.com/smart/download.php?intent=request&phd="+user.id+"&exam_name=" + user.exam + "&email=" + user.email + "&pw=" + user.password;
-        System.out.println(url);
         client.execute(url);
     }
 
@@ -311,7 +311,6 @@ public class MainActivity extends AppCompatActivity
         System.out.println("Trying calendar download ...");
         JSONClient task_client = new JSONClient(this, calendarResultListener);
         String url = "http://marcengelmann.com/smart/download.php?intent=calendar&phd="+user.id+"&exam_name="+user.exam+"&email="+user.email+ "&pw=" + user.password;
-        System.out.println(url);
         task_client.execute(url);
     }
 
