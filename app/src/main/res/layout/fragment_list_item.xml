@@ -1,152 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view_request_list"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginBottom="1dp"
-    android:background="#FFFFFF">
-<RelativeLayout
+    android:layout_height="match_parent"
+    card_view:cardCornerRadius="0dp"
+    android:layout_marginBottom="10dp">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/startTime"
-            android:paddingTop="12dp"
-            android:layout_alignParentLeft="true"
-            android:text="09:00"
-            android:textSize="16dp"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/anfrage_item_row0"
-        android:layout_marginBottom="4dp"
-        android:layout_row="1"
-        android:layout_alignParentLeft="true"
-        android:paddingLeft="56dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:text="Klausur: "/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:id="@+id/exam"
-            android:text="1"/>
-    </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/list_request_title"
             android:orientation="horizontal"
-            android:id="@+id/anfrage_item_row1"
-            android:layout_below="@id/anfrage_item_row0"
-            android:layout_marginBottom="4dp"
-            android:layout_row="1"
-            android:layout_alignParentLeft="true"
-            android:paddingLeft="56dp">
+            android:background="@color/colorPrimary"
+            android:padding="4dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="Aufgabe: "/>
+                android:textColor="@android:color/white"
+                android:id="@+id/txtTime"
+                android:text="Termin von "
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:textSize="16dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:id="@+id/taskNumber"
-                android:text="1"/>
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/white"
+                android:layout_toRightOf="@id/txtTime"
+                android:id="@+id/startTime"
+                android:textSize="16dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:id="@+id/taskSubNumber"
-                android:text="a"/>
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/white"
+                android:id="@+id/txtUntil"
+                android:layout_toRightOf="@id/startTime"
+                android:text=" bis "
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:id="@+id/endTime"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/txtUntil"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_centerVertical="true"
+                android:text=" Uhr"
+                android:layout_toRightOf="@id/endTime"
+                android:textSize="16dp"/>
+            <ImageButton
+                android:id="@+id/listViewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_action_settings"
+                android:background="@color/colorPrimary"
+                />
+        </RelativeLayout>
 
-        </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
+        <GridLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/anfrage_item_until"
-            android:text="-"
-            android:paddingLeft="16dp"
-            android:layout_below="@id/startTime"
-            android:textSize="16dp"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="56dp"
-            android:layout_marginBottom="4dp"
-            android:id="@+id/anfrage_item_row2"
-            android:layout_below="@id/anfrage_item_row1">
-
+            android:id="@+id/list_request_content"
+            android:padding="4dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
-                android:text="Frage: "/>
+                android:text="Klausur: "
+                android:layout_row="0"
+                android:layout_column="0"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:id="@+id/exam"
+                android:text="1"
+                android:layout_row="0"
+                android:layout_column="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Aufgabe: "
+                android:layout_row="1"
+                android:layout_column="0"/>
+            <LinearLayout
+                android:layout_row="1"
+                android:layout_column="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:id="@+id/taskNumber"
+                    android:text="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:id="@+id/taskSubNumber"
+                    android:text="a"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Frage zu: "
+                android:layout_row="2"
+                android:layout_column="0"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
                 android:id="@+id/question"
-                android:text="Inhalt"/>
-        </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/endTime"
-            android:textSize="16dp"
-            android:text="9:10"
-            android:paddingBottom="4dp"
-            android:layout_below="@id/anfrage_item_until"
-            android:textAlignment="center"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/anfrage_item_row2"
-            android:layout_marginBottom="4dp"
-            android:orientation="horizontal"
-            android:paddingLeft="56dp"
-            android:id="@+id/anfrage_item_row3">
+                android:text="Inhalt"
+                android:layout_row="2"
+                android:layout_column="1"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
-                android:text="Student: "/>
+                android:text="Student: "
+                android:layout_row="3"
+                android:layout_column="0"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
                 android:id="@+id/editor"
-                android:text="Hand Müller"/>
-        </LinearLayout>
+                android:text="Hand Müller"
+                android:layout_row="3"
+                android:layout_column="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Sitznummer: "
+                android:layout_row="4"
+                android:layout_column="0"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:id="@+id/sitzNumb"
+                android:text="5"
+                android:layout_row="4"
+                android:layout_column="1"/>
+        </GridLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/anfrage_item_row3"
-        android:orientation="horizontal"
-        android:paddingLeft="56dp"
-        android:id="@+id/anfrage_item_row4">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:text="Sitznummer: "/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:id="@+id/sitzNumb"
-            android:text="5"/>
     </LinearLayout>
+</android.support.v7.widget.CardView>
 
-    </RelativeLayout>
-</RelativeLayout>
+
