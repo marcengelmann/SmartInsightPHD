@@ -69,7 +69,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
             taskNumber = (TextView) view.findViewById(R.id.taskNumber);
             taskSubNumber = (TextView) view.findViewById(R.id.taskSubNumber);
             sitzNumber = (TextView) view.findViewById(R.id.sitzNumb);
-            sitzNumber = (TextView) view.findViewById(R.id.exam);
+            exam = (TextView) view.findViewById(R.id.exam);
 
         }
 

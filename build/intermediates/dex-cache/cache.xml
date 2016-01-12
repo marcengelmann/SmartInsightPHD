@@ -2,11 +2,74 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Rebecca\Documents\GitHub\SmartInsightPHD\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
+        jar="/Users/marcengelmann/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v2.1.6/b036abbb61656165da99cf44898e4b9123687e65/MPAndroidChart-v2.1.6.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b036abbb61656165da99cf44898e4b9123687e65">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/MPAndroidChart-v2.1.6-57771d5ddd3ddcc68d3e9a678b00c89991f023d6.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-8f7633ab90c023e1514cbd37a4e5fb05e0aea5bf.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/library-2.4.0-6fc61b05dc7480bfcb5c83db892adde6e46a9e48.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/classes-9699d45994e4a24449d05126ca961fc472a9a6ca.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
-        <dex dex="C:\Users\Rebecca\Documents\GitHub\SmartInsightPHD\app\build\intermediates\pre-dexed\debug\classes-7bfbf63b592745a81a2ce958cf0aa73790077b80.jar" />
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/classes-261fac7e574f396e2b1d25198edbc3e961bce143.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-1d0bd5870e289060a9e0902edfde04c7ad0f8e7d.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/exploded-aar/com.github.ganfra/material-spinner/1.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d0df3bf618b078d102a4234ceff33c44026e64b9">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/classes-487d03c0f5b59b88ae6220e718c001e72371b2b5.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/classes-a6a23a9ee5774e523643e7c7ad2faa26888a3e6d.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/classes-450862aa5fdbd44588e9aa0318d62923c94f4ded.jar" />
+    </item>
+    <item
+        jar="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/Users/marcengelmann/AndroidStudioProjects/SmartInsightPHD/app/build/intermediates/pre-dexed/debug/classes-9c62ada35a54456fe0835f6b42880f1c17f18c89.jar" />
     </item>
 
 </items>

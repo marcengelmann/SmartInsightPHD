@@ -202,14 +202,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private boolean isMatrikelnummerValid(String matrikelnummer) {
-
-        if(!TextUtils.isDigitsOnly(matrikelnummer)) {
-            return false;
-        } else if(matrikelnummer.length() <= 8 || matrikelnummer.length() > 12) {
-            return false;
-        } else {
-            return true;
-        }
+        //TODO CHECK EMAIL!
+        return true;
     }
 
     private boolean isPasswordValid(String password) {
@@ -328,7 +322,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             LoginHandler connection = new LoginHandler();
 
             try {
-                if(connection.tryLogin(mMatrikelnummer,mPassword)) {
+                if(connection.tryLogin(mMatrikelnummer,MD5Encryptor.getMD5(mPassword))) {
                     System.out.println("Login successful!");
                 } else {
                     System.out.println("Wrong credidentials!");
@@ -339,10 +333,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
 
-            User user = connection.getUserData();
             userLocalStore.setUserLoggedIn(true);
-            userLocalStore.storeUserData(user);
-
+            userLocalStore.storeUserData(connection.getUserData());
             return true;
         }
 

@@ -36,28 +36,25 @@ public class MainActivity extends AppCompatActivity
     TextView nameView;
     CircleImageView profilPicView;
     NavigationView navigationView;
-    ArrayList<AnfrageProvider> requests = new ArrayList<AnfrageProvider>();
+    ArrayList<AnfrageProvider> requests = new ArrayList<>();
     //Todo In dieses Array müsste am Anfang (Nur einmal) alle aktuellen Prüfungstermine geladen werden!
-    ArrayList<Calendar> requestsCalendar = new ArrayList<Calendar>();
+    ArrayList<Calendar> requestsCalendar = new ArrayList<>();
 
 
-    private GetJSONListener uploadResultListener = new GetJSONListener(){
+    private GetJSONListener uploadResultListener = new GetJSONListener() {
         @Override
         public void onRemoteCallComplete(JSONObject jsonFromNet) {
             try {
                 String result = jsonFromNet.getString("result");
-
-                if(result.contains("true")) {
+                if (result.contains("true")) {
                     System.out.println("Upload successful!");
                     downloadRequests();
+                } else {
+                    Toast.makeText(MainActivity.this, result,
+                            Toast.LENGTH_LONG).show();
                 }
-
-                //TODO: Receive repsonse from server!
-
-            } catch(JSONException e) {
-                System.out.println(e);
-            }catch (NullPointerException e) {
-                System.out.println(e);
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
 
@@ -79,7 +76,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private GetJSONListener requestResultListener = new GetJSONListener(){
+    private GetJSONListener requestResultListener = new GetJSONListener() {
         @Override
         public void onRemoteCallComplete(JSONObject jsonFromNet) {
             try {
@@ -87,55 +84,61 @@ public class MainActivity extends AppCompatActivity
                 JSONArray jsonArray = jsonFromNet.getJSONArray("posts");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject obj = jsonArray.getJSONObject(i);
-                    String student = obj.getString("linked_student");
-                    String exam = obj.getString("linked_exam");
-                    String subtask = obj.getString("linked_subtask");
-                    String task = obj.getString("linked_task");
+                    String subtask = obj.getString("subtask_name");
+                    String task = obj.getString("task_name");
                     String phd = obj.getString("linked_phd");
                     String id = obj.getString("id");
-                    //Todo sitznummer hinzufügen wir Uhrzeit, Art der Frage
-                    //Todo statt matirkelnummer Namen des Studenten schicken
-                    //Todo Kommentar direkt mit runterladen
-                    AnfrageProvider anfrage = new AnfrageProvider(id,"12:00","12:10", task, subtask, "Inhalt und PUnkte", student,"3", "KlausurName der Anfrage");
+                    String startTime = obj.getString("start_time");
+                    String endTime = obj.getString("end_time");
+                    String type_of_question = obj.getString("type_of_question");
+                    String exam = obj.getString("linked_exam");
+
+                    String cutStart = startTime.substring(11, startTime.length() - 3);
+                    String cutEnd = endTime.substring(11, endTime.length() - 3);
+                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, phd,"sitz",exam);
                     requests.add(anfrage);
-                    System.out.println(anfrage.toString());
                 }
-                updateListView();
+
+
+                /*if (customIntFragListView != null) {
+                    customIntFragListView.updateFragmentListView(requests);
+                }*/
 
             } catch (JSONException e) {
-                System.out.println(e);
-            }catch (NullPointerException e) {
-                System.out.println(e);
+                requests.clear();
+                Toast.makeText(MainActivity.this, "Keine Anfragen verfügbar!",
+                        Toast.LENGTH_SHORT).show();
             }
-
+            updateListView();
         }
 
     };
 
-    private GetJSONListener examResultListener = new GetJSONListener(){
+    private GetJSONListener calendarResultListener = new GetJSONListener() {
         @Override
         public void onRemoteCallComplete(JSONObject jsonFromNet) {
-
             try {
+                requestsCalendar.clear();
                 JSONArray jsonArray = jsonFromNet.getJSONArray("posts");
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject obj = jsonArray.getJSONObject(i);
 
+                    String date = obj.getString("date");
                     String name = obj.getString("name");
-                    String linked_exam = obj.getString("linked_exam");
-                    String linked_phd = obj.getString("linked_phd");
-                    String id = obj.getString("id");
-                    String number = obj.getString("number");
+                    String room = obj.getString("room");
+                    String responsible_person = obj.getString("responsible_person");
+                    String number_of_students = obj.getString("number_of_students");
+                    String mean_grade = obj.getString("mean_grade");
+                    Calendar calendar = new Calendar(date,name,room,number_of_students, responsible_person,mean_grade);
+
+                    requestsCalendar.add(calendar);
+                    System.out.println(calendar.toString());
                 }
-
             } catch (JSONException e) {
-                System.out.println(e);
-            }catch (NullPointerException e) {
-                System.out.println(e);
+                Toast.makeText(MainActivity.this, "Serververbindung fehlgeschlagen!",
+                        Toast.LENGTH_SHORT).show();
             }
-
         }
-
     };
 
 
@@ -152,7 +155,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent myIntent = new Intent(v.getContext(), FloatingActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("requests", (Serializable) requests);
+                bundle.putSerializable("requests", requests);
                 myIntent.putExtras(bundle);
                 startActivity(myIntent);
             }
@@ -174,7 +177,7 @@ public class MainActivity extends AppCompatActivity
 
         //generate lsitview für anfragen
         // Construct the data source
-        ArrayList<AnfrageProvider> arrayOfUsers = new ArrayList<AnfrageProvider>();
+        ArrayList<AnfrageProvider> arrayOfUsers = new ArrayList<>();
         // Create the adapter to convert the array to views
 
         userLocalStore = new UserLocalStore(this);
@@ -184,9 +187,6 @@ public class MainActivity extends AppCompatActivity
         setFragmentAnfrageliste();
 
         user = userLocalStore.getUserLogInUser();
-
-        //todo setze dummy daten für die Klausureinsichttermine im Kalendar
-       updateCalendarData();
     }
 
     @Override
@@ -199,23 +199,13 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    //Todo ist akuteller dummy funktion um die Daten für die Kalender in das Array zu laden
-    private void  updateCalendarData(){
-        requestsCalendar.clear();
-        for (int i = 0; i < 10 ;i++){
-            Calendar calendarItem = new Calendar("29.01.2016 ", "Klausurname" + i, "Raum" + i, String.valueOf(i), "Markus Schmitt", "2,5");
-            requestsCalendar.add(calendarItem);
-        }
-    }
-
-
     @Override
     protected void onStart(){
         super.onStart();
 
         user = userLocalStore.getUserLogInUser();
-/*
-        if(authenticate() == true && startActFirstTime){
+
+        if(authenticate() && startActFirstTime){
             Toast.makeText(MainActivity.this,"Willkommen, "+user.name + ", Email: "+user.email,
                     Toast.LENGTH_LONG).show();
             emailView.setText(user.email);
@@ -223,14 +213,14 @@ public class MainActivity extends AppCompatActivity
             onListFragmentUpdateProfilePic();
             startActFirstTime = false;
             downloadRequests();
-            downloadExam();
+            //downloadCalendar();
             navigationView.getMenu().getItem(0).setChecked(true);
             setFragmentAnfrageliste();
         }
         else if (startActFirstTime){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             startActFirstTime = true;
-        }*/
+        }
 
         //Hier kommen updates nach dem Floating action button hin
         if(anfrageLocalStore.getStatusAnfrageClient())
@@ -265,39 +255,42 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment;
-        int id = item.getItemId();
+
         fragmentAnfrageListActive = false;
 
-        if (id == R.id.nav_calendar) {
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("calendar", (Serializable) requestsCalendar);
-            fragment = new CalendarFragment();
-            fragment.setArguments(bundle);
-            setTitle(R.string.caption_klausur);
-            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-        }
-        else if (id == R.id.nav_abmelden) {
-            userLocalStore.clearUserData();
-            userLocalStore.setUserLoggedIn(false);
-            setTitle(R.string.caption);
-            View view;
-            view = new View(this);
-            Intent myIntent = new Intent(view.getContext(), LoginActivity.class);
-            startActivity(myIntent);
+        switch(item.getItemId()) {
+
+            case R.id.nav_calendar:
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("calendar", requestsCalendar);
+                fragment = new CalendarFragment();
+                fragment.setArguments(bundle);
+                setTitle(R.string.caption_klausur);
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            case R.id.nav_abmelden:
+                userLocalStore.clearUserData();
+                userLocalStore.setUserLoggedIn(false);
+                setTitle(R.string.caption);
+                View view;
+                view = new View(this);
+                Intent myIntent = new Intent(view.getContext(), LoginActivity.class);
+                startActivity(myIntent);
             startActFirstTime = true;
-        }
-        else if (id == R.id.nav_anfragen) {
-            setFragmentAnfrageliste();
-        }
-        else if (id == R.id.nav_settings) {
-            setTitle(R.string.caption_settings);
-            fragment = new SettingsFragment();
-            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-        }
-        else if (id == R.id.nav_statistic) {
-            setTitle(R.string.caption_statistic);
-            fragment = new StatisticFragment();
-            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            case R.id.nav_anfragen:
+                setFragmentAnfrageliste();
+                break;
+            case R.id.nav_settings:
+                setTitle(R.string.caption_settings);
+                fragment = new SettingsFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
+            case R.id.nav_statistic:
+                setTitle(R.string.caption_statistic);
+                fragment = new StatisticFragment();
+                fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -306,43 +299,42 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void downloadRequests() {
+
+        System.out.println("Trying requests download ...");
         JSONClient client = new JSONClient(this, requestResultListener);
-        // TODO: Website so konfigurieren, dass die Anfrage nur mit Passwort ausgegeben wird.
-        // Todo: MUss das hier mit E-mail angepasst werden, da es keine Matrikelnummern mehr gibt
-        String url = "http://www.marcengelmann.com/smart/download.php?intent=request&matrikelnummer=" + user.email;
+        String url = "http://www.marcengelmann.com/smart/download.php?intent=request&phd="+user.id+"&exam_name=" + user.exam + "&email=" + user.email + "&pw=" + user.password;
+        System.out.println(url);
         client.execute(url);
     }
 
-    private void downloadExam() {
-        JSONClient client = new JSONClient(this, examResultListener);
-        // TODO: Website so konfigurieren, dass die Anfrage nur mit Passwort ausgegeben wird.
-        // TODO: ACHTUNG KURZNAME!
-        String url = "http://marcengelmann.com/smart/download.php?intent=exam&exam_name=AER";
-        client.execute(url);
+    private void downloadCalendar() {
+        System.out.println("Trying calendar download ...");
+        JSONClient task_client = new JSONClient(this, calendarResultListener);
+        String url = "http://marcengelmann.com/smart/download.php?intent=calendar&phd="+user.id+"&exam_name="+user.exam+"&email="+user.email+ "&pw=" + user.password;
+        System.out.println(url);
+        task_client.execute(url);
     }
 
+   /* @SuppressWarnings("SpellCheckingInspection")
     private void uploadData(Anfrage anfrage) {
         System.out.println("Trying data upload ...");
-        System.out.println(anfrage.toString());
         JSONClient uploader = new JSONClient(this, uploadResultListener);
-        // TODO: Website so konfigurieren, dass die Anfrage nur mit Passwort ausgegeben wird.
-        // Todo: habe hier statt matrikelnummer email hingeschrieben
-        String url = "http://www.marcengelmann.com/smart/upload.php?intent=request&matrikelnummer=" + user.email+"&task_id="+anfrage.linked_task+"&subtask_id="+anfrage.linked_subtask;
+        String url = "http://www.marcengelmann.com/smart/upload.php?intent=request&exam_name="+user.exam+"&email=" + user.email + "&task_id=" + anfrage.linked_task + "&subtask_id=" + anfrage.linked_subtask + "&pw=" + user.password + "&type_of_question=" + anfrage.art_of_question;
         uploader.execute(url);
-    }
+    } */
 
+    /*@SuppressWarnings("SpellCheckingInspection")
     private void deleteRequest(AnfrageProvider anfrage) {
         System.out.println("Trying data delete ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
-        // TODO: Website so konfigurieren, dass die Anfrage nur mit Passwort ausgegeben wird.
-        String url = "http://www.marcengelmann.com/smart/upload.php?intent=delete_request&request_id="+anfrage.id;
+        String url = "http://www.marcengelmann.com/smart/upload.php?intent=delete_request&exam_name="+user.exam+"&request_id=" + anfrage.id + "&pw=" + user.password;
         uploader.execute(url);
-    }
+    }*/
 
     @Override
     public void onListFragmentUpdateProfilePic() {
         if (userLocalStore.getUserStatusProfilPic()){
-            User user = userLocalStore.getUserLogInUser();
+            //User user = userLocalStore.getUserLogInUser();
             profilPicView.setImageURI(userLocalStore.getUserProfilPic());
         }
         else {

@@ -26,6 +26,8 @@ public class AnfrageLocalStore {
         spEditor.putString("startTime", anfrage.startTime);
         spEditor.putString("endTime", anfrage.endTime);
         spEditor.putString("editRequest", anfrage.editRequest);
+        spEditor.putString("art_of_question",anfrage.art_of_question);
+        spEditor.putString("exam",anfrage.exam);
 
         spEditor.commit();
     }
@@ -39,8 +41,10 @@ public class AnfrageLocalStore {
         String startTime = anfrageLocalDatabase.getString("startTime","");
         String endTime = anfrageLocalDatabase.getString("endTime", "");
         String editRequest = anfrageLocalDatabase.getString("editRequest", "");
+        String art_of_question = anfrageLocalDatabase.getString("art_of_question","");
+        String exam = anfrageLocalDatabase.getString("exam","");
 
-        Anfrage storedAnfrage = new Anfrage(id,linked_student, linked_task, linked_subtask , linked_phd, startTime, endTime, editRequest);
+        Anfrage storedAnfrage = new Anfrage(id,linked_student, linked_task, linked_subtask , linked_phd, startTime, endTime, editRequest,art_of_question,exam);
 
         return storedAnfrage;
     }

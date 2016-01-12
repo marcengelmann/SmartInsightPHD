@@ -20,46 +20,42 @@ public class UserLocalStore {
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
         spEditor.putString("name", user.name);
         spEditor.putString("email", user.email);
+        spEditor.putString("password",user.password);
+        spEditor.putString("exam",user.exam);
+        spEditor.putString("id",user.id);
 
-        spEditor.commit();
+        spEditor.apply();
     }
 
     public User getUserLogInUser(){
         String name = userLocalDatabase.getString("name", "");
         String email = userLocalDatabase.getString("email","");
-        String matrikelnummer = userLocalDatabase.getString("matrikelnummer", "");
         String exam = userLocalDatabase.getString("exam", "");
-        String sitNumb = userLocalDatabase.getString("sitNumb", "");
+        String password = userLocalDatabase.getString("password","");
+        String id = userLocalDatabase.getString("id","");
 
-        User storedUser = new User(email, name);
+        return new User(email, name,password,exam,id);
 
-        return storedUser;
     }
 
     public void setUserLoggedIn(boolean loggedIn){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
         spEditor.putBoolean("loggedIn", loggedIn);
-        spEditor.commit();
+        spEditor.apply();
     }
 
     public boolean getUserLoggedIn(){
-        if(userLocalDatabase.getBoolean("loggedIn", false) == true){
-            return true;
-        }
-        return false;
+         return userLocalDatabase.getBoolean("loggedIn", false);
     }
 
     public boolean getUserStatusProfilPic(){
-        if(userLocalDatabase.getBoolean("statusProfilPic", false) == true){
-            return true;
-        }
-        return false;
+        return userLocalDatabase.getBoolean("statusProfilPic", false);
     }
 
     public void setUserStatusProfilPic(boolean status){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
         spEditor.putBoolean("statusProfilPic", status);
-        spEditor.commit();
+        spEditor.apply();
     }
 
     public Uri getUserProfilPic(){
@@ -71,13 +67,13 @@ public class UserLocalStore {
     public void setUserProfilPic(Uri bitmap){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
         spEditor.putString("profilPic", bitmap.toString());
-        spEditor.commit();
+        spEditor.apply();
     }
 
 
     public void clearUserData(){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
         spEditor.clear();
-        spEditor.commit();
+        spEditor.apply();
     }
 }

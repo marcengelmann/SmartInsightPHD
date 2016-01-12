@@ -20,10 +20,10 @@ public class LoginHandler {
     protected boolean tryLogin(String mUsername, String mPassword)
     {
         HttpURLConnection connection;
-        OutputStreamWriter request = null;
-        URL url = null;
-        String response = null;
-        String parameters = "matrikelnummer="+mUsername+"&passwort="+mPassword;
+        OutputStreamWriter request;
+        URL url;
+        String response;
+        String parameters = "phd=yes&email="+mUsername+"&password="+mPassword;
 
         try
         {
@@ -37,7 +37,7 @@ public class LoginHandler {
             request.write(parameters);
             request.flush();
             request.close();
-            String line = "";
+            String line;
             InputStreamReader isr = new InputStreamReader(connection.getInputStream());
             BufferedReader reader = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
@@ -75,17 +75,14 @@ public class LoginHandler {
             System.out.println(json.toString());
 
             String name = json.get("name").toString();
-            //Todo speichern der email adresse statt matrikelnummern, aber dann muss auch in MainActivity die matrikelnummer vom Serverseite aus angepasst werdne
-            String email = json.get("matrikelnummer").toString();
-
-            // Todo speichern der name und email der dozenten!! Ebenfalls bei Login Daten
-
-            user = new User(email, name);
+            String email = json.get("email").toString();
+            String password = json.get("password").toString();
+            String exam = json.get("exam").toString();
+            String id = json.get("id").toString();
+            user = new User(email, name,password,exam,id);
 
         } catch(JSONException e) {
-            System.out.println(e);
-        } catch(NullPointerException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
