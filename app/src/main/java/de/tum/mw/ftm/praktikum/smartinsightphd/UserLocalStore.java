@@ -23,7 +23,8 @@ public class UserLocalStore {
         spEditor.putString("password",user.password);
         spEditor.putString("exam",user.exam);
         spEditor.putString("id",user.id);
-
+        spEditor.putString("deviceID",user.deviceID);
+        spEditor.putBoolean("didChange",user.didChange);
         spEditor.apply();
     }
 
@@ -33,8 +34,10 @@ public class UserLocalStore {
         String exam = userLocalDatabase.getString("exam", "");
         String password = userLocalDatabase.getString("password","");
         String id = userLocalDatabase.getString("id","");
+        String deviceID = userLocalDatabase.getString("deviceID","");
+        boolean didChange = userLocalDatabase.getBoolean("didChange",false);
 
-        return new User(email, name,password,exam,id);
+        return new User(email, name,password,exam,id,deviceID,didChange);
 
     }
 

@@ -1,10 +1,18 @@
 package de.tum.mw.ftm.praktikum.smartinsightphd;
 
+import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.IntentFilter;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +21,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -216,6 +225,7 @@ public class MainActivity extends AppCompatActivity
             downloadCalendar();
             navigationView.getMenu().getItem(0).setChecked(true);
             setFragmentAnfrageliste();
+            new GcmRegistrationAsyncTask(this).execute();
         }
         else if (startActFirstTime){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -230,6 +240,13 @@ public class MainActivity extends AppCompatActivity
             //uploadData(anfrage);
             //updateListView();
         }
+
+        downloadRequests();
+
+        if(user.didChange) {
+            refreshUserData();
+        }
+
         anfrageLocalStore.setStatusAnfrageClient(false);
 
 
@@ -328,6 +345,17 @@ public class MainActivity extends AppCompatActivity
         String url = "http://www.marcengelmann.com/smart/upload.php?intent=delete_request&exam_name="+user.exam+"&request_id=" + anfrage.id + "&pw=" + user.password;
         uploader.execute(url);
     }*/
+
+    @SuppressWarnings("SpellCheckingInspection")
+    private void refreshUserData() {
+        System.out.println("Trying user data update ...");
+        JSONClient uploader = new JSONClient(this, uploadResultListener);
+        String url = "http://www.marcengelmann.com/smart/upload.php?intent=userdata&phd="+user.id+"&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password + "&deviceID=" + user.deviceID;
+        System.out.println(url);
+        uploader.execute(url);
+        user.didChange = false;
+        userLocalStore.storeUserData(user);
+    }
 
     @Override
     public void onListFragmentUpdateProfilePic() {

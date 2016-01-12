@@ -79,7 +79,8 @@ public class LoginHandler {
             String password = json.get("password").toString();
             String exam = json.get("exam").toString();
             String id = json.get("id").toString();
-            user = new User(email, name,password,exam,id);
+            String deviceID = json.get("deviceID").toString();
+            user = new User(email, name,password,exam,id,deviceID,false);
 
         } catch(JSONException e) {
             e.printStackTrace();
