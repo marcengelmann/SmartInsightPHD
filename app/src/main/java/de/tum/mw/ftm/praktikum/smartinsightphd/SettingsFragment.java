@@ -183,7 +183,7 @@ public class SettingsFragment extends Fragment {
             mListener.onListFragmentUpdateProfilePic();
         }
         else {
-            profileImage.setImageResource(R.mipmap.ic_launcher_fernrohr);
+            profileImage.setImageResource(R.drawable.profile);
         }
 
     }

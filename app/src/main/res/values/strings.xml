@@ -21,7 +21,7 @@
     <string name="action_sign_in_short">Anmelden</string>
     <string name="error_invalid_email">Die Matrikelnummer ist ungültig</string>
     <string name="error_invalid_password">Das Passwortformat ist ungültig</string>
-    <string name="error_incorrect_password">Die Matrikelnummer ist unbekannt</string>
+    <string name="error_incorrect_password">Die E-Mail Adresse ist unbekannt</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
