@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity
 
                     String cutStart = startTime.substring(11, startTime.length() - 3);
                     String cutEnd = endTime.substring(11, endTime.length() - 3);
+                    //Todo hinzufügen ob eine Anfrage bearbeitet wurde oder nicht.
                     AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam, "false");
                     requests.add(anfrage);
                 }

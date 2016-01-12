@@ -57,7 +57,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         String endTime = mValues.get(position).endTime;
         String startTime = mValues.get(position).startTime;
         viewHolder.editor.setText(mValues.get(position).editor);
-        Boolean requestFinished = Boolean.getBoolean(mValues.get(position).requestFinished);
+        Boolean requestFinished = Boolean.valueOf(mValues.get(position).requestFinished);
         viewHolder.endTime.setText(endTime);
         viewHolder.startTime.setText(startTime);
         viewHolder.question.setText(mValues.get(position).question);
@@ -118,10 +118,10 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
 
             }
 
-            if(requestFinished){
+            if(requestFinished || actualDate < requestStartDate){
                 viewHolder.listViewButton.setVisibility(View.GONE);
             }
-            else
+            else // Erledigt icon nur anzeigen, wenn die startzeit in der Vergangenheit liegt. Man soll nicht in der Zukunft etwas ändern können
             {
                 viewHolder.listViewButton.setOnClickListener(new View.OnClickListener() {
 
