@@ -100,6 +100,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
                                            int position, long id) {
                     setDataExam();
                     barChartTask.setupBarChartTask(0);
+                    barChartOverviewExam.setHihlightValue(position);
+
                 }
 
                 @Override
@@ -119,6 +121,11 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         public void onNothingSelected() {
 
         }
+        private  void setHihlightValue(int setHihlightValue){
+            mChartExam.highlightValue(setHihlightValue, 0);
+
+        }
+
         private void setupBarChartExam(int spinPosition){
             spinExams.setSelection(spinPosition);
 
@@ -216,7 +223,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
     }
 
     BarChartTask barChartTask = null;
-    public class BarChartTask implements OnChartValueSelectedListener{
+    public class BarChartTask{
         protected BarChart mChartTask;
         private Spinner spinTasks;
 
@@ -232,6 +239,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
                 public void onItemSelected(AdapterView<?> parent, View view,
                                            int position, long id) {
                     setDataTask();
+                    barChartExam.setHihlightValue(position);
                 }
 
                 @Override
@@ -241,23 +249,13 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
 
             });
         }
-        @Override
-        public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
 
-        }
-
-        @Override
-        public void onNothingSelected() {
-
-        }
 
         private void setupBarChartTask(int spinPosition){
             spinTasks.setSelection(spinPosition);
-
             mChartTask.setDrawBarShadow(false);
 
             mChartTask.setDescription("");
-            mChartTask.setOnChartValueSelectedListener(this);
             mChartTask.setHighlightPerDragEnabled(false);
             mChartTask.setHighlightPerTapEnabled(false);
             // if more than 60 entries are displayed in the chart, no values will be
@@ -368,7 +366,10 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         }
 
 
+        private  void setHihlightValue(int setHihlightValue){
+            mChartOverviewExam.highlightValue(setHihlightValue, 0);
 
+        }
         private void setupBarChartOverviewExam(){
             mChartOverviewExam.setDrawBarShadow(false);
 

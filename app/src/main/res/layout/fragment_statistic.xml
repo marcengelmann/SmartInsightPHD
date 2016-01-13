@@ -56,6 +56,7 @@
             android:id="@+id/barChartExam"
             android:layout_below="@id/settingsExams"
             android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_height="220dp" />
         <TextView
@@ -80,6 +81,8 @@
         android:id="@+id/barChartTask"
         android:layout_below="@id/settingsTasks"
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
         android:layout_height="220dp" />
 </RelativeLayout>
 </ScrollView>
