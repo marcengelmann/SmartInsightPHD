@@ -9,19 +9,13 @@
     android:layout_height="match_parent">
     <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
         android:layout_margin="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textOverview"
-            android:text="Diese Seite zeigt drei Statistiken bezogen auf das ausgewählte Semester."/>
         <fr.ganfra.materialspinner.MaterialSpinner
             android:id="@+id/settingsSemester"
             android:layout_width="120dp"
             android:layout_height="48dp"
             android:layout_marginBottom="24dp"
-            android:layout_below="@id/textOverview"
             android:layout_alignParentRight="true"
             app:ms_multiline="false"
             app:ms_enableFloatingLabel="false"
