@@ -46,11 +46,12 @@ public class SpinnerAnfrageAdapter extends ArrayAdapter<String> {
     public View getCustomView(int position, View convertView, ViewGroup parent) {
 
         /********** Inflate spinner_rows.xml file for each row ( Defined below ) ************/
-        View row = inflater.inflate(R.layout.spinner_list_item, parent, false);
+        View row = inflater.inflate(R.layout.fragment_list_item, parent, false);
 
         /***** Get each Model object from Arraylist ********/
         tempValues = null;
         tempValues = (AnfrageProvider) data.get(position);
+        row.findViewById(R.id.listViewButton).setVisibility(View.GONE);
 
         TextView editor = (TextView) row.findViewById(R.id.editor);
         TextView endTime = (TextView) row.findViewById(R.id.endTime);
@@ -59,7 +60,7 @@ public class SpinnerAnfrageAdapter extends ArrayAdapter<String> {
         TextView taskNumber = (TextView) row.findViewById(R.id.taskNumber);
         TextView taskSubNumber = (TextView) row.findViewById(R.id.taskSubNumber);
         TextView sitzNumber = (TextView) row.findViewById(R.id.sitzNumb);
-
+        TextView exam = (TextView) row.findViewById(R.id.exam);
         editor.setText(tempValues.editor);
         endTime.setText(tempValues.endTime);
         startTime.setText(tempValues.startTime);
@@ -67,6 +68,7 @@ public class SpinnerAnfrageAdapter extends ArrayAdapter<String> {
         taskNumber.setText(tempValues.taskNumber);
         taskSubNumber.setText(tempValues.taskSubNumber);
         sitzNumber.setText(tempValues.sitzNumber);
+        exam.setText(tempValues.exam);
 
         return row;
     }

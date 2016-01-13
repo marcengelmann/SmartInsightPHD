@@ -10,25 +10,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="de.tum.mw.ftm.praktikum.smartinsightphd.FloatingActivity">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Wähle die Anfrage aus, zu der Sie ein Kommentar verfassen möchten:"
-            android:textSize="16dp"
-            android:layout_margin="8dp"
-            android:id="@+id/rowRequest"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ausgewählte Anfrage:"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:id="@+id/rowDesc"/>
     <fr.ganfra.materialspinner.MaterialSpinner
         android:id="@+id/spinnerRequest"
         android:spinnerMode="dropdown"
+        android:layout_below="@id/rowDesc"
+        app:ms_floatingLabelText=""
+        app:ms_hint="Anfrage auswählen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_below="@id/rowRequest"
         android:layout_alignParentRight="true"
         app:ms_multiline="true"
         app:ms_enableFloatingLabel="false"
-        app:ms_enableErrorLabel="false"
+        app:ms_enableErrorLabel="true"
         app:ms_highlightColor="@color/colorAccent"
         app:ms_arrowSize="16dp"
         app:ms_alignLabels="false"/>
@@ -38,7 +40,8 @@
         android:layout_height="wrap_content"
         android:text="Kommentar:"
         android:layout_below="@+id/spinnerRequest"
-        android:textSize="16dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
         android:layout_margin="8dp"
         android:layout_marginTop="32dp"
         android:id="@+id/rowQuestion"/>
@@ -53,7 +56,7 @@
     <Button
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Kommentar per Mail schicken"
+        android:text="Per E-Mail senden"
         android:id="@+id/btnSendQuestion"
         android:background="@color/colorPrimary"
         android:onClick="onButtonSendQuestion"
