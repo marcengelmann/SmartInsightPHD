@@ -99,6 +99,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
                 public void onItemSelected(AdapterView<?> parent, View view,
                                            int position, long id) {
                     setDataExam();
+                    barChartTask.setupBarChartTask(0);
                 }
 
                 @Override
@@ -110,14 +111,17 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         }
         @Override
         public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
-
+            int position = h.getXIndex();
+            barChartTask.setupBarChartTask(position);
         }
 
         @Override
         public void onNothingSelected() {
 
         }
-        private void setupBarChartExam(){
+        private void setupBarChartExam(int spinPosition){
+            spinExams.setSelection(spinPosition);
+
             mChartExam.setDrawBarShadow(false);
 
             mChartExam.setDescription("");
@@ -247,12 +251,15 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
 
         }
 
-        private void setupBarChartTask(){
+        private void setupBarChartTask(int spinPosition){
+            spinTasks.setSelection(spinPosition);
+
             mChartTask.setDrawBarShadow(false);
 
             mChartTask.setDescription("");
             mChartTask.setOnChartValueSelectedListener(this);
-
+            mChartTask.setHighlightPerDragEnabled(false);
+            mChartTask.setHighlightPerTapEnabled(false);
             // if more than 60 entries are displayed in the chart, no values will be
             // drawn
             mChartTask.setMaxVisibleValueCount(60);
@@ -350,7 +357,9 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
 
         @Override
         public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
-
+            int position = h.getXIndex();
+            barChartExam.setupBarChartExam(position);
+            barChartTask.setupBarChartTask(0);
         }
 
         @Override
@@ -439,8 +448,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         barChartExam = new BarChartExam(view);
         barChartTask = new BarChartTask(view);
         barChartOverviewExam = new BarChartOverviewExam(view);
-        barChartExam.setupBarChartExam();
-        barChartTask.setupBarChartTask();
+        barChartExam.setupBarChartExam(0);
+        barChartTask.setupBarChartTask(0);
         barChartOverviewExam.setupBarChartOverviewExam();
 
 
@@ -453,8 +462,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                barChartExam.setupBarChartExam();
-                barChartTask.setupBarChartTask();
+                barChartExam.setupBarChartExam(0);
+                barChartTask.setupBarChartTask(0);
                 barChartOverviewExam.setupBarChartOverviewExam();
             }
 

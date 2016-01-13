@@ -16,14 +16,12 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6e7f170-35dc-4786-8066-046aab9bc561" name="Default" comment="Senden per E-Mail die Seite verschönert und den rest code hinzugefügt">
+    <list default="true" id="b6e7f170-35dc-4786-8066-046aab9bc561" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_statistic.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_statistic.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SmartInsightPHD.iws" />
@@ -93,27 +91,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatisticFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StatisticFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.931034">
-              <caret line="481" column="0" selection-start-line="481" selection-start-column="0" selection-end-line="481" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3306773">
+              <caret line="283" column="28" selection-start-line="283" selection-start-column="23" selection-end-line="283" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#16875#16876#0" expanded="true" />
-                <element signature="e#16907#16908#0" expanded="true" />
+                <element signature="e#17419#17420#0" expanded="true" />
+                <element signature="e#17451#17452#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_statistic.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fragment_statistic.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_statistic.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4243028">
+            <state vertical-scroll-proportion="-7.3448277">
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
@@ -125,16 +123,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OnChartValueSelectedListener.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v2.1.6/8566224b546d0b421be6df4296b0b7dd84e10767/MPAndroidChart-v2.1.6-sources.jar!/com/github/mikephil/charting/listener/OnChartValueSelectedListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -2683,8 +2671,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/SpinnerAnfrageAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_floating.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/FloatingActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_statistic.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" />
       </list>
     </option>
   </component>
@@ -3237,7 +3225,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452678637205</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Speicher Zwischenstand bei der Überarbeitung der STatitik seite. Interne klassen erstellt für die einzelnen Charts abschnitte mit Spinner">
+      <created>1452686415655</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1452686415656</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3261,7 +3255,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26697353" sideWeight="0.5027435" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37888888" sideWeight="0.49725652" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37888888" sideWeight="0.49725652" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31663114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3329,7 +3323,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Überarbeiten des User PRofiles nur auf Name und E-Mail Adresse" />
     <MESSAGE value="Überarbeiten es Fernrohr bildes" />
     <MESSAGE value="Ändere Floating Action Button Bild zu Edit" />
     <MESSAGE value="löschen des delete buttons bei der Anfrageliste" />
@@ -3354,7 +3347,8 @@
     <MESSAGE value="HInzufügen bei der Klausurliste, dass ein aktueller KLausureinsichttermin grün hinterlegt ist" />
     <MESSAGE value="HInzufügen des bestätigens buttons in abhängigkeit der bearbeitungstatus und startzeit der anrfrage" />
     <MESSAGE value="Senden per E-Mail die Seite verschönert und den rest code hinzugefügt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Senden per E-Mail die Seite verschönert und den rest code hinzugefügt" />
+    <MESSAGE value="Speicher Zwischenstand bei der Überarbeitung der STatitik seite. Interne klassen erstellt für die einzelnen Charts abschnitte mit Spinner" />
+    <option name="LAST_COMMIT_MESSAGE" value="Speicher Zwischenstand bei der Überarbeitung der STatitik seite. Interne klassen erstellt für die einzelnen Charts abschnitte mit Spinner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3377,13 +3371,19 @@
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java</url>
+          <line>359</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/FloatingActivity.java</url>
           <line>82</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="38" />
+      <option name="time" value="39" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -3883,26 +3883,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.931034">
-          <caret line="481" column="0" selection-start-line="481" selection-start-column="0" selection-end-line="481" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#16875#16876#0" expanded="true" />
-            <element signature="e#16907#16908#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_statistic.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4243028">
+        <state vertical-scroll-proportion="-7.3448277">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3306773">
+          <caret line="283" column="28" selection-start-line="283" selection-start-column="23" selection-end-line="283" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#17419#17420#0" expanded="true" />
+            <element signature="e#17451#17452#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
