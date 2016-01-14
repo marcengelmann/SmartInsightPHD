@@ -11,11 +11,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
         android:layout_margin="16dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textStatistic1"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_alignParentTop="true"
+            android:text="Klausureinsicht"/>
         <fr.ganfra.materialspinner.MaterialSpinner
             android:id="@+id/settingsSemester"
             android:layout_width="120dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="24dp"
+            android:layout_below="@id/textStatistic1"
             android:layout_alignParentRight="true"
             app:ms_multiline="false"
             app:ms_enableFloatingLabel="false"
@@ -23,24 +31,51 @@
             app:ms_highlightColor="@color/colorPrimary"
             app:ms_arrowSize="16dp"
             app:ms_alignLabels="false"/>
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textStatistic1"
             android:layout_below="@id/settingsSemester"
-            android:text="1. Statistik über die Anzahl der zur Prüfungsansicht angemeldeten Studenten bezogen auf die Klausuren"/>
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barChartOverviewExam"
-            android:layout_below="@id/textStatistic1"
-            android:layout_width="match_parent"
+            android:id="@+id/ResultbarchartOverviewExam"
             android:layout_marginBottom="20dp"
-            android:layout_height="220dp" />
+            android:layout_height="wrap_content">
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChartOverviewExam"
+                android:layout_width="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_height="220dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/overviewExamXAxis"
+                android:layout_centerHorizontal="true"
+                android:textSize="14dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:text="Klausur"
+                android:layout_below="@id/barChartOverviewExam"/>
+            <de.tum.mw.ftm.praktikum.smartinsightphd.VerticalTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:gravity="bottom"
+                android:id="@+id/overviewExamYAxis"
+                android:text="Anzahl Anmeldungen"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textStatistic2"
-            android:layout_below="@id/barChartOverviewExam"
-            android:text="2. Statistik zeigt die Anzahl der Anfragen der Studenten bezogen auf die Kategorien Punkte, Inhalt, Inhalt und Punkte bezogen auf die Aufgaben der ausgewählte Klausur an."/>
+            android:layout_below="@id/ResultbarchartOverviewExam"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="Anfragenverteilung Klausur"/>
         <fr.ganfra.materialspinner.MaterialSpinner
             android:id="@+id/settingsExams"
             android:layout_width="match_parent"
@@ -52,19 +87,52 @@
             app:ms_highlightColor="@color/colorPrimary"
             app:ms_arrowSize="16dp"
             app:ms_alignLabels="false"/>
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barChartExam"
-            android:layout_below="@id/settingsExams"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_height="220dp" />
+            android:layout_below="@id/textStatistic2"
+            android:id="@+id/ResultbarchartExam"
+            android:layout_height="wrap_content">
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChartExam"
+                android:layout_width="match_parent"
+                android:layout_marginTop="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_height="220dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/examsXAxis"
+                android:layout_centerHorizontal="true"
+                android:textSize="14dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:text="Klausur"
+                android:layout_below="@id/barChartExam"/>
+            <de.tum.mw.ftm.praktikum.smartinsightphd.VerticalTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:gravity="bottom"
+                android:id="@+id/examYAxis"
+                android:text="Anzahl Anfragen"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:id="@+id/textStatistic3"
-            android:layout_below="@id/barChartExam"
+            android:layout_below="@id/ResultbarchartExam"
             android:layout_height="wrap_content"
-            android:text="Die 3. Statistik zeigt die Anzahl der Anfrage der Studenten bezogen auf die Klausuraufgabe untergliedert in Unteraufgaben an. "/>
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="Anfragenverteilung "/>
         <fr.ganfra.materialspinner.MaterialSpinner
             android:id="@+id/settingsTasks"
             android:layout_width="120dp"
@@ -77,13 +145,43 @@
             app:ms_highlightColor="@color/colorPrimary"
             app:ms_arrowSize="16dp"
             app:ms_alignLabels="false"/>
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChartTask"
-        android:layout_below="@id/settingsTasks"
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
-        android:layout_height="220dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@id/textStatistic3"
+            android:layout_height="wrap_content">
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChartTask"
+                android:layout_width="match_parent"
+                android:layout_marginTop="60dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:layout_height="220dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/taskXAxis"
+                android:layout_centerHorizontal="true"
+                android:textSize="14dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:text="Unteraufgabe"
+                android:layout_below="@id/barChartTask"/>
+                <de.tum.mw.ftm.praktikum.smartinsightphd.VerticalTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="14dp"
+                    android:gravity="bottom"
+                    android:text="Anzahl Anfragen"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
 </RelativeLayout>
 </ScrollView>
 </FrameLayout>

@@ -98,8 +98,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view,
                                            int position, long id) {
-                    setDataExam();
-                    barChartTask.setupBarChartTask(0);
+                    setDataExam(position);
+                    barChartTask.setDataTask(0);
                     barChartOverviewExam.setHihlightValue(position);
 
                 }
@@ -114,7 +114,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         @Override
         public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
             int position = h.getXIndex();
-            barChartTask.setupBarChartTask(position);
+            barChartTask.setDataTask(position);
         }
 
         @Override
@@ -126,8 +126,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
 
         }
 
-        private void setupBarChartExam(int spinPosition){
-            spinExams.setSelection(spinPosition);
+        private void setupBarChartExam(){
 
             mChartExam.setDrawBarShadow(false);
 
@@ -155,7 +154,6 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             leftAxis.setDrawGridLines(false);
 
             mChartExam.getAxisRight().setEnabled(false);
-            mChartExam.animateY(2500);
 
             Legend l = mChartExam.getLegend();
             l.setPosition(Legend.LegendPosition.ABOVE_CHART_RIGHT);
@@ -164,10 +162,12 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             l.setTextSize(11f);
             l.setXEntrySpace(4f);
 
-            setDataExam();
+            setDataExam(0);
         }
 
-        private void setDataExam() {
+        private void setDataExam(int spinPosition){
+            spinExams.setSelection(spinPosition);
+            mChartExam.animateY(2500);
 
             ArrayList<String> xVals = new ArrayList<String>();
             for (int i = 0; i < mTaks.length; i++) {
@@ -238,7 +238,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view,
                                            int position, long id) {
-                    setDataTask();
+                    setDataTask(position);
                     barChartExam.setHihlightValue(position);
                 }
 
@@ -251,8 +251,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         }
 
 
-        private void setupBarChartTask(int spinPosition){
-            spinTasks.setSelection(spinPosition);
+        private void setupBarChartTask(){
             mChartTask.setDrawBarShadow(false);
 
             mChartTask.setDescription("");
@@ -279,7 +278,6 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             leftAxis.setDrawGridLines(false);
 
             mChartTask.getAxisRight().setEnabled(false);
-            mChartTask.animateY(2500);
 
             Legend l = mChartTask.getLegend();
             l.setPosition(Legend.LegendPosition.ABOVE_CHART_RIGHT);
@@ -288,9 +286,11 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             l.setTextSize(11f);
             l.setXEntrySpace(4f);
 
-            setDataTask();
+            setDataTask(0);
         }
-        private void setDataTask() {
+        private void setDataTask(int spinPosition){
+            spinTasks.setSelection(spinPosition);
+            mChartTask.animateY(2500);
 
             ArrayList<String> xVals = new ArrayList<String>();
             for (int i = 0; i < mSubTaks.length; i++) {
@@ -356,8 +356,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         @Override
         public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
             int position = h.getXIndex();
-            barChartExam.setupBarChartExam(position);
-            barChartTask.setupBarChartTask(0);
+            barChartExam.setDataExam(position);
+            barChartTask.setDataTask(0);
         }
 
         @Override
@@ -397,7 +397,6 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             leftAxis.setDrawGridLines(false);
 
             mChartOverviewExam.getAxisRight().setEnabled(false);
-            mChartOverviewExam.animateY(2500);
 
             mChartOverviewExam.getLegend().setEnabled(false);
 
@@ -405,6 +404,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         }
 
         private void setDataOverviewExam() {
+            mChartOverviewExam.animateY(2500);
 
             ArrayList<String> xVals = new ArrayList<String>();
             for (int i = 0; i < mExams.length; i++) {
@@ -449,8 +449,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         barChartExam = new BarChartExam(view);
         barChartTask = new BarChartTask(view);
         barChartOverviewExam = new BarChartOverviewExam(view);
-        barChartExam.setupBarChartExam(0);
-        barChartTask.setupBarChartTask(0);
+        barChartExam.setupBarChartExam();
+        barChartTask.setupBarChartTask();
         barChartOverviewExam.setupBarChartOverviewExam();
 
 
@@ -463,9 +463,9 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                barChartExam.setupBarChartExam(0);
-                barChartTask.setupBarChartTask(0);
-                barChartOverviewExam.setupBarChartOverviewExam();
+                barChartExam.setDataExam(0);
+                barChartTask.setDataTask(0);
+                barChartOverviewExam.setDataOverviewExam();
             }
 
             @Override
