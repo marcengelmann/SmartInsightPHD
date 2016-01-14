@@ -32,14 +32,14 @@
             android:orientation="vertical">
 
             <de.tum.mw.ftm.praktikum.smartinsightphd.CircleImageView
-                android:src="@mipmap/ic_launcher_fernrohr"
+                android:src="@drawable/ic_phd_icon"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="32dp"
                 android:layout_centerInParent="true"
-                app:civ_border_width="2dp"
+                app:civ_border_width="0dp"
                 app:civ_border_color="@color/borderCircleImage"
                 />
 

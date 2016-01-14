@@ -366,7 +366,7 @@ public class MainActivity extends AppCompatActivity
             profilPicView.setImageURI(userLocalStore.getUserProfilPic());
         }
         else {
-            profilPicView.setImageResource(R.mipmap.ic_launcher_fernrohr);
+            profilPicView.setImageResource(R.drawable.ic_phd_icon);
         }
     }
 

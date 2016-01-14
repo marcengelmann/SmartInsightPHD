@@ -24,7 +24,6 @@ class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String> {
     private GoogleCloudMessaging gcm;
     private Context context;
 
-    // TODO: change to your own sender ID to Google Developers Console project number, as per instructions above
     private static final String SENDER_ID = "954365349091";
 
     public GcmRegistrationAsyncTask(Context context) {
@@ -48,8 +47,6 @@ class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String> {
             String regId = gcm.register(SENDER_ID);
             msg = "Device registered, registration ID=" + regId;
 
-            //TODO store deviceID and push it to server!
-
             UserLocalStore userLocalStore = new UserLocalStore(context);
             User user = userLocalStore.getUserLogInUser();
             user.deviceID = regId;
@@ -67,7 +64,7 @@ class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String> {
 
     @Override
     protected void onPostExecute(String msg) {
-        Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
         Logger.getLogger("REGISTRATION").log(Level.INFO, msg);
     }
 }

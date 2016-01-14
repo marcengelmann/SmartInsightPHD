@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartInsight Student</string>
+    <string name="app_name">SI PhD</string>
     <integer name="max_sitz_numb">15</integer>
 
     <string name="capition_anfrageliste">Anfrageliste</string>
@@ -7,7 +7,7 @@
     <string name="caption_settings">Profil</string>
     <string name="caption_statistic">Statistik</string>
     <string name="caption_editTask">Anfrage kommentieren</string>
-    <string name="caption">SmartInsight PHD</string>
+    <string name="caption">SmartInsight PhD</string>
     <!-- Strings related to login -->
 
     <string name="prompt_matrikelnummber">Matrikelnummer</string>
@@ -31,6 +31,5 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
