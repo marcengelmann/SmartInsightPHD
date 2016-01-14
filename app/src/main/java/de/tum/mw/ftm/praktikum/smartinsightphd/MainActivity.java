@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment;
 
         Bundle bundle = new Bundle();
-        bundle.putSerializable("requests", (Serializable) requests);
+        bundle.putSerializable("requests", requests);
 
         setTitle(R.string.capition_anfrageliste);
         fragment = new AnfrageListFragment();
@@ -101,11 +101,20 @@ public class MainActivity extends AppCompatActivity
                     String type_of_question = obj.getString("type_of_question");
                     String exam = obj.getString("linked_exam");
                     String seat = obj.getString("seat");
+                    String bare_Bool = obj.getString("done");
 
                     String cutStart = startTime.substring(11, startTime.length() - 3);
                     String cutEnd = endTime.substring(11, endTime.length() - 3);
-                    //Todo hinzufügen ob eine Anfrage bearbeitet wurde oder nicht.
-                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam, "false");
+
+                    String done;
+
+                    if(bare_Bool.contains("0")) {
+                        done = "false";
+                    } else {
+                        done = "true";
+                    }
+
+                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam, done);
                     requests.add(anfrage);
                 }
 
@@ -185,11 +194,6 @@ public class MainActivity extends AppCompatActivity
         nameView = (TextView) headerNavigation.findViewById(R.id.nameView);
         profilPicView = (CircleImageView) headerNavigation.findViewById(R.id.imageView);
 
-        //generate lsitview für anfragen
-        // Construct the data source
-        ArrayList<AnfrageProvider> arrayOfUsers = new ArrayList<>();
-        // Create the adapter to convert the array to views
-
         userLocalStore = new UserLocalStore(this);
         anfrageLocalStore = new AnfrageLocalStore(this);
         anfrageLocalStore.setStatusAnfrageClient(false);
@@ -232,15 +236,6 @@ public class MainActivity extends AppCompatActivity
         else if (startActFirstTime){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             startActFirstTime = true;
-        }
-
-        //Hier kommen updates nach dem Floating action button hin
-        if(anfrageLocalStore.getStatusAnfrageClient())
-        {
-            // ToDo KOmmentar des Dozenten per mail schicken oder in einer Historie/Todo liste speichern
-            Anfrage anfrage = anfrageLocalStore.getDataAnfrageClient();
-            //uploadData(anfrage);
-            //updateListView();
         }
 
         downloadRequests();
@@ -332,28 +327,19 @@ public class MainActivity extends AppCompatActivity
         task_client.execute(url);
     }
 
-   /* @SuppressWarnings("SpellCheckingInspection")
-    private void uploadData(Anfrage anfrage) {
+    @SuppressWarnings("SpellCheckingInspection")
+    private void uploadData(AnfrageProvider anfrage) {
         System.out.println("Trying data upload ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
-        String url = "http://www.marcengelmann.com/smart/upload.php?intent=request&exam_name="+user.exam+"&email=" + user.email + "&task_id=" + anfrage.linked_task + "&subtask_id=" + anfrage.linked_subtask + "&pw=" + user.password + "&type_of_question=" + anfrage.art_of_question;
+        String url = "http://www.marcengelmann.com/smart/upload.php?intent=request_done&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password +"&request_id="+anfrage.id;
         uploader.execute(url);
-    } */
-
-    /*@SuppressWarnings("SpellCheckingInspection")
-    private void deleteRequest(AnfrageProvider anfrage) {
-        System.out.println("Trying data delete ...");
-        JSONClient uploader = new JSONClient(this, uploadResultListener);
-        String url = "http://www.marcengelmann.com/smart/upload.php?intent=delete_request&exam_name="+user.exam+"&request_id=" + anfrage.id + "&pw=" + user.password;
-        uploader.execute(url);
-    }*/
+    }
 
     @SuppressWarnings("SpellCheckingInspection")
     private void refreshUserData() {
         System.out.println("Trying user data update ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
         String url = "http://www.marcengelmann.com/smart/upload.php?intent=userdata&phd="+user.id+"&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password + "&deviceID=" + user.deviceID;
-        System.out.println(url);
         uploader.execute(url);
         user.didChange = false;
         userLocalStore.storeUserData(user);
@@ -374,6 +360,7 @@ public class MainActivity extends AppCompatActivity
     public void onListFragmentRequestFinishedItem(int position, AnfrageProvider value) {
         //ToDo hier muss das item das fertig ist mit bearbeiten true gestzt werden!
         downloadRequests();
+        uploadData(requests.get(position));
         Toast.makeText(MainActivity.this, "Anfrage wurde bearbeitet!",
                 Toast.LENGTH_SHORT).show();
     }

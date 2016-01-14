@@ -109,7 +109,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
                     viewHolder.card.setCardBackgroundColor(Color.LTGRAY);
                 }
                 else {
-                    viewHolder.card.setCardBackgroundColor(Color.RED);
+                    viewHolder.card.setCardBackgroundColor(Color.rgb(255, 112, 112));
                 }
             }
             else
