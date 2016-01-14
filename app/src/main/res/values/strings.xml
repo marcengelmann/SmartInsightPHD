@@ -10,6 +10,8 @@
     <string name="caption">SmartInsight PhD</string>
     <!-- Strings related to login -->
 
+    <string name="website">http://marcengelmann.com/smart</string>
+
     <string name="prompt_matrikelnummber">Matrikelnummer</string>
     <string name="text_information">Auf dieser Seite werden die Anfragen von den Studenten aufgelistet. Kommentare zu den einzelnen Anfragen können durch den roten runden Bearbeitungs Button erstellt werden!</string>
     <string name="calendar_information">Hier wirden die aktuellen Klausureinsichtstermine aufgelistet. Zur Zeit sind keine vorhanden!</string>

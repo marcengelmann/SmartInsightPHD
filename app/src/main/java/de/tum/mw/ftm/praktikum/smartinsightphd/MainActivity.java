@@ -316,14 +316,14 @@ public class MainActivity extends AppCompatActivity
 
         System.out.println("Trying requests download ...");
         JSONClient client = new JSONClient(this, requestResultListener);
-        String url = "http://www.marcengelmann.com/smart/download.php?intent=request&phd="+user.id+"&exam_name=" + user.exam + "&email=" + user.email + "&pw=" + user.password;
+        String url = getString(R.string.website)+"/download.php?intent=request&phd="+user.id+"&exam_name=" + user.exam + "&email=" + user.email + "&pw=" + user.password;
         client.execute(url);
     }
 
     private void downloadCalendar() {
         System.out.println("Trying calendar download ...");
         JSONClient task_client = new JSONClient(this, calendarResultListener);
-        String url = "http://marcengelmann.com/smart/download.php?intent=calendar&phd="+user.id+"&exam_name="+user.exam+"&email="+user.email+ "&pw=" + user.password;
+        String url = getString(R.string.website)+"/download.php?intent=calendar&phd="+user.id+"&exam_name="+user.exam+"&email="+user.email+ "&pw=" + user.password;
         task_client.execute(url);
     }
 
@@ -331,7 +331,7 @@ public class MainActivity extends AppCompatActivity
     private void uploadData(AnfrageProvider anfrage) {
         System.out.println("Trying data upload ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
-        String url = "http://www.marcengelmann.com/smart/upload.php?intent=request_done&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password +"&request_id="+anfrage.id;
+        String url = getString(R.string.website)+"/smart/upload.php?intent=request_done&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password +"&request_id="+anfrage.id;
         uploader.execute(url);
     }
 
@@ -339,7 +339,7 @@ public class MainActivity extends AppCompatActivity
     private void refreshUserData() {
         System.out.println("Trying user data update ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
-        String url = "http://www.marcengelmann.com/smart/upload.php?intent=userdata&phd="+user.id+"&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password + "&deviceID=" + user.deviceID;
+        String url = getString(R.string.website)+"/upload.php?intent=userdata&phd="+user.id+"&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password + "&deviceID=" + user.deviceID;
         uploader.execute(url);
         user.didChange = false;
         userLocalStore.storeUserData(user);

@@ -1,5 +1,7 @@
 package de.tum.mw.ftm.praktikum.smartinsightphd;
 
+import android.content.Context;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,8 +19,7 @@ public class LoginHandler {
 
     private User user = null;
 
-    protected boolean tryLogin(String mUsername, String mPassword)
-    {
+    protected boolean tryLogin(String mUsername, String mPassword,Context context) {
         HttpURLConnection connection;
         OutputStreamWriter request;
         URL url;
@@ -27,7 +28,8 @@ public class LoginHandler {
 
         try
         {
-            url = new URL("http://www.marcengelmann.com/smart/check_credidentials.php");
+            url = new URL(context.getResources().getString(R.string.website)+"/check_credidentials.php");
+            System.out.println(url);
             connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");

@@ -298,7 +298,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         };
 
         int ADDRESS = 0;
-        int IS_PRIMARY = 1;
     }
 
     /**
@@ -317,12 +316,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected Boolean doInBackground(Void... params) {
 
-            JSONArray user_data = null;
-
             LoginHandler connection = new LoginHandler();
 
             try {
-                if(connection.tryLogin(mMatrikelnummer,MD5Encryptor.getMD5(mPassword))) {
+                if(connection.tryLogin(mMatrikelnummer,MD5Encryptor.getMD5(mPassword),getApplicationContext())) {
                     System.out.println("Login successful!");
                 } else {
                     System.out.println("Wrong credidentials!");
