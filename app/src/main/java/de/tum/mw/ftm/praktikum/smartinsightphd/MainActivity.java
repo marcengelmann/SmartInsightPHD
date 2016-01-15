@@ -331,7 +331,7 @@ public class MainActivity extends AppCompatActivity
     private void uploadData(AnfrageProvider anfrage) {
         System.out.println("Trying data upload ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
-        String url = getString(R.string.website)+"/smart/upload.php?intent=request_done&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password +"&request_id="+anfrage.id;
+        String url = getString(R.string.website)+"/upload.php?intent=request_done&exam_name="+user.exam+"&email=" + user.email + "&pw=" + user.password +"&request_id="+anfrage.id;
         uploader.execute(url);
     }
 

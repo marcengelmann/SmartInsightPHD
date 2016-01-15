@@ -56,7 +56,12 @@ public class GcmIntentService extends IntentService {
                         .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000}).build();
                 NotificationManager notificationManager =
                         (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                notificationManager.notify(0, notification);
+                UserLocalStore userLocalStore = new UserLocalStore(this);
+                if(userLocalStore.getUserLoggedIn()) {
+                    notificationManager.notify(0, notification);
+                } else {
+                    System.out.println("User is not logged in anymore!");
+                }
             }
         }
         GcmBroadcastReceiver.completeWakefulIntent(intent);
