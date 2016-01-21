@@ -35,7 +35,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnListFragmentInteractionListener, AnfrageListFragment.OnListFragmentInteractionListener{
     UserLocalStore userLocalStore;
-    AnfrageLocalStore anfrageLocalStore;
     User user = null;
 
     private boolean fragmentAnfrageListActive = false;
@@ -195,8 +194,6 @@ public class MainActivity extends AppCompatActivity
         profilPicView = (CircleImageView) headerNavigation.findViewById(R.id.imageView);
 
         userLocalStore = new UserLocalStore(this);
-        anfrageLocalStore = new AnfrageLocalStore(this);
-        anfrageLocalStore.setStatusAnfrageClient(false);
 
         setFragmentAnfrageliste();
 
@@ -243,9 +240,6 @@ public class MainActivity extends AppCompatActivity
         if(user.didChange) {
             refreshUserData();
         }
-
-        anfrageLocalStore.setStatusAnfrageClient(false);
-
 
     }
 

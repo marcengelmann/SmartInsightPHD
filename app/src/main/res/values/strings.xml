@@ -9,7 +9,7 @@
     <string name="caption_editTask">Anfrage kommentieren</string>
     <string name="caption">SmartInsight PhD</string>
     <!-- Strings related to login -->
-
+    <string name="bundleRequests">requests</string>
     <string name="website">http://marcengelmann.com/smart</string>
 
     <string name="prompt_matrikelnummber">Matrikelnummer</string>
