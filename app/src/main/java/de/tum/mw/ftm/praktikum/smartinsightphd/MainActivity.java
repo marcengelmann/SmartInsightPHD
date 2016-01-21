@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity
                             Toast.LENGTH_LONG).show();
                 }
             } catch (JSONException e) {
-                e.printStackTrace();
             }
         }
 
@@ -116,12 +115,6 @@ public class MainActivity extends AppCompatActivity
                     AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam, done);
                     requests.add(anfrage);
                 }
-
-
-                /*if (customIntFragListView != null) {
-                    customIntFragListView.updateFragmentListView(requests);
-                }*/
-
             } catch (JSONException e) {
                 requests.clear();
                 Toast.makeText(MainActivity.this, "Keine Anfragen verfügbar!",
@@ -311,6 +304,7 @@ public class MainActivity extends AppCompatActivity
         System.out.println("Trying requests download ...");
         JSONClient client = new JSONClient(this, requestResultListener);
         String url = getString(R.string.website)+"/download.php?intent=request&phd="+user.getId()+"&exam_name=" + user.getExam() + "&email=" + user.getEmail() + "&pw=" + user.getPassword();
+        System.out.println(url);
         client.execute(url);
     }
 
@@ -318,6 +312,7 @@ public class MainActivity extends AppCompatActivity
         System.out.println("Trying calendar download ...");
         JSONClient task_client = new JSONClient(this, calendarResultListener);
         String url = getString(R.string.website)+"/download.php?intent=calendar&phd="+user.getId()+"&exam_name="+user.getExam()+"&email="+user.getEmail()+ "&pw=" + user.getPassword();
+        System.out.println(url);
         task_client.execute(url);
     }
 
@@ -326,6 +321,7 @@ public class MainActivity extends AppCompatActivity
         System.out.println("Trying data upload ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
         String url = getString(R.string.website)+"/upload.php?intent=request_done&exam_name="+user.getExam()+"&email=" + user.getEmail() + "&pw=" + user.getPassword() +"&request_id="+anfrage.getId();
+        System.out.println(url);
         uploader.execute(url);
     }
 
@@ -334,6 +330,7 @@ public class MainActivity extends AppCompatActivity
         System.out.println("Trying user data update ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
         String url = getString(R.string.website)+"/upload.php?intent=userdata&phd="+user.getId()+"&exam_name="+user.getExam()+"&email=" + user.getEmail() + "&pw=" + user.getPassword() + "&deviceID=" + user.getDeviceID();
+        System.out.println(url);
         uploader.execute(url);
         user.setDidChange(false);
         userLocalStore.storeUserData(user);

@@ -85,7 +85,7 @@ public class LoginHandler {
             user = new User(email, name,password,exam,id,deviceID,false);
 
         } catch(JSONException e) {
-            e.printStackTrace();
+            //
         }
     }
 

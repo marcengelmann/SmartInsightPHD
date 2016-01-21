@@ -53,7 +53,7 @@ public class JSONClient extends AsyncTask<String, Void, JSONObject>{
             try {
                 is.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         }
 
@@ -61,7 +61,7 @@ public class JSONClient extends AsyncTask<String, Void, JSONObject>{
     }
 
 
-    public static JSONObject connect(String url)
+    public static JSONObject connect(String url) throws NullPointerException
     {
         HttpClient httpclient = new DefaultHttpClient();
 
@@ -93,11 +93,11 @@ public class JSONClient extends AsyncTask<String, Void, JSONObject>{
 
 
         } catch (ClientProtocolException e) {
-            e.printStackTrace();
+            //
         } catch (IOException e) {
-            e.printStackTrace();
+            //
         } catch (JSONException e) {
-            e.printStackTrace();
+            //
         }
 
         return null;
@@ -118,8 +118,12 @@ public class JSONClient extends AsyncTask<String, Void, JSONObject>{
     }
 
     @Override
-    protected void onPostExecute(JSONObject json ) {
-        getJSONListener.onRemoteCallComplete(json);
+    protected void onPostExecute(JSONObject json ) throws NullPointerException {
+        try {
+            getJSONListener.onRemoteCallComplete(json);
+        } catch (NullPointerException e){
+            //throw e;
+        }
         progressDialog.dismiss();
     }
 }

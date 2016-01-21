@@ -6,6 +6,6 @@ package de.tum.mw.ftm.praktikum.smartinsightphd;
 import org.json.JSONObject;
 
 public interface GetJSONListener {
-    public void onRemoteCallComplete(JSONObject jsonFromNet);
+    public void onRemoteCallComplete(JSONObject jsonFromNet) throws NullPointerException;
 }
 
