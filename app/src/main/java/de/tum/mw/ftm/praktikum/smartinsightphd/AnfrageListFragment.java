@@ -24,12 +24,12 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
     private SwipeRefreshLayout swipeContainer;
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
-    AnfrageListAdapter adapter;
-    TextView txtIntroduction;
+    private AnfrageListAdapter adapter;
+    private TextView txtIntroduction;
     private OnListFragmentInteractionListener mListener;
-    ArrayList<AnfrageProvider> listAnfrageProvider = new ArrayList<AnfrageProvider>();
-    Handler handlerRefreshList = new Handler();
-    Runnable runnableRefreshList = null;
+    private ArrayList<AnfrageProvider> listAnfrageProvider = new ArrayList<AnfrageProvider>();
+    private Handler handlerRefreshList = new Handler();
+    private Runnable runnableRefreshList = null;
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
