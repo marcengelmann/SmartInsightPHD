@@ -1,7 +1,7 @@
 package de.tum.mw.ftm.praktikum.smartinsightphd;
 
 /**
- * Created by Rebecca on 13.12.2015.
+ * Speichern der daten vom PHD
  */
 public class User {
     String name, email, password,exam,id,deviceID;

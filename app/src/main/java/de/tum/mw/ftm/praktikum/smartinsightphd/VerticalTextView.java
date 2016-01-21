@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.widget.TextView;
 
 /**
- * Created by Rebecca on 14.01.2016.
+ * Klasse die den Text View vertical setzt
  */
 public class VerticalTextView extends TextView {
     final boolean topDown;

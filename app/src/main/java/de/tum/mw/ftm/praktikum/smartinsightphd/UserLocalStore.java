@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 
 /**
- * Created by Rebecca on 13.12.2015.
+ * KLasse die den Aktuellen nutzer lokal speichert
  */
 public class UserLocalStore {
 
