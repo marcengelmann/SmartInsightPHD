@@ -13,7 +13,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/*
+* Diese KLasse erzeugt einen Adapter für den Spinner in der Floating Action Screen
+* um die anfrage aufzulisten
+* */
 public class SpinnerRequestListAdapter extends ArrayAdapter<String> {
 
     private Activity activity;
@@ -52,7 +55,7 @@ public class SpinnerRequestListAdapter extends ArrayAdapter<String> {
         tempValues = null;
         tempValues = (AnfrageProvider) data.get(position);
         row.findViewById(R.id.listViewButton).setVisibility(View.GONE);
-
+        // hol die layout elemente
         TextView editor = (TextView) row.findViewById(R.id.editor);
         TextView endTime = (TextView) row.findViewById(R.id.endTime);
         TextView question = (TextView) row.findViewById(R.id.question);
@@ -61,6 +64,7 @@ public class SpinnerRequestListAdapter extends ArrayAdapter<String> {
         TextView taskSubNumber = (TextView) row.findViewById(R.id.taskSubNumber);
         TextView sitzNumber = (TextView) row.findViewById(R.id.sitzNumb);
         TextView exam = (TextView) row.findViewById(R.id.exam);
+        // setz die akutellen werte für die layout elemente
         editor.setText(tempValues.editor);
         endTime.setText(tempValues.endTime);
         startTime.setText(tempValues.startTime);
