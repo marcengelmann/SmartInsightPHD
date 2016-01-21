@@ -6,21 +6,21 @@ import java.io.Serializable;
  * Created by Rebecca on 13.12.2015.
  */
 public class AnfrageProvider implements Serializable{
-    public String endTime;
-    public String startTime;
-    public String editor;
-    public String question;
-    public String taskNumber;
-    public String sitzNumber;
-    public String taskSubNumber;
-    public String id;
-    public String exam;
-    public String requestFinished;
+    private String endTime;
+    private String startTime;
+    private String student;
+    private String question;
+    private String taskNumber;
+    private String sitzNumber;
+    private String taskSubNumber;
+    private String id;
+    private String exam;
+    private String requestFinished;
 
-    public AnfrageProvider(String id, String startTime, String endTime, String taskNumber, String taskSubNumber, String question, String editor, String sitzNumber, String exam, String requestFinished) {
+    public AnfrageProvider(String id, String startTime, String endTime, String taskNumber, String taskSubNumber, String question, String student, String sitzNumber, String exam, String requestFinished) {
         this.endTime = endTime;
         this.startTime = startTime;
-        this.editor = editor;
+        this.student = student;
         this.question = question;
         this.taskNumber = taskNumber;
         this.taskSubNumber = taskSubNumber;
@@ -46,12 +46,12 @@ public class AnfrageProvider implements Serializable{
         this.startTime = startTime;
     }
 
-    public String getEditor() {
-        return editor;
+    public String getStudent() {
+        return student;
     }
 
-    public void setEditor(String editor) {
-        this.editor = editor;
+    public void setStudent(String student) {
+        this.student = student;
     }
 
     public String getQuestion() {
@@ -70,20 +70,43 @@ public class AnfrageProvider implements Serializable{
         this.taskNumber = taskNumber;
     }
 
+    public String getSitzNumber() {
+        return sitzNumber;
+    }
+
+    public void setSitzNumber(String sitzNumber) {
+        this.sitzNumber = sitzNumber;
+    }
+
     public String getTaskSubNumber() {
         return taskSubNumber;
-    }
-
-    public void setID(String id) {
-        this.id = id;
-    }
-
-    public String getID() {
-        return id;
     }
 
     public void setTaskSubNumber(String taskSubNumber) {
         this.taskSubNumber = taskSubNumber;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getExam() {
+        return exam;
+    }
+
+    public void setExam(String exam) {
+        this.exam = exam;
+    }
+
+    public String getRequestFinished() {
+        return requestFinished;
+    }
+
+    public void setRequestFinished(String requestFinished) {
+        this.requestFinished = requestFinished;
+    }
 }

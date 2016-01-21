@@ -142,7 +142,7 @@ public class FloatingActivity extends AppCompatActivity {
             Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             User user = userLocalStore.getUserLogInUser();
             //Empfänger speichern
-            String[] TO = {user.email};
+            String[] TO = {user.getEmail()};
             // setzen des text types
             emailIntent.setType("text/html");
             // setzen an wen die E-mail gehen soll

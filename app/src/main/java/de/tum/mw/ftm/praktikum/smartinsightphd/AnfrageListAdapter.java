@@ -54,17 +54,17 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder,final int position) {
         viewHolder.mItem = mValues.get(position);
-        String endTime = mValues.get(position).endTime;
-        String startTime = mValues.get(position).startTime;
-        viewHolder.editor.setText(mValues.get(position).editor);
-        Boolean requestFinished = Boolean.valueOf(mValues.get(position).requestFinished);
+        String endTime = mValues.get(position).getEndTime();
+        String startTime = mValues.get(position).getStartTime();
+        viewHolder.editor.setText(mValues.get(position).getStudent());
+        Boolean requestFinished = Boolean.valueOf(mValues.get(position).getRequestFinished());
         viewHolder.endTime.setText(endTime);
         viewHolder.startTime.setText(startTime);
-        viewHolder.question.setText(mValues.get(position).question);
-        viewHolder.taskNumber.setText(mValues.get(position).taskNumber);
-        viewHolder.taskSubNumber.setText(mValues.get(position).taskSubNumber);
-        viewHolder.sitzNumber.setText(mValues.get(position).sitzNumber);
-        viewHolder.exam.setText(mValues.get(position).exam);
+        viewHolder.question.setText(mValues.get(position).getQuestion());
+        viewHolder.taskNumber.setText(mValues.get(position).getTaskNumber());
+        viewHolder.taskSubNumber.setText(mValues.get(position).getTaskSubNumber());
+        viewHolder.sitzNumber.setText(mValues.get(position).getSitzNumber());
+        viewHolder.exam.setText(mValues.get(position).getExam());
 
         long requestStartDate = 0;
         long requestEndDate = 0;

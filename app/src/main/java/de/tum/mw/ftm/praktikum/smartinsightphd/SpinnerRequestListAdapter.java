@@ -65,14 +65,14 @@ public class SpinnerRequestListAdapter extends ArrayAdapter<String> {
         TextView sitzNumber = (TextView) row.findViewById(R.id.sitzNumb);
         TextView exam = (TextView) row.findViewById(R.id.exam);
         // setz die akutellen werte für die layout elemente
-        editor.setText(tempValues.editor);
-        endTime.setText(tempValues.endTime);
-        startTime.setText(tempValues.startTime);
-        question.setText(tempValues.question);
-        taskNumber.setText(tempValues.taskNumber);
-        taskSubNumber.setText(tempValues.taskSubNumber);
-        sitzNumber.setText(tempValues.sitzNumber);
-        exam.setText(tempValues.exam);
+        editor.setText(tempValues.getStudent());
+        endTime.setText(tempValues.getEndTime());
+        startTime.setText(tempValues.getStartTime());
+        question.setText(tempValues.getQuestion());
+        taskNumber.setText(tempValues.getTaskNumber());
+        taskSubNumber.setText(tempValues.getTaskSubNumber());
+        sitzNumber.setText(tempValues.getSitzNumber());
+        exam.setText(tempValues.getExam());
 
         return row;
     }

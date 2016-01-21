@@ -84,8 +84,8 @@ public class SettingsFragment extends Fragment {
         final User user = userLocalStore.getUserLogInUser();
 
 
-        txtEmail.setText(user.email);
-        txtName.setText(user.name);
+        txtEmail.setText(user.getEmail());
+        txtName.setText(user.getName());
         updateProfilPic();
         return view;
     }

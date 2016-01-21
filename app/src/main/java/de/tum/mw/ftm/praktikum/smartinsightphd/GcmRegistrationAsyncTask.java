@@ -49,8 +49,8 @@ class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String> {
 
             UserLocalStore userLocalStore = new UserLocalStore(context);
             User user = userLocalStore.getUserLogInUser();
-            user.deviceID = regId;
-            user.didChange = true;
+            user.setDeviceID(regId);
+            user.setDidChange(true);
             userLocalStore.storeUserData(user);
 
             regService.register(regId).execute();

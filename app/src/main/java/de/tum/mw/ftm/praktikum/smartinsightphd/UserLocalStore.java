@@ -9,7 +9,7 @@ import android.net.Uri;
  */
 public class UserLocalStore {
 
-    public  static final String SP_NAME = "userDetails";
+    private  static final String SP_NAME = "userDetails";
     SharedPreferences userLocalDatabase;
 
     public UserLocalStore(Context context){
@@ -18,13 +18,13 @@ public class UserLocalStore {
 
     public void storeUserData(User user){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
-        spEditor.putString("name", user.name);
-        spEditor.putString("email", user.email);
-        spEditor.putString("password",user.password);
-        spEditor.putString("exam",user.exam);
-        spEditor.putString("id",user.id);
-        spEditor.putString("deviceID",user.deviceID);
-        spEditor.putBoolean("didChange",user.didChange);
+        spEditor.putString("name", user.getName());
+        spEditor.putString("email", user.getEmail());
+        spEditor.putString("password",user.getPassword());
+        spEditor.putString("exam",user.getExam());
+        spEditor.putString("id",user.getId());
+        spEditor.putString("deviceID",user.getDeviceID());
+        spEditor.putBoolean("didChange",user.getDidChange());
         spEditor.apply();
     }
 

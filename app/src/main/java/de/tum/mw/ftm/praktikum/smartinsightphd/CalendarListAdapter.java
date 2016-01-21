@@ -32,7 +32,7 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        String date = mValues.get(position).date;
+        String date = mValues.get(position).getDate();
         viewHolder.mItem = mValues.get(position);
         // get the acutal date
         SimpleDateFormat curFormater = new SimpleDateFormat("dd.MM.yyyy");
@@ -56,12 +56,12 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
             }
         }
         // von dem aktuellen Klausureinsichttermin sollen die Werte gesetzt werden
-        viewHolder.name.setText(mValues.get(position).name);
-        viewHolder.room.setText(mValues.get(position).room);
+        viewHolder.name.setText(mValues.get(position).getName());
+        viewHolder.room.setText(mValues.get(position).getRoom());
         viewHolder.date.setText(date);
-        viewHolder.numbOfReg.setText(mValues.get(position).numbOfRegistration);
-        viewHolder.responsiblePerson.setText(mValues.get(position).responsiblePerson);
-        viewHolder.mean.setText(mValues.get(position).mean);
+        viewHolder.numbOfReg.setText(mValues.get(position).getNumbOfRegistration());
+        viewHolder.responsiblePerson.setText(mValues.get(position).getResponsiblePerson());
+        viewHolder.mean.setText(mValues.get(position).getMean());
 
     }
 
