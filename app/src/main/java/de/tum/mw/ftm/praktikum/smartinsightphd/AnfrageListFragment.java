@@ -86,7 +86,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
     }
 
     private void refreshListView(){
-        //Adapter für die Anfrage liste bescheid geben, dass sich daten geändert haben.
+        //Adapter für die Anfrageliste bescheid geben, dass sich daten geändert haben.
         adapter.notifyDataSetChanged();
         swipeContainer.setRefreshing(false);
     }
