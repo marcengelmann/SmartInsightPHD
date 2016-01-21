@@ -4,7 +4,7 @@ package de.tum.mw.ftm.praktikum.smartinsightphd;
 import java.io.Serializable;
 
 /**
- * Created by Rebecca on 02.01.2016.
+ * Klasse die die Klausureinsichttermine speichert
  */
 public class Calendar implements Serializable {
     public String date, name, room, numbOfRegistration, responsiblePerson, mean;

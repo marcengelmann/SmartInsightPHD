@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Rebecca on 02.01.2016.
+ * Adapter für die KLausureinsichtstermin eliste
  */
 public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapter.ViewHolder> {
     private final List<Calendar> mValues;
@@ -34,9 +34,9 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         String date = mValues.get(position).date;
         viewHolder.mItem = mValues.get(position);
+        // get the acutal date
         SimpleDateFormat curFormater = new SimpleDateFormat("dd.MM.yyyy");
         Date examDate = null;
-        Date today;
         try {
             examDate = curFormater.parse(date);
         } catch (ParseException e) {
@@ -44,6 +44,8 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
         }
         Date currentDay = new Date();
         if(examDate != null){
+            // wenn an dem heutigen Tag eine Klausureinsicht ist, soll der Termin einen grünen
+            // HIntergrund haben, sonst normal einen weißen
             if(examDate.getYear() == currentDay.getYear()
                     && examDate.getMonth() == currentDay.getMonth()
                     && examDate.getDay() == currentDay.getDay()){
@@ -53,6 +55,7 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
 
             }
         }
+        // von dem aktuellen Klausureinsichttermin sollen die Werte gesetzt werden
         viewHolder.name.setText(mValues.get(position).name);
         viewHolder.room.setText(mValues.get(position).room);
         viewHolder.date.setText(date);
