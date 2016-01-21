@@ -31,7 +31,7 @@ public class FloatingActivity extends AppCompatActivity {
     // Spinner zur Auswahl der Anfrage
     private MaterialSpinner spinnerrequest;
     // Eigener Adapter, der die Struktur der Anfrage übernehmen kann
-    SpinnerAnfrageAdapter adapter;
+    SpinnerRequestListAdapter adapter;
     // Variable, die den aktuellen USER daten speichert
     UserLocalStore userLocalStore;
     // Textfeld, welches den Kommentar beinahtlet
@@ -68,7 +68,7 @@ public class FloatingActivity extends AppCompatActivity {
         selectRequest = (TextView)findViewById(R.id.rowDesc);
 
         // Create custom adapter object ( see below CustomAdapter.java )
-        adapter = new SpinnerAnfrageAdapter(this, R.layout.fragment_list_item, listAnfrageProvider);
+        adapter = new SpinnerRequestListAdapter(this, R.layout.fragment_list_item, listAnfrageProvider);
         // Set adapter to spinner
         spinnerrequest.setAdapter(adapter);
         // Listener called when spinner item selected

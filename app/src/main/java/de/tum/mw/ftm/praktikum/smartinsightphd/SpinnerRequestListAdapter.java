@@ -14,14 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SpinnerAnfrageAdapter extends ArrayAdapter<String> {
+public class SpinnerRequestListAdapter extends ArrayAdapter<String> {
 
     private Activity activity;
     private ArrayList data;
     AnfrageProvider tempValues=null;
     LayoutInflater inflater;
 
-    public SpinnerAnfrageAdapter(FloatingActivity activitySpinner, int textViewResourceId, ArrayList objects)
+    public SpinnerRequestListAdapter(FloatingActivity activitySpinner, int textViewResourceId, ArrayList objects)
     {
         super(activitySpinner, textViewResourceId, objects);
 
