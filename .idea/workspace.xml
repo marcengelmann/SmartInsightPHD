@@ -10,6 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6752d5d1-b865-4e22-9cb5-f592256949b6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/ProfilFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/ProfilFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -122,10 +124,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/ProfilFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="162" column="37" selection-start-line="162" selection-start-column="37" selection-end-line="162" selection-end-column="37" />
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
               <folding>
-                <element signature="e#3156#4199#0" expanded="true" />
-                <element signature="e#4198#4199#0" expanded="true" />
+                <element signature="e#3172#4215#0" expanded="true" />
+                <element signature="e#4214#4215#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,10 +136,22 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4801444">
-              <caret line="285" column="48" selection-start-line="285" selection-start-column="48" selection-end-line="285" selection-end-column="48" />
+            <state vertical-scroll-proportion="1.647619">
+              <caret line="379" column="88" selection-start-line="379" selection-start-column="88" selection-end-line="379" selection-end-column="88" />
               <folding>
-                <element signature="e#10943#10966#0" expanded="true" />
+                <element signature="e#3257#3287#0" expanded="true" />
+                <element signature="e#8051#8082#0" expanded="true" />
+                <element signature="e#8084#8116#0" expanded="true" />
+                <element signature="e#12741#12765#0" expanded="true" />
+                <element signature="e#13050#13066#0" expanded="true" />
+                <element signature="e#13484#13507#0" expanded="true" />
+                <element signature="e#13739#13765#0" expanded="true" />
+                <element signature="e#14298#14325#0" expanded="true" />
+                <element signature="e#14734#14761#0" expanded="true" />
+                <element signature="e#14975#15019#0" expanded="true" />
+                <element signature="e#15224#15251#0" expanded="true" />
+                <element signature="e#15478#15522#0" expanded="true" />
+                <element signature="e#15714#15741#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,6 +174,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-3.7777777">
               <caret line="6" column="32" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnfrageListFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.586206">
+              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2644,14 +2668,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/FloatingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/GcmRegistrationAsyncTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/SettingsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CONST.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/UserLocalStore.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_profil.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/ProfilFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -3202,7 +3226,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453451470491</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Kommenieren profile klasse">
+      <created>1453452060476</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1453452060476</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3263,7 +3293,8 @@
     <MESSAGE value="ädnern ovn public variablen klasssen zu private und generieren von getter und setter methoden" />
     <MESSAGE value="hinzufügen von gloabel stringvariablen in userlocalstore" />
     <MESSAGE value="fragment settings ändern in fragement profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="fragment settings ändern in fragement profil" />
+    <MESSAGE value="Kommenieren profile klasse" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kommenieren profile klasse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3380,7 +3411,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="110" column="27" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
           <folding>
-            <element signature="e#10943#10966#0" expanded="true" />
+            <element signature="e#3257#3287#0" expanded="true" />
+            <element signature="e#8051#8082#0" expanded="true" />
+            <element signature="e#8084#8116#0" expanded="true" />
+            <element signature="e#12741#12765#0" expanded="true" />
+            <element signature="e#13050#13066#0" expanded="true" />
+            <element signature="e#13484#13507#0" expanded="true" />
+            <element signature="e#13739#13765#0" expanded="true" />
+            <element signature="e#14298#14325#0" expanded="true" />
+            <element signature="e#14734#14761#0" expanded="true" />
+            <element signature="e#14975#15019#0" expanded="true" />
+            <element signature="e#15224#15251#0" expanded="true" />
+            <element signature="e#15478#15522#0" expanded="true" />
+            <element signature="e#15714#15741#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3606,14 +3649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/Calendar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3736,20 +3771,40 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/ProfilFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="37" selection-start-line="162" selection-start-column="37" selection-end-line="162" selection-end-column="37" />
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
           <folding>
-            <element signature="e#3156#4199#0" expanded="true" />
-            <element signature="e#4198#4199#0" expanded="true" />
+            <element signature="e#3172#4215#0" expanded="true" />
+            <element signature="e#4214#4215#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.586206">
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4801444">
-          <caret line="285" column="48" selection-start-line="285" selection-start-column="48" selection-end-line="285" selection-end-column="48" />
+        <state vertical-scroll-proportion="1.647619">
+          <caret line="379" column="88" selection-start-line="379" selection-start-column="88" selection-end-line="379" selection-end-column="88" />
           <folding>
-            <element signature="e#10943#10966#0" expanded="true" />
+            <element signature="e#3257#3287#0" expanded="true" />
+            <element signature="e#8051#8082#0" expanded="true" />
+            <element signature="e#8084#8116#0" expanded="true" />
+            <element signature="e#12741#12765#0" expanded="true" />
+            <element signature="e#13050#13066#0" expanded="true" />
+            <element signature="e#13484#13507#0" expanded="true" />
+            <element signature="e#13739#13765#0" expanded="true" />
+            <element signature="e#14298#14325#0" expanded="true" />
+            <element signature="e#14734#14761#0" expanded="true" />
+            <element signature="e#14975#15019#0" expanded="true" />
+            <element signature="e#15224#15251#0" expanded="true" />
+            <element signature="e#15478#15522#0" expanded="true" />
+            <element signature="e#15714#15741#0" expanded="true" />
           </folding>
         </state>
       </provider>

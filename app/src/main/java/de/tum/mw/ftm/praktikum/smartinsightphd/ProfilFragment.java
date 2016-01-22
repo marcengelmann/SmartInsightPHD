@@ -30,8 +30,8 @@ public class ProfilFragment extends Fragment {
     private TextView txtName;
     private TextView txtEmail;
     private ImageButton btnUploadFoto;
-    ImageView profileImage;
-    UserLocalStore userLocalStore;
+    private ImageView profileImage;
+    private UserLocalStore userLocalStore;
     private OnListFragmentInteractionListener mListener;
     public ProfilFragment() {
         // Required empty public constructor

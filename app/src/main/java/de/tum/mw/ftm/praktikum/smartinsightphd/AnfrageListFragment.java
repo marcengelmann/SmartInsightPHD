@@ -140,7 +140,6 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
             }
         };
         handlerRefreshList.postDelayed(runnableRefreshList, timer);
-        Log.d("test", "Update in ms. " + timer);
     }
 
     private Dialog finalDialog(String title,String msg, final int position, final AnfrageProvider value){

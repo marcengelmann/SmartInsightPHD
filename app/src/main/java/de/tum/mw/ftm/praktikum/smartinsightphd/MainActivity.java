@@ -34,18 +34,23 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, ProfilFragment.OnListFragmentInteractionListener, AnfrageListFragment.OnListFragmentInteractionListener{
-    UserLocalStore userLocalStore;
-    User user = null;
+    private UserLocalStore userLocalStore;
+    private User user = null;
 
+    // Attribute, welche true ist wenn das Fragment AnfrageListe gelaen ist
     private boolean fragmentAnfrageListActive = false;
+    // ist true wenn noch keine User login daten zum ersten mal geladen sind
     private boolean startActFirstTime = true;
 
-    TextView emailView;
-    TextView nameView;
-    CircleImageView profilPicView;
-    NavigationView navigationView;
-    ArrayList<AnfrageProvider> requests = new ArrayList<>();
-    ArrayList<Calendar> requestsCalendar = new ArrayList<>();
+    private TextView emailView;
+    private TextView nameView;
+    private CircleImageView profilPicView;
+    private NavigationView navigationView;
+
+    // LIste, die die Anfragen der Studenten speichert
+    private ArrayList<AnfrageProvider> requests = new ArrayList<>();
+    // Liste, die die Klausureinsichtstermine speichert
+    private ArrayList<Calendar> requestsCalendar = new ArrayList<>();
 
 
     private GetJSONListener uploadResultListener = new GetJSONListener() {
@@ -66,20 +71,22 @@ public class MainActivity extends AppCompatActivity
 
     };
 
+    // methode di eAufgerufen werden soll, wenn das Fragment Anfragelsite geladen werden osll
     private void setFragmentAnfrageliste(){
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment;
-
+        // Wenn die Anfrageliste geladen wird, soll die Liste mit den Anfragen ovn der Studenten
+        // Über ein bundle mit geladen werden
         Bundle bundle = new Bundle();
         bundle.putSerializable("requests", requests);
-
+        // In der Toolbar soll der titel geladen werden
         setTitle(R.string.capition_anfrageliste);
         fragment = new AnfrageListFragment();
         fragment.setArguments(bundle);
 
         fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        // true setzen, da das fragment active ist
         fragmentAnfrageListActive = true;
-
     }
 
     private GetJSONListener requestResultListener = new GetJSONListener() {
@@ -160,10 +167,14 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Floating action button
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // wenn der Floating action button aktiviert wurde, soll die Klasse
+                // FloatingActivity geladen werden und abei die aktuelle Anfragen der Studenten
+                // mit übertragen werden, damit die in dem Spinner angezeigt werden können
                 Intent myIntent = new Intent(v.getContext(), FloatingActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("requests", requests);
@@ -182,17 +193,19 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         View headerNavigation = navigationView.getHeaderView(0);
         headerNavigation.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        // in diesen zwei TextView ist das die E-Mail addresse und der Name des Users,
+        // die in dem Naviationdrawer im header angezeigt werden, so wie das Profilbild
         emailView = (TextView) headerNavigation.findViewById(R.id.emailView);
         nameView = (TextView) headerNavigation.findViewById(R.id.nameView);
         profilPicView = (CircleImageView) headerNavigation.findViewById(R.id.imageView);
 
         userLocalStore = new UserLocalStore(this);
-
+        // Fragment zur Anfrageliste osll immer der startbildschirm sein
         setFragmentAnfrageliste();
-
+        // get actual user
         user = userLocalStore.getUserLogInUser();
+        // uplaod das profilbild in navigation drawer header
         onListFragmentUpdateProfilePic();
-
     }
 
     @Override
@@ -208,28 +221,35 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart(){
         super.onStart();
-
+        // get user
         user = userLocalStore.getUserLogInUser();
 
         if(authenticate() && startActFirstTime){
+            // wenn der User eingeloggt ist und die App zum ersten mal gestarteter wird,
+            // soll über ein Toast der User Willkommen geheißen werden
             Toast.makeText(MainActivity.this,"Willkommen, "+user.getName() + ", Email: "+user.getEmail(),
                     Toast.LENGTH_LONG).show();
+            // setzen der email addresse und des namens im header des navigation drawer
             emailView.setText(user.getEmail());
             nameView.setText(user.getName());
+            // soll danach nicht mehr geladen werden, daher wird das attribute false gesetzt
             startActFirstTime = false;
-            downloadRequests();
+            // die  methoden downloaden vom server die aktuelel
+            //  Klausureinsichtstermine geladen
             downloadCalendar();
+            // setze im navtation drawer, dass die Anfrageliste ausgewählt ist
             navigationView.getMenu().getItem(0).setChecked(true);
             setFragmentAnfrageliste();
             new GcmRegistrationAsyncTask(this).execute();
         }
         else if (startActFirstTime){
+            // wenn noch kein nutzer gespeichert ist, wird ein login activity geladen
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
             startActFirstTime = true;
         }
-
+        // die methode downlaoded vom server die aktuelle Anfragelsite
         downloadRequests();
-
+        // wenn sich etwas verändert aht, soll die User daten aktualisiert werden
         if(user.getDidChange()) {
             refreshUserData();
         }
@@ -238,10 +258,16 @@ public class MainActivity extends AppCompatActivity
 
 
     private boolean authenticate(){
+        // ToDo überprüfen ob die Nutzerdaten noch aktuell sind und dementsprechens
+        // im userLocalstore die UserLoggedIn false setzen
         return userLocalStore.getUserLoggedIn();
     }
 
+    // Methode soll die aktuelle Anfrage liste updaten, wenn sich etwas geändert hat
     private  void updateListView() {
+        // hier uwrde noch keien andere möglcihkeit gefunden zu überprüfen, ob das Fragement
+        // welches die Anfragen auflistet aktive ist und dementspreichend soll die Liste über
+        // die methode updateFragmentListView geupdtet werden
         if (fragmentAnfrageListActive) {
             AnfrageListFragment anfrageListFragment = (AnfrageListFragment)
                     getSupportFragmentManager().findFragmentById(R.id.container);
@@ -336,6 +362,7 @@ public class MainActivity extends AppCompatActivity
         userLocalStore.storeUserData(user);
     }
 
+    // update das profil bild in dem header de Naviation drawer
     @Override
     public void onListFragmentUpdateProfilePic() {
         if (userLocalStore.getUserStatusProfilPic()){
@@ -347,9 +374,10 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // wird aufgerufen vom Fragment die die Anfrage liste, wennn man eine Anfrage bearbeitet hat über
+    // das den Check button
     @Override
     public void onListFragmentRequestFinishedItem(int position, AnfrageProvider value) {
-        //ToDo hier muss das item das fertig ist mit bearbeiten true gestzt werden!
         downloadRequests();
         uploadData(requests.get(position));
         Toast.makeText(MainActivity.this, "Anfrage wurde bearbeitet!",
