@@ -10,13 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6752d5d1-b865-4e22-9cb5-f592256949b6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestStudentListAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudentListFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_requests_student_list.xml" />
+      <change type="DELETED" beforePath="C:\Users\Rebecca\Documents\GitHub\SmartInsightPHD\app\src\main\java\de\tum\mw\ftm\praktikum\smartinsightphd\AnfrageListAdapter.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CalendarFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CalendarFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CalendarListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CalendarListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SmartInsightPHD.iws" />
@@ -59,76 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityTransitionState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/app/ActivityTransitionState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="29" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="29" />
-              <folding>
-                <element signature="e#1387#1388#0" expanded="true" />
-                <element signature="e#1419#1420#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Instrumentation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/app/Instrumentation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1106" column="0" selection-start-line="1106" selection-start-column="0" selection-end-line="1106" selection-end-column="0" />
-              <folding>
-                <element signature="e#6411#6412#0" expanded="true" />
-                <element signature="e#6439#6440#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserLocalStore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/UserLocalStore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="e#614#627#0" expanded="true" />
-                <element signature="e#689#703#0" expanded="true" />
-                <element signature="e#766#783#0" expanded="true" />
-                <element signature="e#848#861#0" expanded="true" />
-                <element signature="e#922#933#0" expanded="true" />
-                <element signature="e#1076#1094#0" expanded="true" />
-                <element signature="e#1252#1265#0" expanded="true" />
-                <element signature="e#1339#1353#0" expanded="true" />
-                <element signature="e#1425#1438#0" expanded="true" />
-                <element signature="e#1515#1532#0" expanded="true" />
-                <element signature="e#1602#1613#0" expanded="true" />
-                <element signature="e#1785#1803#0" expanded="true" />
-                <element signature="e#2060#2077#0" expanded="true" />
-                <element signature="e#2230#2247#0" expanded="true" />
-                <element signature="e#2369#2393#0" expanded="true" />
-                <element signature="e#2580#2604#0" expanded="true" />
-                <element signature="e#2762#2780#0" expanded="true" />
-                <element signature="e#2993#3011#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.551724">
-              <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.4827585">
+              <caret line="293" column="56" selection-start-line="293" selection-start-column="56" selection-end-line="293" selection-end-column="56" />
               <folding>
                 <element signature="e#3146#3169#0" expanded="true" />
                 <element signature="e#3256#3286#0" expanded="true" />
@@ -151,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalendarFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CalendarFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CalendarFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09714286">
+            <state vertical-scroll-proportion="-1.7586207">
               <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#1412#1429#0" expanded="true" />
@@ -179,25 +119,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/view/View.java">
+      <file leaf-file-name="AnfrageListFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8929" column="33" selection-start-line="8929" selection-start-column="33" selection-end-line="8929" selection-end-column="33" />
+              <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+              <folding>
+                <element signature="e#1100#1117#0" expanded="true" />
+                <element signature="e#1994#2017#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_requests_student_list.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_requests_student_list.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestsStudentListFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudentListFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnfrageListFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java">
+      <file leaf-file-name="RequestStudentListAdapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestStudentListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.2342857">
+              <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#730#747#0" expanded="true" />
+                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#953#954#0" expanded="true" />
+                <element signature="e#6301#6622#0" expanded="true" />
+                <element signature="e#6621#6622#0" expanded="true" />
+                <element signature="e#6705#6706#0" expanded="true" />
+                <element signature="e#6742#6743#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GcmBroadcastReceiver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/GcmBroadcastReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding>
-                <element signature="e#1120#1137#0" expanded="true" />
-                <element signature="e#2082#2105#0" expanded="true" />
-              </folding>
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2682,15 +2664,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/ProfilFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/SpinnerRequestListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/FloatingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/UserLocalStore.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CalendarListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CalendarFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestStudentListAdapter.java" />
       </list>
     </option>
   </component>
@@ -3265,7 +3248,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453458033513</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="kommentieren und update CalendarFragment">
+      <created>1453459301387</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1453459301387</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3330,7 +3319,8 @@
     <MESSAGE value="Kommenieren main activity class" />
     <MESSAGE value="AnfrageProvider in RequestsStudent umbenannt" />
     <MESSAGE value="beheben von bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="beheben von bugs" />
+    <MESSAGE value="kommentieren und update CalendarFragment" />
+    <option name="LAST_COMMIT_MESSAGE" value="kommentieren und update CalendarFragment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3421,14 +3411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="63" selection-start-line="66" selection-start-column="63" selection-end-line="66" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -3732,27 +3714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="e#673#690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="e#1120#1137#0" expanded="true" />
-            <element signature="e#2082#2105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3830,31 +3791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.551724">
-          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
-          <folding>
-            <element signature="e#3146#3169#0" expanded="true" />
-            <element signature="e#3256#3286#0" expanded="true" />
-            <element signature="e#7746#7769#0" expanded="true" />
-            <element signature="e#8079#8110#0" expanded="true" />
-            <element signature="e#8112#8144#0" expanded="true" />
-            <element signature="e#12559#12576#0" expanded="true" />
-            <element signature="e#12721#12745#0" expanded="true" />
-            <element signature="e#13030#13046#0" expanded="true" />
-            <element signature="e#13468#13491#0" expanded="true" />
-            <element signature="e#13723#13749#0" expanded="true" />
-            <element signature="e#14336#14363#0" expanded="true" />
-            <element signature="e#14827#14854#0" expanded="true" />
-            <element signature="e#15068#15112#0" expanded="true" />
-            <element signature="e#15372#15399#0" expanded="true" />
-            <element signature="e#15626#15670#0" expanded="true" />
-            <element signature="e#15917#15944#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/23.1.1/recyclerview-v7-23.1.1-sources.jar!/android/support/v7/widget/RecyclerView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33203125">
@@ -3879,10 +3815,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/CalendarFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09714286">
+        <state vertical-scroll-proportion="-1.7586207">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#1412#1429#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_requests_student_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudentListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/GcmBroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/AnfrageListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
+          <folding>
+            <element signature="e#1100#1117#0" expanded="true" />
+            <element signature="e#1994#2017#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.4827585">
+          <caret line="293" column="56" selection-start-line="293" selection-start-column="56" selection-end-line="293" selection-end-column="56" />
+          <folding>
+            <element signature="e#3146#3169#0" expanded="true" />
+            <element signature="e#3256#3286#0" expanded="true" />
+            <element signature="e#7746#7769#0" expanded="true" />
+            <element signature="e#8079#8110#0" expanded="true" />
+            <element signature="e#8112#8144#0" expanded="true" />
+            <element signature="e#12559#12576#0" expanded="true" />
+            <element signature="e#12721#12745#0" expanded="true" />
+            <element signature="e#13030#13046#0" expanded="true" />
+            <element signature="e#13468#13491#0" expanded="true" />
+            <element signature="e#13723#13749#0" expanded="true" />
+            <element signature="e#14336#14363#0" expanded="true" />
+            <element signature="e#14827#14854#0" expanded="true" />
+            <element signature="e#15068#15112#0" expanded="true" />
+            <element signature="e#15372#15399#0" expanded="true" />
+            <element signature="e#15626#15670#0" expanded="true" />
+            <element signature="e#15917#15944#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestStudentListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2342857">
+          <caret line="138" column="37" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#730#747#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#6301#6622#0" expanded="true" />
+            <element signature="e#6621#6622#0" expanded="true" />
+            <element signature="e#6705#6706#0" expanded="true" />
+            <element signature="e#6742#6743#0" expanded="true" />
           </folding>
         </state>
       </provider>

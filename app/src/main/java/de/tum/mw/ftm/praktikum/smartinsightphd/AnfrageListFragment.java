@@ -20,11 +20,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.customButtonListener{
+public class AnfrageListFragment extends Fragment implements RequestStudentListAdapter.customButtonListener{
     private SwipeRefreshLayout swipeContainer;
     private static final String ARG_COLUMN_COUNT = "column-count";
-    private int mColumnCount = 1;
-    private AnfrageListAdapter adapter;
+    private RequestStudentListAdapter adapter;
     private TextView txtIntroduction;
     private OnListFragmentInteractionListener mListener;
     private ArrayList<RequestsStudent> listAnfrageProvider = new ArrayList<RequestsStudent>();
@@ -50,12 +49,10 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
         super.onCreate(savedInstanceState);
         listAnfrageProvider.clear();
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
             listAnfrageProvider = (ArrayList<RequestsStudent>)getArguments().get(String.valueOf(R.string.bundleRequests));
-
         }
 
-        adapter = new AnfrageListAdapter(listAnfrageProvider, this);
+        adapter = new RequestStudentListAdapter(listAnfrageProvider, this);
 
     }
     RecyclerView recyclerView = null;
