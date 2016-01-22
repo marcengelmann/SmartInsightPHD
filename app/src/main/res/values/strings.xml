@@ -4,7 +4,7 @@
 
     <string name="capition_anfrageliste">Anfrageliste</string>
     <string name="caption_klausur">Klausureinsichtstermine</string>
-    <string name="caption_settings">Profil</string>
+    <string name="caption_profil">Profil</string>
     <string name="caption_statistic">Statistik</string>
     <string name="caption_editTask">Anfrage kommentieren</string>
     <string name="caption">SmartInsight PhD</string>

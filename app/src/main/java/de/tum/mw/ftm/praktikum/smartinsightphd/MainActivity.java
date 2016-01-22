@@ -33,7 +33,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, SettingsFragment.OnListFragmentInteractionListener, AnfrageListFragment.OnListFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, ProfilFragment.OnListFragmentInteractionListener, AnfrageListFragment.OnListFragmentInteractionListener{
     UserLocalStore userLocalStore;
     User user = null;
 
@@ -282,9 +282,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_anfragen:
                 setFragmentAnfrageliste();
                 break;
-            case R.id.nav_settings:
-                setTitle(R.string.caption_settings);
-                fragment = new SettingsFragment();
+            case R.id.nav_profil:
+                setTitle(R.string.caption_profil);
+                fragment = new ProfilFragment();
                 fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
                 break;
             case R.id.nav_statistic:
