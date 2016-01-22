@@ -33,7 +33,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, ProfilFragment.OnListFragmentInteractionListener, AnfrageListFragment.OnListFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, ProfilFragment.OnListFragmentInteractionListener, RequestsStudentListFragment.OnListFragmentInteractionListener{
     private UserLocalStore userLocalStore;
 
     // Attribute, welche true ist wenn das Fragment AnfrageListe gelaen ist
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity
         bundle.putSerializable(String.valueOf(R.string.bundleRequests), requests);
         // In der Toolbar soll der titel geladen werden
         setTitle(R.string.capition_anfrageliste);
-        fragment = new AnfrageListFragment();
+        fragment = new RequestsStudentListFragment();
         fragment.setArguments(bundle);
 
         fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity
         // welches die Anfragen auflistet aktive ist und dementspreichend soll die Liste über
         // die methode updateFragmentListView geupdtet werden
         if (fragmentAnfrageListActive) {
-            AnfrageListFragment anfrageListFragment = (AnfrageListFragment)
+            RequestsStudentListFragment anfrageListFragment = (RequestsStudentListFragment)
                     getSupportFragmentManager().findFragmentById(R.id.container);
             if (anfrageListFragment != null) {
                 anfrageListFragment.updateFragmentListView(requests);
