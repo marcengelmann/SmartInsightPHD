@@ -32,7 +32,7 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
 
 
     private Spinner spinSemester;
-
+    // Ab hier sin dalles Dummy daten, die in die Statistiken geladen werden
     protected String[] mExams = new String[] {
             "BMW", "MT", "NFT", "TuB"
     };
@@ -61,15 +61,6 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment StatisticFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static StatisticFragment newInstance(String param1, String param2) {
         StatisticFragment fragment = new StatisticFragment();
         return fragment;
@@ -82,7 +73,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
     }
 
 
-    BarChartExam barChartExam = null;
+    private BarChartExam barChartExam = null;
+    // Klasse die eine bestimmte Klausur als BAlkendiagramm löd von Aufgabe 1 bis x
     public class BarChartExam implements OnChartValueSelectedListener{
         protected BarChart mChartExam;
         private Spinner spinExams;
@@ -98,8 +90,14 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view,
                                            int position, long id) {
+                    // wenn eine Klausur vom Spinner ausgewählt ist, werden
+                    // die Daten des aktuellen Kklausur geladen
                     setDataExam(position);
+                    // Die aktuelle Daten der Unterklausuraufgaben werden geladen
+                    // und die spinner position der Aufgabe wird auf 0 gesetzt, d.h. Aufgabe 1
                     barChartTask.setDataTask(0);
+                    // die Ausgewählte Kklausurbalken wird in dem Überlbick der Anzahl der Angemeldeten
+                    // Studenten zur Kklausur markiert
                     barChartOverviewExam.setHihlightValue(position);
 
                 }
@@ -113,6 +111,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         }
         @Override
         public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
+            // Wenn eien Aufgabe ausgewählt wurde über die Balken, wird das Diagramm die Daten von der
+            // ausgwählten aufgabe neu berechnet und der Spinner auf die rivhtige position gesetzt
             int position = h.getXIndex();
             barChartTask.setDataTask(position);
         }
@@ -212,7 +212,6 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             dataSets.add(set3);
 
             BarData data = new BarData(xVals, dataSets);
-//        data.setValueFormatter(new LargeValueFormatter());
 
             // add space between the dataset groups in percent of bar-width
             data.setGroupSpace(80f);
@@ -222,7 +221,9 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         }
     }
 
-    BarChartTask barChartTask = null;
+    private BarChartTask barChartTask = null;
+    // Balkendiagramm für die eine Aufgabe der Klasuur, umd ie Verteilung der Unteraufgaben
+    // besser darzustellen
     public class BarChartTask{
         protected BarChart mChartTask;
         private Spinner spinTasks;
@@ -238,7 +239,9 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view,
                                            int position, long id) {
+                    // aktualisieren der Data in abhängigkeit der gewählten aufgabe
                     setDataTask(position);
+                    // markiere ide entsprechende Aufgabe in der Übersicht der ausgewählten Klausur
                     barChartExam.setHihlightValue(position);
                 }
 
@@ -336,7 +339,6 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             dataSets.add(set3);
 
             BarData data = new BarData(xVals, dataSets);
-//        data.setValueFormatter(new LargeValueFormatter());
 
             // add space between the dataset groups in percent of bar-width
             data.setGroupSpace(80f);
@@ -356,7 +358,10 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
         @Override
         public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
             int position = h.getXIndex();
+            // Eine Klausur würde über das Balkendiegramm ausgewählt,
+            // dementsprechend werden die Klausur Daten mit der Aufgab1 bis x geladen
             barChartExam.setDataExam(position);
+            // Und die Unteraufgaben werden auch dementsprechend geladen, aber auf position 0 zurück gesettz
             barChartTask.setDataTask(0);
         }
 
@@ -420,10 +425,9 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
 
 
 
-            // create 3 datasets with different types
+            // create 1 datasets with different types
             BarDataSet set1 = new BarDataSet(yVals1, "Klausuren");
-            // set1.setColors(ColorTemplate.createColors(getApplicationContext(),
-            // ColorTemplate.FRESH_COLORS));
+
             set1.setColor(Color.rgb(204, 40, 40));
             set1.setDrawValues(false);
 
@@ -433,7 +437,6 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
 
 
             BarData data = new BarData(xVals, dataSets);
-//        data.setValueFormatter(new LargeValueFormatter());
 
             // add space between the dataset groups in percent of bar-width
             data.setGroupSpace(80f);
@@ -463,6 +466,8 @@ public class StatisticFragment extends Fragment implements OnChartValueSelectedL
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
+                // Spinner, der das Semeste rauswählt,
+                // dementsprechend, werden alle Daten gesetzt und die Position auf 0 zurück gesetzt
                 barChartExam.setDataExam(0);
                 barChartTask.setDataTask(0);
                 barChartOverviewExam.setDataOverviewExam();

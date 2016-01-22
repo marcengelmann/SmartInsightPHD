@@ -10,14 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6752d5d1-b865-4e22-9cb5-f592256949b6" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Rebecca\Documents\GitHub\SmartInsightPHD\app\src\main\java\de\tum\mw\ftm\praktikum\smartinsightphd\AnfrageListFragment.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudentListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudentListFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_requests_student_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_requests_student_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SmartInsightPHD.iws" />
@@ -128,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestsStudentListFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RequestsStudentListFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudentListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6624549">
-              <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding>
                 <element signature="e#1117#1134#0" expanded="true" />
                 <element signature="e#1935#1958#0" expanded="true" />
@@ -141,6 +134,16 @@
                 <element signature="e#5960#6208#0" expanded="true" />
                 <element signature="e#6207#6208#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.4247619">
+              <caret line="469" column="99" selection-start-line="469" selection-start-column="99" selection-end-line="469" selection-end-column="99" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2679,6 +2682,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_requests_student_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudentListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java" />
       </list>
     </option>
   </component>
@@ -3265,7 +3269,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453460154832</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Kommentieren des RequestStudentListFragment">
+      <created>1453460790517</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1453460790517</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3332,7 +3342,8 @@
     <MESSAGE value="beheben von bugs" />
     <MESSAGE value="kommentieren und update CalendarFragment" />
     <MESSAGE value="kommentieren und update RequestStudentListAdapter&#10;Dieser Klassenname wurde von AnfrageListAdapter auf RequestStudentListAdapter geändert" />
-    <option name="LAST_COMMIT_MESSAGE" value="kommentieren und update RequestStudentListAdapter&#10;Dieser Klassenname wurde von AnfrageListAdapter auf RequestStudentListAdapter geändert" />
+    <MESSAGE value="Kommentieren des RequestStudentListFragment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kommentieren des RequestStudentListFragment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3608,14 +3619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profil.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.793104">
@@ -3878,8 +3881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/RequestsStudentListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6624549">
-          <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
           <folding>
             <element signature="e#1117#1134#0" expanded="true" />
             <element signature="e#1935#1958#0" expanded="true" />
@@ -3888,6 +3891,14 @@
             <element signature="e#5960#6208#0" expanded="true" />
             <element signature="e#6207#6208#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/de/tum/mw/ftm/praktikum/smartinsightphd/StatisticFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4247619">
+          <caret line="469" column="99" selection-start-line="469" selection-start-column="99" selection-end-line="469" selection-end-column="99" />
+          <folding />
         </state>
       </provider>
     </entry>
