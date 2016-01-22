@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,10 +18,9 @@ import java.util.List;
  * Adapter für die KLausureinsichtstermin eliste
  */
 public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapter.ViewHolder> {
-    private final List<Calendar> mValues;
-
+    private final ArrayList<Calendar> mValues = new ArrayList<Calendar>();
     public CalendarListAdapter(List<Calendar> anfrageProvider) {
-        mValues = anfrageProvider;
+        mValues.addAll(anfrageProvider);
     }
 
     @Override
@@ -69,7 +69,10 @@ public class CalendarListAdapter extends RecyclerView.Adapter<CalendarListAdapte
     public int getItemCount() {
         return mValues.size();
     }
-
+    public void updateData(ArrayList<Calendar> calendarArrayList){
+        mValues.clear();
+        mValues.addAll(calendarArrayList);
+    }
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public Calendar mItem;
