@@ -21,7 +21,7 @@ public class SpinnerRequestListAdapter extends ArrayAdapter<String> {
 
     private Activity activity;
     private ArrayList data;
-    AnfrageProvider tempValues=null;
+    RequestsStudent tempValues=null;
     LayoutInflater inflater;
 
     public SpinnerRequestListAdapter(FloatingActivity activitySpinner, int textViewResourceId, ArrayList objects)
@@ -53,7 +53,7 @@ public class SpinnerRequestListAdapter extends ArrayAdapter<String> {
 
         /***** Get each Model object from Arraylist ********/
         tempValues = null;
-        tempValues = (AnfrageProvider) data.get(position);
+        tempValues = (RequestsStudent) data.get(position);
         row.findViewById(R.id.listViewButton).setVisibility(View.GONE);
         // hol die layout elemente
         TextView editor = (TextView) row.findViewById(R.id.editor);

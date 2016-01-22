@@ -27,7 +27,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
     private AnfrageListAdapter adapter;
     private TextView txtIntroduction;
     private OnListFragmentInteractionListener mListener;
-    private ArrayList<AnfrageProvider> listAnfrageProvider = new ArrayList<AnfrageProvider>();
+    private ArrayList<RequestsStudent> listAnfrageProvider = new ArrayList<RequestsStudent>();
     private Handler handlerRefreshList = new Handler();
     private Runnable runnableRefreshList = null;
     /**
@@ -51,7 +51,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
         listAnfrageProvider.clear();
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-            listAnfrageProvider = (ArrayList<AnfrageProvider>)getArguments().get("requests");
+            listAnfrageProvider = (ArrayList<RequestsStudent>)getArguments().get("requests");
 
         }
 
@@ -108,7 +108,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
         mListener = null;
     }
 
-    public void updateFragmentListView(ArrayList<AnfrageProvider> requests) {
+    public void updateFragmentListView(ArrayList<RequestsStudent> requests) {
         if (requests.isEmpty()) {
             txtIntroduction.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
@@ -122,7 +122,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
     }
 
     @Override
-    public void onButtonClickListner(int position, AnfrageProvider value) {
+    public void onButtonClickListner(int position, RequestsStudent value) {
         String msg = "Hast du die Anfrage zur Aufgabe " + value.getTaskNumber() + value.getTaskSubNumber() + " bearbeitet?" ;
         String title = "Anfrage bearbeitet?";
 
@@ -142,7 +142,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
         handlerRefreshList.postDelayed(runnableRefreshList, timer);
     }
 
-    private Dialog finalDialog(String title,String msg, final int position, final AnfrageProvider value){
+    private Dialog finalDialog(String title,String msg, final int position, final RequestsStudent value){
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage(msg);
         builder.setTitle(title);
@@ -164,6 +164,6 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
 
 
     public interface OnListFragmentInteractionListener {
-        void onListFragmentRequestFinishedItem(int position, AnfrageProvider value);
+        void onListFragmentRequestFinishedItem(int position, RequestsStudent value);
     }
 }

@@ -56,9 +56,9 @@ public class FloatingActivity extends AppCompatActivity {
         // Über das Bundle wurde die aktuelle Anfrageliste mitgesendet, die über den Spinner angezeigt
         //werden soll
         Bundle b = getIntent().getExtras();
-        ArrayList<AnfrageProvider> listAnfrageProvider = new ArrayList<AnfrageProvider>();
+        ArrayList<RequestsStudent> listAnfrageProvider = new ArrayList<RequestsStudent>();
         // in dieser variable wird ei aktuelle Anfrageliste von dem PHD gespeichert
-        listAnfrageProvider = (ArrayList<AnfrageProvider>)b.getSerializable(String.valueOf(R.string.bundleRequests));
+        listAnfrageProvider = (ArrayList<RequestsStudent>)b.getSerializable(String.valueOf(R.string.bundleRequests));
 
         // Hier wird der titel von der Action bar gesetzt
         setTitle(R.string.caption_editTask);

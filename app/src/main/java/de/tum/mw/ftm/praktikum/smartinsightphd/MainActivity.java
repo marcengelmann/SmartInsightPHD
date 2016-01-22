@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity
     private NavigationView navigationView;
 
     // LIste, die die Anfragen der Studenten speichert
-    private ArrayList<AnfrageProvider> requests = new ArrayList<>();
+    private ArrayList<RequestsStudent> requests = new ArrayList<>();
     // Liste, die die Klausureinsichtstermine speichert
     private ArrayList<Calendar> requestsCalendar = new ArrayList<>();
 
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity
                         done = "true";
                     }
 
-                    AnfrageProvider anfrage = new AnfrageProvider(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam, done);
+                    RequestsStudent anfrage = new RequestsStudent(id,cutStart , cutEnd, task, subtask, type_of_question, student,seat,exam, done);
                     requests.add(anfrage);
                 }
             } catch (JSONException e) {
@@ -343,7 +343,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @SuppressWarnings("SpellCheckingInspection")
-    private void uploadData(AnfrageProvider anfrage) {
+    private void uploadData(RequestsStudent anfrage) {
         System.out.println("Trying data upload ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
         String url = getString(R.string.website)+"/upload.php?intent=request_done&exam_name="+user.getExam()+"&email=" + user.getEmail() + "&pw=" + user.getPassword() +"&request_id="+anfrage.getId();
@@ -377,7 +377,7 @@ public class MainActivity extends AppCompatActivity
     // wird aufgerufen vom Fragment die die Anfrage liste, wennn man eine Anfrage bearbeitet hat über
     // das den Check button
     @Override
-    public void onListFragmentRequestFinishedItem(int position, AnfrageProvider value) {
+    public void onListFragmentRequestFinishedItem(int position, RequestsStudent value) {
         downloadRequests();
         uploadData(requests.get(position));
         Toast.makeText(MainActivity.this, "Anfrage wurde bearbeitet!",

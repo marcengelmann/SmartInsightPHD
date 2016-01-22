@@ -20,7 +20,7 @@ import java.util.List;
 
 public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.ViewHolder> {
 
-    private final ArrayList<AnfrageProvider> mValues = new ArrayList<AnfrageProvider>();
+    private final ArrayList<RequestsStudent> mValues = new ArrayList<RequestsStudent>();
     customButtonListener customListner;
     private Boolean refreshActive = false; //
 
@@ -30,11 +30,11 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
     }
 
     public interface customButtonListener {
-        public void onButtonClickListner(int position,AnfrageProvider value);
+        public void onButtonClickListner(int position,RequestsStudent value);
         public void refreshListListener(int position, long timer);
     }
 
-    public AnfrageListAdapter(List<AnfrageProvider> anfrageProvider , customButtonListener listener) {
+    public AnfrageListAdapter(List<RequestsStudent> anfrageProvider , customButtonListener listener) {
         mValues.addAll(anfrageProvider);
         customListner = listener;
     }
@@ -46,7 +46,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
         return new ViewHolder(view);
     }
 
-    public void updateData(ArrayList<AnfrageProvider> anfrageProvider){
+    public void updateData(ArrayList<RequestsStudent> anfrageProvider){
         mValues.clear();
         mValues.addAll(anfrageProvider);
     }
@@ -149,7 +149,7 @@ public class AnfrageListAdapter extends RecyclerView.Adapter<AnfrageListAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public AnfrageProvider mItem;
+        public RequestsStudent mItem;
 
         public TextView startTime;
         public TextView endTime;
