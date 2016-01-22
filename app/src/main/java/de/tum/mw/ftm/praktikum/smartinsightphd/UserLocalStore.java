@@ -23,7 +23,7 @@ public class UserLocalStore {
         spEditor.putString(String.valueOf(R.string.password),user.getPassword());
         spEditor.putString(String.valueOf(R.string.exam),user.getExam());
         spEditor.putString(String.valueOf(R.string.id),user.getId());
-        spEditor.putString(String.valueOf(R.string.deviceID),user.getDeviceID());
+        spEditor.putString(String.valueOf(R.string.deviceID), user.getDeviceID());
         spEditor.putBoolean(String.valueOf(R.string.didChange),user.getDidChange());
         spEditor.apply();
     }

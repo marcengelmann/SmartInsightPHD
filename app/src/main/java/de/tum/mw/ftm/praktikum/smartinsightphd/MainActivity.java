@@ -35,7 +35,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, ProfilFragment.OnListFragmentInteractionListener, AnfrageListFragment.OnListFragmentInteractionListener{
     private UserLocalStore userLocalStore;
-    private User user = null;
 
     // Attribute, welche true ist wenn das Fragment AnfrageListe gelaen ist
     private boolean fragmentAnfrageListActive = false;
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity
         // Wenn die Anfrageliste geladen wird, soll die Liste mit den Anfragen ovn der Studenten
         // Über ein bundle mit geladen werden
         Bundle bundle = new Bundle();
-        bundle.putSerializable("requests", requests);
+        bundle.putSerializable(String.valueOf(R.string.bundleRequests), requests);
         // In der Toolbar soll der titel geladen werden
         setTitle(R.string.capition_anfrageliste);
         fragment = new AnfrageListFragment();
@@ -177,7 +176,7 @@ public class MainActivity extends AppCompatActivity
                 // mit übertragen werden, damit die in dem Spinner angezeigt werden können
                 Intent myIntent = new Intent(v.getContext(), FloatingActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("requests", requests);
+                bundle.putSerializable(String.valueOf(R.string.bundleRequests), requests);
                 myIntent.putExtras(bundle);
                 startActivity(myIntent);
             }
@@ -202,8 +201,6 @@ public class MainActivity extends AppCompatActivity
         userLocalStore = new UserLocalStore(this);
         // Fragment zur Anfrageliste osll immer der startbildschirm sein
         setFragmentAnfrageliste();
-        // get actual user
-        user = userLocalStore.getUserLogInUser();
         // uplaod das profilbild in navigation drawer header
         onListFragmentUpdateProfilePic();
     }
@@ -222,9 +219,10 @@ public class MainActivity extends AppCompatActivity
     protected void onStart(){
         super.onStart();
         // get user
-        user = userLocalStore.getUserLogInUser();
+        User user = userLocalStore.getUserLogInUser();
 
         if(authenticate() && startActFirstTime){
+
             // wenn der User eingeloggt ist und die App zum ersten mal gestarteter wird,
             // soll über ein Toast der User Willkommen geheißen werden
             Toast.makeText(MainActivity.this,"Willkommen, "+user.getName() + ", Email: "+user.getEmail(),
@@ -289,7 +287,7 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.nav_calendar:
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("calendar", requestsCalendar);
+                bundle.putSerializable(String.valueOf(R.string.calendar), requestsCalendar);
                 fragment = new CalendarFragment();
                 fragment.setArguments(bundle);
                 setTitle(R.string.caption_klausur);
@@ -303,7 +301,7 @@ public class MainActivity extends AppCompatActivity
                 view = new View(this);
                 Intent myIntent = new Intent(view.getContext(), LoginActivity.class);
                 startActivity(myIntent);
-            startActFirstTime = true;
+                startActFirstTime = true;
                 break;
             case R.id.nav_anfragen:
                 setFragmentAnfrageliste();
@@ -326,7 +324,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void downloadRequests() {
-
+        User user = userLocalStore.getUserLogInUser();
         System.out.println("Trying requests download ...");
         JSONClient client = new JSONClient(this, requestResultListener);
         String url = getString(R.string.website)+"/download.php?intent=request&phd="+user.getId()+"&exam_name=" + user.getExam() + "&email=" + user.getEmail() + "&pw=" + user.getPassword();
@@ -335,6 +333,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void downloadCalendar() {
+        User user = userLocalStore.getUserLogInUser();
         System.out.println("Trying calendar download ...");
         JSONClient task_client = new JSONClient(this, calendarResultListener);
         String url = getString(R.string.website)+"/download.php?intent=calendar&phd="+user.getId()+"&exam_name="+user.getExam()+"&email="+user.getEmail()+ "&pw=" + user.getPassword();
@@ -344,6 +343,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("SpellCheckingInspection")
     private void uploadData(RequestsStudent anfrage) {
+        User user = userLocalStore.getUserLogInUser();
         System.out.println("Trying data upload ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
         String url = getString(R.string.website)+"/upload.php?intent=request_done&exam_name="+user.getExam()+"&email=" + user.getEmail() + "&pw=" + user.getPassword() +"&request_id="+anfrage.getId();
@@ -353,6 +353,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("SpellCheckingInspection")
     private void refreshUserData() {
+        User user = userLocalStore.getUserLogInUser();
         System.out.println("Trying user data update ...");
         JSONClient uploader = new JSONClient(this, uploadResultListener);
         String url = getString(R.string.website)+"/upload.php?intent=userdata&phd="+user.getId()+"&exam_name="+user.getExam()+"&email=" + user.getEmail() + "&pw=" + user.getPassword() + "&deviceID=" + user.getDeviceID();

@@ -42,7 +42,7 @@ public class CalendarFragment extends Fragment {
         listCalendar.clear();
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-            listCalendar = (ArrayList<Calendar>)getArguments().get("calendar");
+            listCalendar = (ArrayList<Calendar>)getArguments().get(String.valueOf(R.string.calendar));
         }
 
 

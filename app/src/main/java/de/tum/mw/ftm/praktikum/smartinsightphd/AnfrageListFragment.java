@@ -51,7 +51,7 @@ public class AnfrageListFragment extends Fragment implements AnfrageListAdapter.
         listAnfrageProvider.clear();
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-            listAnfrageProvider = (ArrayList<RequestsStudent>)getArguments().get("requests");
+            listAnfrageProvider = (ArrayList<RequestsStudent>)getArguments().get(String.valueOf(R.string.bundleRequests));
 
         }
 

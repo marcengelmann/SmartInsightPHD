@@ -29,24 +29,21 @@ import fr.ganfra.materialspinner.MaterialSpinner;
 * */
 public class FloatingActivity extends AppCompatActivity {
     // Spinner zur Auswahl der Anfrage
-    private MaterialSpinner spinnerrequest;
+    MaterialSpinner spinnerrequest;
     // Eigener Adapter, der die Struktur der Anfrage übernehmen kann
-    SpinnerRequestListAdapter adapter;
+    private SpinnerRequestListAdapter adapter;
     // Variable, die den aktuellen USER daten speichert
-    UserLocalStore userLocalStore;
+    private UserLocalStore userLocalStore;
     // Textfeld, welches den Kommentar beinahtlet
-    EditText addCommit;
-    TextView selectRequest;
+    private EditText addCommit;
+    private TextView selectRequest;
 
     //Variablen die die Daten ovn der aktuellen anfrage speichern
-    String student;
-    String endTime;
-    String question;
-    String startTime;
-    String taskNumber;
-    String taskSubNumber;
-    String sitzNumber;
-    String exam;
+    private String student;
+    private String question;
+    private String taskNumber;
+    private String taskSubNumber;
+    private String exam;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +64,7 @@ public class FloatingActivity extends AppCompatActivity {
         spinnerrequest = (MaterialSpinner) findViewById(R.id.spinnerRequest);
         selectRequest = (TextView)findViewById(R.id.rowDesc);
 
-        // Create custom adapter object ( see below CustomAdapter.java )
+        // Create custom adapter object
         adapter = new SpinnerRequestListAdapter(this, R.layout.fragment_list_item, listAnfrageProvider);
         // Set adapter to spinner
         spinnerrequest.setAdapter(adapter);
@@ -83,12 +80,9 @@ public class FloatingActivity extends AppCompatActivity {
                     selectRequest.setVisibility(View.VISIBLE);
                     // holen der ausgewählten daten und speichern dieser Daten in variablen
                     student = ((TextView) findViewById(R.id.editor)).getText().toString();
-                    endTime = ((TextView) findViewById(R.id.endTime)).getText().toString();
                     question = ((TextView) findViewById(R.id.question)).getText().toString();
-                    startTime = ((TextView) findViewById(R.id.startTime)).getText().toString();
                     taskNumber = ((TextView) findViewById(R.id.taskNumber)).getText().toString();
                     taskSubNumber = ((TextView) findViewById(R.id.taskSubNumber)).getText().toString();
-                    sitzNumber = ((TextView) findViewById(R.id.sitzNumb)).getText().toString();
                     exam = ((TextView) findViewById(R.id.exam)).getText().toString();
                 } else {
                     // wenn keine anfrage ausgewählt wurde, zeigt der Spinner an, dass man eine
