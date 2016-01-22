@@ -17,10 +17,10 @@ import java.util.ArrayList;
 public class CalendarFragment extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
-    CalendarListAdapter adapter;
-    TextView txtIntroduction;
-    RecyclerView list_calendar;
-    ArrayList<Calendar> listCalendar = new ArrayList<Calendar>();
+    private CalendarListAdapter adapter;
+    private TextView txtIntroduction;
+    private RecyclerView list_calendar;
+    private ArrayList<Calendar> listCalendar = new ArrayList<Calendar>();
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).

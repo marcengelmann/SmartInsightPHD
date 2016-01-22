@@ -18,24 +18,24 @@ public class UserLocalStore {
 
     public void storeUserData(User user){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
-        spEditor.putString("name", user.getName());
-        spEditor.putString("email", user.getEmail());
-        spEditor.putString("password",user.getPassword());
-        spEditor.putString("exam",user.getExam());
-        spEditor.putString("id",user.getId());
-        spEditor.putString("deviceID",user.getDeviceID());
-        spEditor.putBoolean("didChange",user.getDidChange());
+        spEditor.putString(String.valueOf(R.string.name), user.getName());
+        spEditor.putString(String.valueOf(R.string.email), user.getEmail());
+        spEditor.putString(String.valueOf(R.string.password),user.getPassword());
+        spEditor.putString(String.valueOf(R.string.exam),user.getExam());
+        spEditor.putString(String.valueOf(R.string.id),user.getId());
+        spEditor.putString(String.valueOf(R.string.deviceID),user.getDeviceID());
+        spEditor.putBoolean(String.valueOf(R.string.didChange),user.getDidChange());
         spEditor.apply();
     }
 
     public User getUserLogInUser(){
-        String name = userLocalDatabase.getString("name", "");
-        String email = userLocalDatabase.getString("email","");
-        String exam = userLocalDatabase.getString("exam", "");
-        String password = userLocalDatabase.getString("password","");
-        String id = userLocalDatabase.getString("id","");
-        String deviceID = userLocalDatabase.getString("deviceID","");
-        boolean didChange = userLocalDatabase.getBoolean("didChange",false);
+        String name = userLocalDatabase.getString(String.valueOf(R.string.name), "");
+        String email = userLocalDatabase.getString(String.valueOf(R.string.email),"");
+        String exam = userLocalDatabase.getString(String.valueOf(R.string.exam), "");
+        String password = userLocalDatabase.getString(String.valueOf(R.string.password),"");
+        String id = userLocalDatabase.getString(String.valueOf(R.string.id),"");
+        String deviceID = userLocalDatabase.getString(String.valueOf(R.string.deviceID),"");
+        boolean didChange = userLocalDatabase.getBoolean(String.valueOf(R.string.didChange),false);
 
         return new User(email, name,password,exam,id,deviceID,didChange);
 
@@ -43,34 +43,34 @@ public class UserLocalStore {
 
     public void setUserLoggedIn(boolean loggedIn){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
-        spEditor.putBoolean("loggedIn", loggedIn);
-        spEditor.apply();
+        spEditor.putBoolean(String.valueOf(R.string.loggedIn), loggedIn);
+                spEditor.apply();
     }
 
     public boolean getUserLoggedIn(){
-         return userLocalDatabase.getBoolean("loggedIn", false);
+         return userLocalDatabase.getBoolean(String.valueOf(R.string.loggedIn), false);
     }
 
     public boolean getUserStatusProfilPic(){
-        return userLocalDatabase.getBoolean("statusProfilPic", false);
+        return userLocalDatabase.getBoolean(String.valueOf(R.string.statusProfilPic), false);
     }
 
     public void setUserStatusProfilPic(boolean status){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
-        spEditor.putBoolean("statusProfilPic", status);
-        spEditor.apply();
+        spEditor.putBoolean(String.valueOf(R.string.statusProfilPic), status);
+                spEditor.apply();
     }
 
     public Uri getUserProfilPic(){
-        String profilPic = userLocalDatabase.getString("profilPic", "");
+        String profilPic = userLocalDatabase.getString(String.valueOf(R.string.profilPic), "");
 
         return (Uri.parse(profilPic));
     }
 
     public void setUserProfilPic(Uri bitmap){
         SharedPreferences.Editor spEditor = userLocalDatabase.edit();
-        spEditor.putString("profilPic", bitmap.toString());
-        spEditor.apply();
+        spEditor.putString(String.valueOf(R.string.profilPic), bitmap.toString());
+                spEditor.apply();
     }
 
 
