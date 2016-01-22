@@ -22,12 +22,9 @@ import java.io.File;
 
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ProfilFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ProfilFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Pofil klasse zum hochladen eine Profilbildes
+ * Anzeigen das push nachrichten akitviert sind
+ * Und Name plus mail adresse
  */
 public class ProfilFragment extends Fragment {
     private TextView txtName;
@@ -40,14 +37,6 @@ public class ProfilFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingsFragment.
-     */
     public static ProfilFragment newInstance(String param1, String param2) {
         ProfilFragment fragment = new ProfilFragment();
 
@@ -57,6 +46,7 @@ public class ProfilFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // holt die aktuellen gespeicherten User daten
         userLocalStore = new UserLocalStore(getContext());
 
     }
@@ -69,6 +59,7 @@ public class ProfilFragment extends Fragment {
         txtEmail = (TextView) view.findViewById(R.id.profileEmail);
         txtName = (TextView) view.findViewById(R.id.profileName);
         profileImage = (ImageView) view.findViewById(R.id.profileImage);
+        // Button zum Bearbeiten des Profilbildes und soll die methode onClickUploadFoto aufrufen
         btnUploadFoto = (ImageButton) view.findViewById(R.id.btnUploadFoto);
         btnUploadFoto.setOnClickListener(new View.OnClickListener() {
 
@@ -81,120 +72,95 @@ public class ProfilFragment extends Fragment {
             }
 
         });
-        int maxSitNumb = getResources().getInteger(R.integer.max_sitz_numb);
-        String[] number = new String[maxSitNumb];
-        for(int i=0; i < number.length; i++){
-            number[i] = String.valueOf(i);
-        }
-        ArrayAdapter<String> adapterSitNumber = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, number);
-        adapterSitNumber.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //hol die aktuel user daten um email und name in das profil reinzuschreiben
         final User user = userLocalStore.getUserLogInUser();
-
-
         txtEmail.setText(user.getEmail());
         txtName.setText(user.getName());
+        // methode um das aktuelle profilbild zu laden
         updateProfilPic();
         return view;
     }
 
     public void onClickUploadFoto(View view){
         final CharSequence[] options = { "Foto aufnehmen", "Foto aus Gallerie auswählen","Abbrechen" };
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-
         builder.setTitle("Neues Profilbild hochladen!");
-
+        // Es soll über die Kamera ein Bild gemacht werden können oder eiens aus der
+        // Galerie geladen werden
         builder.setItems(options, new DialogInterface.OnClickListener() {
-
             @Override
-
             public void onClick(DialogInterface dialog, int item) {
-
                 if (options[item].equals("Foto aufnehmen"))
-
                 {
-
+                    // Camera aufnahmen
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
                     File f = new File(android.os.Environment.getExternalStorageDirectory(), "temp.jpg");
-
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
-
                     startActivityForResult(intent, 1);
 
                 } else if (options[item].equals("Foto aus Gallerie auswählen"))
-
                 {
-
+                    // Bild über Galerie holen
                     Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
                     startActivityForResult(intent, 2);
-
-
                 } else if (options[item].equals("Abbrechen")) {
-
                     dialog.dismiss();
-
                 }
-
             }
-
         });
 
         builder.show();
     }
 
+    // Methode wir aufgerufen, wenn ein Bild in der GAllerie oder über die Kamera ausgewähl/
+    // gemacht wrude
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == Activity.RESULT_OK){
             userLocalStore.setUserStatusProfilPic(false);
             if (requestCode == 1) {
-
+                // Kamera bild umwandlen und in UserLocalStore speicehrn
                 File f = new File(Environment.getExternalStorageDirectory().toString());
-
                 for (File temp : f.listFiles()) {
-
                     if (temp.getName().equals("temp.jpg")) {
-
                         f = temp;
                         Uri uri = Uri.fromFile(f);
                         userLocalStore.setUserProfilPic(uri);
                         userLocalStore.setUserStatusProfilPic(true);
-
                         break;
-
                     }
-
                 }
-
             } else if (requestCode == 2) {
+                // Gallerie bild umwandlen und in UserLocalStore speicehrn
                 Uri selectedImage = data.getData();
-
                 userLocalStore.setUserProfilPic(selectedImage);
                 userLocalStore.setUserStatusProfilPic(true);
-
-
             }
 
         }
+        // Profilbild neu alden
         updateProfilPic();
 
     }
-
+    //Diese Methode updatet das Profilbild auf der Profilseite
     private void updateProfilPic() {
+        // sit ein Profilbild vorhanden, wird dies geladen
         if (userLocalStore.getUserStatusProfilPic()){
             User user = userLocalStore.getUserLogInUser();
             profileImage.setImageURI(userLocalStore.getUserProfilPic());
             mListener.onListFragmentUpdateProfilePic();
         }
         else {
+            // es ist kein Profilbild vorhanden und daher wird ein dummy geladen
             profileImage.setImageResource(R.drawable.profile);
         }
 
     }
 
     public interface OnListFragmentInteractionListener {
+        // Interface was auf der MainActivity klasse gealden wird um das profilbild in der
+        // Navigationsbar zu erneuern
         void onListFragmentUpdateProfilePic();
     }
 
