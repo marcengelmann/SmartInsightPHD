@@ -1,10 +1,12 @@
 package de.tum.mw.ftm.praktikum.smartinsightphd;
 
+import java.io.Serializable;
+
 /**
  * Klasse die die Anfragen von den Studenten speichert mit Zeit, Name, Sitzplatz nummer,
  * Klausur und ob die Anfrage vom PHD schon bearbeitet wrude
  */
-public class RequestsStudent {
+public class RequestsStudent  implements Serializable {
     private String endTime;
     private String startTime;
     private String student;

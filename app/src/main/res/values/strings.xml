@@ -9,7 +9,6 @@
     <string name="caption_editTask">Anfrage kommentieren</string>
     <string name="caption">SmartInsight PhD</string>
     <!-- Strings related to login -->
-    <string name="bundleRequests">requests</string>
 
     <!-- if server is offline, use marcengelmann.com/smart -->
     <string name="website">http://pr-android.ftm.mw.tum.de/android/smart_insight</string>
@@ -35,7 +34,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-
+    <string name="bundleRequests">requests</string>
     <string name="name">name</string>
     <string name="email">email</string>
     <string name="password">password</string>
